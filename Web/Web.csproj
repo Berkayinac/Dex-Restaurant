@@ -82,6 +82,7 @@
     <Content Include="AdminDashBoard.aspx" />
     <Content Include="AdminOrderPanelV1.aspx" />
     <Content Include="AdminProductPanelV1.aspx" />
+    <Content Include="AdminUserAuthorityPanelV1.aspx" />
     <Content Include="AdminUserPanelV1.aspx" />
     <Content Include="assets\css\bootstrap-theme.min.css" />
     <Content Include="assets\css\bootstrap.css" />
@@ -386,6 +387,13 @@
     </Compile>
     <Compile Include="AdminProductPanelV1.aspx.designer.cs">
       <DependentUpon>AdminProductPanelV1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUserAuthorityPanelV1.aspx.cs">
+      <DependentUpon>AdminUserAuthorityPanelV1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUserAuthorityPanelV1.aspx.designer.cs">
+      <DependentUpon>AdminUserAuthorityPanelV1.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminUserPanelV1.aspx.cs">
       <DependentUpon>AdminUserPanelV1.aspx</DependentUpon>

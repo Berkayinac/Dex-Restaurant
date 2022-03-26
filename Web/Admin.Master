@@ -18,6 +18,7 @@
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
+
     <asp:ContentPlaceHolder ID="head" runat="server">
 
     </asp:ContentPlaceHolder>
@@ -272,7 +273,10 @@
                         <a href="AdminCustomerPanelV1.aspx"><i class="fa fa-desktop"></i> Customers </a>
                     </li>
                     <li>
-                        <a href="AdminAuthorityPanelV1.aspx"><i class="fa fa-table"></i> Authority </a>
+                        <a href="AdminAuthorityPanelV1.aspx"><i class="fa fa-table"></i> Authorities </a>
+                    </li>
+                    <li>
+                        <a href="AdminUserAuthorityPanelV1.aspx"><i class="fa fa-table"></i> UserAuthorities </a>
                     </li>
                 </ul>
             </div>
@@ -316,7 +320,6 @@
 	
     <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script>
-
 
 </body>
 </html>

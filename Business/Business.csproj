@@ -47,6 +47,7 @@
     <Compile Include="Abstract\ICustomerService.cs" />
     <Compile Include="Abstract\IOrderService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\IUserAuthorityService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\AuthManager.cs" />
     <Compile Include="Concrete\AuthorityManager.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Concrete\CustomerManager.cs" />
     <Compile Include="Concrete\OrderManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
+    <Compile Include="Concrete\UserAuthorityManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />
     <Compile Include="Constants\Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

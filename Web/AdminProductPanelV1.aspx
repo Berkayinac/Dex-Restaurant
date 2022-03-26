@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="Product" runat="server">
     <div>
-        <asp:GridView ID="GridView1" runat="server" CssClass="table table-light " AutoGenerateColumns="false"  >
+        <asp:GridView ID="GridView1" runat="server" CssClass="table table-light" AutoGenerateColumns="false"  >
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id"  />
             <asp:BoundField DataField="CategoryId" HeaderText="CategoryId"  />
@@ -58,4 +58,5 @@
             <asp:Button ID="btn_Update" runat="server" CssClass="btn btn-warning" Text="Update" OnClick="btn_Update_Click" />
           </div>
       </div>
+
 </asp:Content>
