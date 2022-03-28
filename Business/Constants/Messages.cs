@@ -57,5 +57,6 @@ namespace Business.Constants
         internal static string UserAuthoritiesListed = "Kullanıcı Yetkileri Listelendi.";
         internal static string UserAuthorityGeted = "Kullanıcı Yetkisi Getirildi.";
         internal static string UserAuthorityUpdated = "Kullanıcı Yetkisi Güncellendi.";
+        internal static string ProductDtosListed;
     }
 }

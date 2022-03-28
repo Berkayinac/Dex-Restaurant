@@ -196,7 +196,6 @@
     <Content Include="models\vendor\php-email-form\validate.js" />
     <Content Include="models\vendor\swiper\swiper-bundle.min.css" />
     <Content Include="models\vendor\swiper\swiper-bundle.min.js" />
-    <Content Include="ProductsWebPageV3.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -260,6 +259,7 @@
     <Content Include="models\vendor\boxicons\fonts\boxicons.ttf" />
     <Content Include="models\vendor\boxicons\fonts\boxicons.woff" />
     <Content Include="models\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="WebPage.aspx" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -336,6 +336,38 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="section\css\style.css" />
+    <Content Include="section\image\banner-bg.jpg" />
+    <Content Include="section\image\blog-1.jpg" />
+    <Content Include="section\image\blog-2.jpg" />
+    <Content Include="section\image\blog-3.jpg" />
+    <Content Include="section\image\blog-4.jpg" />
+    <Content Include="section\image\blog-5.jpg" />
+    <Content Include="section\image\book-1.png" />
+    <Content Include="section\image\book-10.png" />
+    <Content Include="section\image\book-2.png" />
+    <Content Include="section\image\book-3.png" />
+    <Content Include="section\image\book-4.png" />
+    <Content Include="section\image\book-5.png" />
+    <Content Include="section\image\book-6.png" />
+    <Content Include="section\image\book-7.png" />
+    <Content Include="section\image\book-8.png" />
+    <Content Include="section\image\book-9.png" />
+    <Content Include="section\image\book3.png" />
+    <Content Include="section\image\book5.png" />
+    <Content Include="section\image\book7.png" />
+    <Content Include="section\image\deal-img.jpg" />
+    <Content Include="section\image\letter-bg.jpg" />
+    <Content Include="section\image\loader-img.gif" />
+    <Content Include="section\image\pic-1.png" />
+    <Content Include="section\image\pic-2.png" />
+    <Content Include="section\image\pic-3.png" />
+    <Content Include="section\image\pic-4.png" />
+    <Content Include="section\image\pic-5.png" />
+    <Content Include="section\image\pic-6.png" />
+    <Content Include="section\image\stand.png" />
+    <Content Include="section\image\worldmap.png" />
+    <Content Include="section\js\script.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -402,13 +434,6 @@
     <Compile Include="AdminUserPanelV1.aspx.designer.cs">
       <DependentUpon>AdminUserPanelV1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductsWebPageV3.aspx.cs">
-      <DependentUpon>ProductsWebPageV3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProductsWebPageV3.aspx.designer.cs">
-      <DependentUpon>ProductsWebPageV3.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -416,6 +441,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebPage.aspx.cs">
+      <DependentUpon>WebPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPage.aspx.designer.cs">
+      <DependentUpon>WebPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -1,17 +1,17 @@
 ﻿//------------------------------------------------------------------------------
-// <otomatik üretildi>
+// <otomatik olarak oluşturulmuş>
 //     Bu kod bir araç tarafından oluşturuldu.
 //
-//     Bu dosyada yapılacak değişiklikler yanlış davranışa neden olabilir ve
+//     Bu dosyada yapılacak değişiklikler hatalı davranışa neden olabilir ve
 //     kod tekrar üretildi. 
-// </otomatik üretildi>
+// </otomatik olarak oluşturulmuş>
 //------------------------------------------------------------------------------
 
 namespace Web
 {
 
 
-    public partial class ProductsWebPageV3
+    public partial class WebPage
     {
     }
 }

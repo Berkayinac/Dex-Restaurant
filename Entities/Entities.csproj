@@ -45,6 +45,7 @@
     <Compile Include="Concrete\Customer.cs" />
     <Compile Include="Concrete\Order.cs" />
     <Compile Include="Concrete\Product.cs" />
+    <Compile Include="DTOs\ProductDto.cs" />
     <Compile Include="DTOs\UserForLoginDto.cs" />
     <Compile Include="DTOs\UserForRegisterDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

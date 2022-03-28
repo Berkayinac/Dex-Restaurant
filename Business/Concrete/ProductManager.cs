@@ -4,6 +4,7 @@ using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,16 @@ namespace Business.Concrete
         {
             _productDal.Update(product);
             return new SuccessResult(Messages.ProductUpdated);
+        }
+
+        public IDataResult<List<ProductDto>> GetAllByDto()
+        {
+            var result = _productDal.GetProductDtos();
+            if (result == null)
+            {
+                return new ErrorDataResult<List<ProductDto>>();
+            }
+            return new SuccessDataResult<List<ProductDto>>(result, Messages.ProductsListed);
         }
     }
 }

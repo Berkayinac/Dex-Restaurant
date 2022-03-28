@@ -553,5 +553,9 @@
   <!-- Template Main JS File -->
   <script src="models/js/main.js"></script>
 
+  <script src="Scripts/jquery-3.0.0.js"> </script>
+    <asp:ContentPlaceHolder ID="MyScripts" runat="server">
+     </asp:ContentPlaceHolder>
+
 </body>
 </html>
