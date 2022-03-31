@@ -1,7 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AdminProductPanelV1.aspx.cs" Inherits="Web.AdminProductPanelV1" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="Product" runat="server">
-    <div>
+
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <div>
         <asp:GridView ID="GridView1" runat="server" CssClass="table table-light" AutoGenerateColumns="false"  >
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id"  />
@@ -58,5 +63,11 @@
             <asp:Button ID="btn_Update" runat="server" CssClass="btn btn-warning" Text="Update" OnClick="btn_Update_Click" />
           </div>
       </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+
+
+
+    
 
 </asp:Content>

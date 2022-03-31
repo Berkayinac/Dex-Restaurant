@@ -52,11 +52,10 @@ namespace Business.Constants
         public static string AuthorityGeted = "Yetki Getirildi.";
         public static string AuthorityUpdated = "Yetki Güncellendi.";
 
-        internal static string UserAuthorityAdded = "Kullanıcı Yetkisi Eklendi.";
-        internal static string UserAuthorityDeleted = "Kullanıcı Yetkisi Silindi.";
-        internal static string UserAuthoritiesListed = "Kullanıcı Yetkileri Listelendi.";
-        internal static string UserAuthorityGeted = "Kullanıcı Yetkisi Getirildi.";
-        internal static string UserAuthorityUpdated = "Kullanıcı Yetkisi Güncellendi.";
-        internal static string ProductDtosListed;
+        public static string UserAuthorityAdded = "Kullanıcı Yetkisi Eklendi.";
+        public static string UserAuthorityDeleted = "Kullanıcı Yetkisi Silindi.";
+        public static string UserAuthoritiesListed = "Kullanıcı Yetkileri Listelendi.";
+        public static string UserAuthorityGeted = "Kullanıcı Yetkisi Getirildi.";
+        public static string UserAuthorityUpdated = "Kullanıcı Yetkisi Güncellendi.";
     }
 }

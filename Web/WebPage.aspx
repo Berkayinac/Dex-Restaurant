@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="WebPage.aspx.cs" Inherits="Web.WebPage" %>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+    <script src="Scripts/jquery-3.0.0.js"></script>
+
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="Products" runat="server">
     <section id="menu" class="menu section-bg">
       <div class="container" data-aos="fade-up">
@@ -28,16 +33,18 @@
           <div class="col-lg-6 menu-item <%=product.CategoryName %>">
             <img src="models/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
             <div class="menu-content">
-              <a href="#"><%=product.Name%></a> <span>$<%=product.UnitPrice %> <br> <a href="WebPage.aspx?id=<%= product.Id %>" class="book-a-table-btn scrollto d-none d-lg-flex hulo"> Add To Cart</a>  </span>
+              <a href="#"><%=product.Name%></a> <span>$<%=product.UnitPrice %> <br> <a id="lol" onclick="abc(<%= product.Id %>)" href="WebPage.aspx?id=<%= product.Id %>" class="book-a-table-btn scrollto d-none d-lg-flex hulo"> Add To Cart</a>  </span>
             </div>
              
             <div class="menu-ingredients">
               <%=product.QuantityPerUnit %>
             </div>
           </div>
-          <%  }%>
+          <%  }  %>
         </div>
           
       </div>
     </section><!-- End Menu Section -->
 </asp:Content>
+
+
