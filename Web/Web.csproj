@@ -76,14 +76,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AdminAuthorityPanelV1.aspx" />
-    <Content Include="AdminCategoryPanelV1.aspx" />
-    <Content Include="AdminCustomerPanelV1.aspx" />
-    <Content Include="AdminDashBoard.aspx" />
-    <Content Include="AdminOrderPanelV1.aspx" />
-    <Content Include="AdminProductPanelV1.aspx" />
-    <Content Include="AdminUserAuthorityPanelV1.aspx" />
-    <Content Include="AdminUserPanelV1.aspx" />
+    <Content Include="AdminPages\AdminAuthorityPanelV1.aspx" />
+    <Content Include="AdminPages\AdminCategoryPanelV1.aspx" />
+    <Content Include="AdminPages\AdminCustomerPanelV1.aspx" />
+    <Content Include="AdminPages\AdminDashboard.aspx" />
+    <Content Include="AdminPages\AdminOrderPanelV1.aspx" />
+    <Content Include="AdminPages\AdminProductPanelV1.aspx" />
+    <Content Include="AdminPages\AdminUserAuthorityPanelV1.aspx" />
+    <Content Include="AdminPages\AdminUserPanelV1.aspx" />
     <Content Include="assets\css\bootstrap-theme.min.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\custom-styles.css" />
@@ -219,7 +219,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="Admin.Master" />
+    <Content Include="AdminPages\Admin.Master" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.eot" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.ttf" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.woff" />
@@ -371,67 +371,67 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.Master.cs">
+    <Compile Include="AdminPages\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin.Master.designer.cs">
+    <Compile Include="AdminPages\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="AdminAuthorityPanelV1.aspx.cs">
+    <Compile Include="AdminPages\AdminAuthorityPanelV1.aspx.cs">
       <DependentUpon>AdminAuthorityPanelV1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminAuthorityPanelV1.aspx.designer.cs">
+    <Compile Include="AdminPages\AdminAuthorityPanelV1.aspx.designer.cs">
       <DependentUpon>AdminAuthorityPanelV1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminCategoryPanelV1.aspx.cs">
+    <Compile Include="AdminPages\AdminCategoryPanelV1.aspx.cs">
       <DependentUpon>AdminCategoryPanelV1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminCategoryPanelV1.aspx.designer.cs">
+    <Compile Include="AdminPages\AdminCategoryPanelV1.aspx.designer.cs">
       <DependentUpon>AdminCategoryPanelV1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminCustomerPanelV1.aspx.cs">
+    <Compile Include="AdminPages\AdminCustomerPanelV1.aspx.cs">
       <DependentUpon>AdminCustomerPanelV1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminCustomerPanelV1.aspx.designer.cs">
+    <Compile Include="AdminPages\AdminCustomerPanelV1.aspx.designer.cs">
       <DependentUpon>AdminCustomerPanelV1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminDashBoard.aspx.cs">
-      <DependentUpon>AdminDashBoard.aspx</DependentUpon>
+    <Compile Include="AdminPages\AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminDashBoard.aspx.designer.cs">
-      <DependentUpon>AdminDashBoard.aspx</DependentUpon>
+    <Compile Include="AdminPages\AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminOrderPanelV1.aspx.cs">
+    <Compile Include="AdminPages\AdminOrderPanelV1.aspx.cs">
       <DependentUpon>AdminOrderPanelV1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminOrderPanelV1.aspx.designer.cs">
+    <Compile Include="AdminPages\AdminOrderPanelV1.aspx.designer.cs">
       <DependentUpon>AdminOrderPanelV1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminProductPanelV1.aspx.cs">
+    <Compile Include="AdminPages\AdminProductPanelV1.aspx.cs">
       <DependentUpon>AdminProductPanelV1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminProductPanelV1.aspx.designer.cs">
+    <Compile Include="AdminPages\AdminProductPanelV1.aspx.designer.cs">
       <DependentUpon>AdminProductPanelV1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminUserAuthorityPanelV1.aspx.cs">
+    <Compile Include="AdminPages\AdminUserAuthorityPanelV1.aspx.cs">
       <DependentUpon>AdminUserAuthorityPanelV1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminUserAuthorityPanelV1.aspx.designer.cs">
+    <Compile Include="AdminPages\AdminUserAuthorityPanelV1.aspx.designer.cs">
       <DependentUpon>AdminUserAuthorityPanelV1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminUserPanelV1.aspx.cs">
+    <Compile Include="AdminPages\AdminUserPanelV1.aspx.cs">
       <DependentUpon>AdminUserPanelV1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminUserPanelV1.aspx.designer.cs">
+    <Compile Include="AdminPages\AdminUserPanelV1.aspx.designer.cs">
       <DependentUpon>AdminUserPanelV1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

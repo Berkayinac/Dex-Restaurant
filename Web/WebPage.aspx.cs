@@ -35,5 +35,12 @@ namespace Web
         {
             return _categoryService.GetAll().Data;
         }
+
+        protected void Btn_Add_to_Cart_Command(object sender, CommandEventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myId", "myFunction();", true);
+            
+        }
+
     }
 }
