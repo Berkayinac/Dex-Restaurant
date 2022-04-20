@@ -40,7 +40,7 @@
 
           <div class="col-lg-5">
 
-             <label for="exampleFormControlInput1">Id</label>
+            <label for="exampleFormControlInput1">Id</label>
             <asp:TextBox ID="tbx_UpdateId" CssClass="form-control" runat="server"></asp:TextBox>
 
             <label for="exampleFormControlInput1">ProductId</label>

@@ -60,11 +60,16 @@
 
 								<div class="container-login100-form-btn">
 									<asp:Button ID="Btn_Login" CssClass="login100-form-btn" runat="server" OnClick="Btn_Login_Click" Text="Login" />
+									<br />
+									<br />
+									<br />
+									<asp:Button ID="Btn_PasswordReminder" CssClass="login100-form-btn" runat="server" OnClick="Btn_PasswordReminder_Click" Text="Password Reminder" />
 								</div>
 					
 								<div class="text-center p-t-46 p-b-20">
 									<span class="txt2">
 										<asp:Label ID="lbl_Login" runat="server" Text=""></asp:Label>
+
 									</span>
 								</div>
 

@@ -18,9 +18,7 @@ namespace Web.Login
 
         }
 
-
         IAuthService _authService = new AuthManager();
-        
 
         protected void Btn_Login_Click(object sender, EventArgs e)
         {
@@ -30,11 +28,20 @@ namespace Web.Login
 
             var result = _authService.Login(userForLoginDto);
 
+            var authorities = _authService.GetUserAuthority(result.Data);
+            
             if (result.Success)
             {
                 lbl_Login.Text= result.Message;
+                Response.Redirect("/WebPage.aspx");
             }
             lbl_Login.Text = result.Message;
         }
+
+        protected void Btn_PasswordReminder_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/PasswordReminder/PasswordReminder.aspx");
+        }
     }
 }
+

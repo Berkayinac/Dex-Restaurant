@@ -78,6 +78,24 @@ namespace Web.Register
         protected global::System.Web.UI.WebControls.TextBox tbx_Password;
 
         /// <summary>
+        /// drp_SecurityQuestions denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drp_SecurityQuestions;
+
+        /// <summary>
+        /// tbx_SecurityQuestionAnswer denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbx_SecurityQuestionAnswer;
+
+        /// <summary>
         /// Btn_Register denetimi.
         /// </summary>
         /// <remarks>

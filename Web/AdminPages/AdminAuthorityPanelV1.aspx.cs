@@ -13,7 +13,7 @@ namespace Web.AdminPages
     public partial class AdminAuthorityPanelV1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {   
             GetAll();
         }
 

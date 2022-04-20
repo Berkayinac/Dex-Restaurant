@@ -4,6 +4,7 @@ using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +51,19 @@ namespace Business.Concrete
                 return new ErrorDataResult<UserAuthority>();
             }
             return new SuccessDataResult<UserAuthority>(result, Messages.UserAuthorityGeted);
+        }
+
+        public IDataResult<UserAuthoritiesDto> GetUserAndUserAuthorities(User user, List<AuthorityDto> authorities)
+        {
+            UserAuthoritiesDto userAuthoritiesDto = new UserAuthoritiesDto();
+            userAuthoritiesDto.User = user;
+            userAuthoritiesDto.Authorities = authorities;
+
+            if (userAuthoritiesDto.User == null || userAuthoritiesDto.Authorities == null)
+            {
+                return new ErrorDataResult<UserAuthoritiesDto>(Messages.UserOrAuthortiesAreNull);
+            }
+            return new SuccessDataResult<UserAuthoritiesDto>(userAuthoritiesDto);
         }
 
         public IResult Update(UserAuthority userAuthority)

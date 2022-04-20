@@ -2,7 +2,6 @@
 using Business.Constants;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
-using Core.Utilities.Security.Hashing;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.DTOs;
@@ -45,6 +44,16 @@ namespace Business.Concrete
             return new SuccessDataResult<List<User>>(result, Messages.UsersListed);
         }
 
+        public IDataResult<List<AuthorityDto>> GetAuthorities(User user)
+        {
+            var result = _userDal.GetAuthorities(user);
+            if (result == null)
+            {
+                return new ErrorDataResult<List<AuthorityDto>>();
+            }
+            return new SuccessDataResult<List<AuthorityDto>>(result, Messages.AuthoritiesListed);
+        }
+
         public IDataResult<User> GetById(int userId)
         {
             var result = _userDal.Get(u => u.Id == userId);
@@ -63,6 +72,18 @@ namespace Business.Concrete
                 return new ErrorDataResult<User>();
             }
             return new SuccessDataResult<User>(result, Messages.UserGeted);
+        }
+
+        public IDataResult<UserSecurityQuestionDto> GetUserSecurityQuestion(string email)
+        {
+            var user = GetByMail(email).Data;
+
+            var result = _userDal.GetUserSecurityQuestion(user);
+            if (result == null)
+            {
+                return new ErrorDataResult<UserSecurityQuestionDto>();
+            }
+            return new SuccessDataResult<UserSecurityQuestionDto>(result);
         }
 
         public IResult Update(User user)

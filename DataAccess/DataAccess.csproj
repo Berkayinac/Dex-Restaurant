@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -58,14 +61,9 @@
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Abstract\IOrderDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
+    <Compile Include="Abstract\ISecurityQuestionDal.cs" />
     <Compile Include="Abstract\IUserAuthorityDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
-    <Compile Include="Authorities.cs">
-      <DependentUpon>Dex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Categories.cs">
-      <DependentUpon>Dex.tt</DependentUpon>
-    </Compile>
     <Compile Include="Concrete\EntityFramework\EfAuthorityDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
@@ -74,40 +72,8 @@
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\DexContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfProductDal.cs" />
-    <Compile Include="Customers.cs">
-      <DependentUpon>Dex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dex.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Dex.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dex.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Dex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dex.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Dex.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Orders.cs">
-      <DependentUpon>Dex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Products.cs">
-      <DependentUpon>Dex.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Concrete\EntityFramework\EfSecurityQuestionDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>Dex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserAuthorities.cs">
-      <DependentUpon>Dex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Users.cs">
-      <DependentUpon>Dex.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
@@ -121,29 +87,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Dex.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Dex.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Dex.edmx.diagram">
-      <DependentUpon>Dex.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Dex.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Dex.edmx</DependentUpon>
-      <LastGenOutput>Dex.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Dex.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Dex.edmx</DependentUpon>
-      <LastGenOutput>Dex.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -10,5 +10,6 @@ namespace DataAccess.Abstract
 {
     public interface IUserAuthorityDal : IEntityRepository<UserAuthority>
     {
+
     }
 }

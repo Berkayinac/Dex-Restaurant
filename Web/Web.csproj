@@ -242,6 +242,54 @@
     <Content Include="models\vendor\php-email-form\validate.js" />
     <Content Include="models\vendor\swiper\swiper-bundle.min.css" />
     <Content Include="models\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="PasswordReminder\assets\css\main.css" />
+    <Content Include="PasswordReminder\assets\css\util.css" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="PasswordReminder\assets\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="PasswordReminder\assets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\OFL.txt" />
+    <Content Include="PasswordReminder\assets\images\bg-01.jpg" />
+    <Content Include="PasswordReminder\assets\images\icons\favicon.ico" />
+    <Content Include="PasswordReminder\assets\index.html" />
+    <Content Include="PasswordReminder\assets\js\main.js" />
+    <Content Include="PasswordReminder\assets\screenshot.png" />
+    <Content Include="PasswordReminder\assets\screenshotmobile.png" />
+    <Content Include="PasswordReminder\assets\vendor\animate\animate.css" />
+    <Content Include="PasswordReminder\assets\vendor\animsition\css\animsition.css" />
+    <Content Include="PasswordReminder\assets\vendor\animsition\css\animsition.min.css" />
+    <Content Include="PasswordReminder\assets\vendor\animsition\js\animsition.js" />
+    <Content Include="PasswordReminder\assets\vendor\animsition\js\animsition.min.js" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\js\popper.js" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="PasswordReminder\assets\vendor\countdowntime\countdowntime.js" />
+    <Content Include="PasswordReminder\assets\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="PasswordReminder\assets\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="PasswordReminder\assets\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="PasswordReminder\assets\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="PasswordReminder\assets\vendor\daterangepicker\moment.js" />
+    <Content Include="PasswordReminder\assets\vendor\daterangepicker\moment.min.js" />
+    <Content Include="PasswordReminder\assets\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="PasswordReminder\assets\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="PasswordReminder\assets\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="PasswordReminder\assets\vendor\select2\select2.css" />
+    <Content Include="PasswordReminder\assets\vendor\select2\select2.js" />
+    <Content Include="PasswordReminder\assets\vendor\select2\select2.min.css" />
+    <Content Include="PasswordReminder\assets\vendor\select2\select2.min.js" />
+    <Content Include="PasswordReminder\PasswordChange.aspx" />
+    <Content Include="PasswordReminder\PasswordReminder.aspx" />
+    <Content Include="PasswordReminder\Question.aspx" />
     <Content Include="Register\assets\css\main.css" />
     <Content Include="Register\assets\css\util.css" />
     <Content Include="Register\assets\fonts\font-awesome-4.7.0\css\font-awesome.css" />
@@ -510,6 +558,85 @@
     <Content Include="Register\assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Register\assets\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Register\assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="PasswordReminder\assets\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="PasswordReminder\assets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="PasswordReminder\assets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="PasswordReminder\assets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="PasswordReminder\assets\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="PasswordReminder\assets\vendor\bootstrap\css\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -690,6 +817,27 @@
     </Compile>
     <Compile Include="Login\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordReminder\PasswordChange.aspx.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordReminder\PasswordChange.aspx.designer.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordReminder\PasswordReminder.aspx.cs">
+      <DependentUpon>PasswordReminder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordReminder\PasswordReminder.aspx.designer.cs">
+      <DependentUpon>PasswordReminder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordReminder\Question.aspx.cs">
+      <DependentUpon>Question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordReminder\Question.aspx.designer.cs">
+      <DependentUpon>Question.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register\Register.aspx.cs">

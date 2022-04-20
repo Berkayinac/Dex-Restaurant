@@ -11,5 +11,6 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfUserAuthorityDal : EfEntityRepositoryBase<UserAuthority, DexContext>, IUserAuthorityDal
     {
+        
     }
 }

@@ -2,9 +2,9 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MyPage" runat="server">
 
-
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+
         <ContentTemplate>
             <div>
         <asp:GridView ID="GridView1" runat="server" CssClass="table table-light " AutoGenerateColumns="false"  >

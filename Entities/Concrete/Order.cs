@@ -9,7 +9,6 @@ namespace Entities.Concrete
 {
     public class Order : IEntity
     {
-
         public int Id { get; set; }
         public int CustomerID { get; set; }
         public int ProductId { get; set; }

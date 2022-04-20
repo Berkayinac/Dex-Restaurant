@@ -16,12 +16,13 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Customer> Customers { get; set; }
+
         // --------------------------------------------------------
+
         public DbSet<User> Users { get; set; }
         public DbSet<Authority> Authorities { get; set; }
         public DbSet<UserAuthority> UserAuthorities { get; set; }
-
-
+        public DbSet<SecurityQuestion> SecurityQuestions { get; set; }
 
     }
 }
