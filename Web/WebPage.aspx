@@ -5,10 +5,9 @@
 
     <script>
         function myfunction(myId) {
-            alert("asd"+myId)
+            alert(myId)
         }
     </script>
-
 
 </asp:Content>
 

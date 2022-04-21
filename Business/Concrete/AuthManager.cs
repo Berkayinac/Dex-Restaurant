@@ -88,6 +88,7 @@ namespace Business.Concrete
 
         public IResult UserExists(string email)
         {
+            // burası düzeltilecek.
             var userExist = _userService.GetByMail(email);
             if (userExist == null)
             {

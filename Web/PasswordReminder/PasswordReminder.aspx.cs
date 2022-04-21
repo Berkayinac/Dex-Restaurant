@@ -25,7 +25,7 @@ namespace Web.PasswordReminder
             var result =_authService.UserExists(tbx_Email.Text);
             if (!result.Success)
             {
-                lbl_PasswordReminder.Text = "Böyle bir Email bulunamamaktadır.";
+                lbl_PasswordReminder.Text = result.Message;
             }
              
              Response.Redirect("~/PasswordReminder/Question.aspx?Email=" + tbx_Email.Text);
