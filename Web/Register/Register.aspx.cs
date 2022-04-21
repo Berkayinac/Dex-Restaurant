@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Core.Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,8 @@ namespace Web.Register
 
         ISecurityQuestionService _securityQuestionService = new SecurityQuestionManager();
 
+
+
         protected void Btn_Register_Click(object sender, EventArgs e)
         {
             UserForRegisterDto userForRegisterDto = new UserForRegisterDto();
@@ -55,10 +58,17 @@ namespace Web.Register
             UserSecurityQuestionDto userSecurityQuestionDto = new UserSecurityQuestionDto();
 
             userSecurityQuestionDto.SecurityQuestion = drp_SecurityQuestions.SelectedItem.Text;
-
             userSecurityQuestionDto.SecurityQuestionAnswer = tbx_SecurityQuestionAnswer.Text;
 
             var result = _authService.Register(userForRegisterDto, userSecurityQuestionDto);
+
+            UserAuthority userAuthority = new UserAuthority
+            {
+                UserId = result.Data.Id,
+                AuthorityId = 1
+            };
+
+            _authService.AddUserAuthority(userAuthority);
 
             lbl_Register.Text = result.Message;
 

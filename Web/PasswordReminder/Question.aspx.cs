@@ -16,6 +16,7 @@ namespace Web.PasswordReminder
             if (!IsPostBack)
             {
                 var userEmail = Request.QueryString["email"];
+                Session["Email"] = userEmail;
 
                 var userQuestion = _userService.GetUserSecurityQuestion(userEmail);
 
@@ -40,12 +41,12 @@ namespace Web.PasswordReminder
 
             var result = tbx_UserQuestionAnswer.Text;
 
-            if (result != userQuestion.Data.SecurityQuestionAnswer)
+            if (result == userQuestion.Data.SecurityQuestionAnswer)
             {
-                lbl_PasswordReminder.Text = "Tekrar Deneyiniz.";
+                Response.Redirect("~/PasswordReminder/PasswordChange.aspx?email=" + userEmail);
             }
+            lbl_PasswordReminder.Text = "Tekrar Deneyiniz.";
 
-            Response.Redirect("~/PasswordReminder/PasswordChange.aspx?email=" + userEmail);
 
         }
     }

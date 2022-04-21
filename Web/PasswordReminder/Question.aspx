@@ -40,7 +40,7 @@
 									Password Reminder
 								</span>
 					
-								<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+								<div class="wrap-input100 validate-input">
 									<asp:Label ID="lbl_userEmail" runat="server" CssClass="label-input100" Width="100%" Height="100%" Text=""></asp:Label>
 									<span class="focus-input100"></span>
 								</div>
@@ -51,7 +51,7 @@
 									</span>
 								</div>
 
-								<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+								<div class="wrap-input100 validate-input">
 									<asp:Label ID="lbl_userQuestion" CssClass="label-input100"  runat="server" Width="100%" Height="200%" Text=""></asp:Label>
 									<span class="focus-input100"></span>
 								</div>

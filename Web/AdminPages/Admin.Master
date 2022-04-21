@@ -36,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="AdminDashboard.aspx"><b>DE</b>X</a>
+                <a class="navbar-brand" href="Dashboard"><b>DE</b>X</a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -254,29 +254,29 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="AdminDashBoard.aspx"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class="active-menu" href="DashBoard"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="AdminProductPanelV1.aspx"><i class="fa fa-desktop"></i> Products </a>
+                        <a href="Product"><i class="fa fa-desktop"></i> Products </a>
                     </li>
 					<li>
-                        <a href="AdminCategoryPanelV1.aspx"><i class="fa fa-table"></i> Categories </a>
+                        <a href="Category"><i class="fa fa-table"></i> Categories </a>
                     </li>
                     <li>
-                        <a href="AdminOrderPanelV1.aspx"><i class="fa fa-desktop"></i> Orders </a>
+                        <a href="Order"><i class="fa fa-desktop"></i> Orders </a>
                     </li>
                     
                     <li>
-                        <a href="AdminUserPanelV1.aspx"><i class="fa fa-table"></i> Users </a>
+                        <a href="User"><i class="fa fa-table"></i> Users </a>
                     </li>
                     <li>
-                        <a href="AdminCustomerPanelV1.aspx"><i class="fa fa-desktop"></i> Customers </a>
+                        <a href="Customer"><i class="fa fa-desktop"></i> Customers </a>
                     </li>
                     <li>
-                        <a href="AdminAuthorityPanelV1.aspx"><i class="fa fa-table"></i> Authorities </a>
+                        <a href="Authority"><i class="fa fa-table"></i> Authorities </a>
                     </li>
                     <li>
-                        <a href="AdminUserAuthorityPanelV1.aspx"><i class="fa fa-table"></i> UserAuthorities </a>
+                        <a href="UserAuthority"><i class="fa fa-table"></i> UserAuthorities </a>
                     </li>
                 </ul>
             </div>

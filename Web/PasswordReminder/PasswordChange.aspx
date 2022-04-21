@@ -40,13 +40,13 @@
 									Password Reminder
 								</span>
 					
-								<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+								<div class="wrap-input100 validate-input" data-validate="Password is required">
 									<asp:TextBox ID="tbx_NewPassword" CssClass="input100" runat="server"></asp:TextBox>
 									<span class="focus-input100"></span>
 									<span class="label-input100">New Password</span>
 								</div>
 
-								<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+								<div class="wrap-input100 validate-input" data-validate="Password is required">
 									<asp:TextBox ID="tbx_PasswordVerify" CssClass="input100" runat="server"></asp:TextBox>
 									<span class="focus-input100"></span>
 									<span class="label-input100">Password Verify</span>

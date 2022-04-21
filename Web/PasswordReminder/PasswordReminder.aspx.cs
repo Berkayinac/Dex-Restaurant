@@ -27,8 +27,9 @@ namespace Web.PasswordReminder
             {
                 lbl_PasswordReminder.Text = "Böyle bir Email bulunamamaktadır.";
             }
-
-            Response.Redirect("~/PasswordReminder/Question.aspx?email=" + tbx_Email.Text);
+             
+             Response.Redirect("~/PasswordReminder/Question.aspx?Email=" + tbx_Email.Text);
+            //Response.Redirect("~/PasswordReminder/Question.aspx/" + tbx_Email.Text);
         }
     }
 }

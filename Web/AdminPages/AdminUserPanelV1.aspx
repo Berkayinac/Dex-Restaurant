@@ -12,9 +12,10 @@
                         <asp:BoundField DataField="FirstName" HeaderText="FirstName"  />
                         <asp:BoundField DataField="LastName" HeaderText="LastName"  />
                         <asp:BoundField DataField="Email" HeaderText="Email"  />
-                        <asp:BoundField DataField="PasswordHash" HeaderText="PasswordHash"  />
-                        <asp:BoundField DataField="PasswordSalt" HeaderText="PasswordSalt"  />
+                        <asp:BoundField DataField="Password" HeaderText="Password"  />
                         <asp:BoundField DataField="Status" HeaderText="Status"  />
+                        <asp:BoundField DataField="SecurityQuestionId" HeaderText="SecurityQuestionId"  />
+                        <asp:BoundField DataField="SecurityQuestionAnswer" HeaderText="SecurityQuestionAnswer"  />
 
                         <asp:TemplateField>
                             <ItemTemplate>

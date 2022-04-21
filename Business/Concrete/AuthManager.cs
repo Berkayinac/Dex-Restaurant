@@ -131,5 +131,10 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
+        public IResult AddUserAuthority(UserAuthority userAuthority)
+        {
+            _userAuthorityService.Add(userAuthority);
+            return new SuccessResult();
+        }
     }
 }
