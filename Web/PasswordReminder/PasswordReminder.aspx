@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PasswordReminder.aspx.cs" Inherits="Web.PasswordReminder.PasswordReminder" %>
 
+<%@ Register Src="~/UserControl/UserPasswordReminderControl.ascx" TagPrefix="uc1" TagName="UserPasswordReminderControl" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,42 +32,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-		<asp:UpdatePanel ID="UpdatePanel1" runat="server">
-			<ContentTemplate>
-				<div class="limiter">
-					<div class="container-login100">
-						<div class="wrap-login100">
-							<div class="login100-form validate-form">
-								<span class="login100-form-title p-b-43">
-									Password Reminder
-								</span>
-					
-								<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-									<asp:TextBox ID="tbx_Email" CssClass="input100" runat="server"></asp:TextBox>
-									<span class="focus-input100"></span>
-									<span class="label-input100">Email</span>
-								</div>
-
-								<div class="text-center p-t-46 p-b-20">
-									<span class="txt2">
-										<asp:Label ID="lbl_PasswordReminder" runat="server" Text=""></asp:Label>
-									</span>
-								</div>
-
-								<div class="container-login100-form-btn">
-									<asp:Button ID="Btn_PasswordReminder" CssClass="login100-form-btn" runat="server" OnClick="Btn_PasswordReminder_Click" Text="Password Reminder" />
-								</div>
-
-							</div>
-
-							<div class="login100-more" style="background-image: url('/models/img/event-custom.jpg');">
-							</div>
-						</div>
-					</div>
-				</div>
-			</ContentTemplate>
-		</asp:UpdatePanel>
+        <uc1:UserPasswordReminderControl runat="server" id="UserPasswordReminderControl" />
     </form>
 	<script src="/Login/assets/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

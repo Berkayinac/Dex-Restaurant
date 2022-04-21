@@ -80,6 +80,7 @@
     <Content Include="AdminPages\AdminCategoryPanelV1.aspx" />
     <Content Include="AdminPages\AdminCustomerPanelV1.aspx" />
     <Content Include="AdminPages\AdminDashboard.aspx" />
+    <Content Include="AdminPages\AdminMenuControl.ascx" />
     <Content Include="AdminPages\AdminOrderPanelV1.aspx" />
     <Content Include="AdminPages\AdminProductPanelV1.aspx" />
     <Content Include="AdminPages\AdminUserAuthorityPanelV1.aspx" />
@@ -400,6 +401,12 @@
     <Content Include="models\vendor\boxicons\fonts\boxicons.ttf" />
     <Content Include="models\vendor\boxicons\fonts\boxicons.woff" />
     <Content Include="models\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="UserControl\UserLoginControl.ascx" />
+    <Content Include="UserControl\UserMenuControl.ascx" />
+    <Content Include="UserControl\UserPasswordChangeControl.ascx" />
+    <Content Include="UserControl\UserPasswordReminderControl.ascx" />
+    <Content Include="UserControl\UserQuestionControl.ascx" />
+    <Content Include="UserControl\UserRegisterControl.ascx" />
     <Content Include="WebPage.aspx" />
     <Content Include="Login\assets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
     <Content Include="Login\assets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
@@ -784,6 +791,13 @@
     <Compile Include="AdminPages\AdminDashboard.aspx.designer.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\AdminMenuControl.ascx.cs">
+      <DependentUpon>AdminMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\AdminMenuControl.ascx.designer.cs">
+      <DependentUpon>AdminMenuControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\AdminOrderPanelV1.aspx.cs">
       <DependentUpon>AdminOrderPanelV1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -857,6 +871,48 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserLoginControl.ascx.cs">
+      <DependentUpon>UserLoginControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserLoginControl.ascx.designer.cs">
+      <DependentUpon>UserLoginControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserMenuControl.ascx.cs">
+      <DependentUpon>UserMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserMenuControl.ascx.designer.cs">
+      <DependentUpon>UserMenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserPasswordChangeControl.ascx.cs">
+      <DependentUpon>UserPasswordChangeControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserPasswordChangeControl.ascx.designer.cs">
+      <DependentUpon>UserPasswordChangeControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserPasswordReminderControl.ascx.cs">
+      <DependentUpon>UserPasswordReminderControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserPasswordReminderControl.ascx.designer.cs">
+      <DependentUpon>UserPasswordReminderControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserQuestionControl.ascx.cs">
+      <DependentUpon>UserQuestionControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserQuestionControl.ascx.designer.cs">
+      <DependentUpon>UserQuestionControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserRegisterControl.ascx.cs">
+      <DependentUpon>UserRegisterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserRegisterControl.ascx.designer.cs">
+      <DependentUpon>UserRegisterControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebPage.aspx.cs">
       <DependentUpon>WebPage.aspx</DependentUpon>

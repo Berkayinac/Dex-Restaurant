@@ -1,15 +1,13 @@
-﻿using Business.Abstract;
-using Business.Concrete;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Web.PasswordReminder
+namespace Web.UserControl
 {
-    public partial class PasswordChange : System.Web.UI.Page
+    public partial class UserMenuControl : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
