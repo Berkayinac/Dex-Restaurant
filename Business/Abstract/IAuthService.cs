@@ -15,7 +15,7 @@ namespace Business.Abstract
         IDataResult<User> Register(UserForRegisterDto userForRegisterDto, UserSecurityQuestionDto userSecurityQuestionDto);
         IResult UserExists(string email);
         IDataResult<UserAuthoritiesDto> GetUserAuthority(User user);
-        IDataResult<User> UserCheck(string email, UserSecurityQuestionDto userSecurityQuestionDto, UserNewPasswordDto userNewPasswordDto);
+        IDataResult<User> UserCheck(UserSecurityQuestionDto userSecurityQuestionDto, UserNewPasswordDto userNewPasswordDto);
         IResult AddUserAuthority(UserAuthority userAuthority);
     }
 }

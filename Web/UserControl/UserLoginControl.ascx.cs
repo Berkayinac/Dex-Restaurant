@@ -25,26 +25,22 @@ namespace Web.UserControl
             userForLoginDto.Email = tbx_Email.Text;
             userForLoginDto.Password = tbx_Password.Text;
 
-            var result = _authService.Login(userForLoginDto);
+            var userLogin = _authService.Login(userForLoginDto);
 
-            var authorities = _authService.GetUserAuthority(result.Data).Data;
-
-            if (result.Success)
+            if (userLogin.Success)
             {
-                lbl_Login.Text = result.Message;
+                var userAuthorities = _authService.GetUserAuthority(userLogin.Data).Data;
+                string authorities = "";
 
-                string lol = "";
-
-                foreach (var authority in authorities.Authorities)
+                foreach (var authority in userAuthorities.Authorities)
                 {
-                    string resultV1 = authority.AuthorityName;
-                    lol += resultV1+ ",";
+                    authorities += authority.AuthorityName + ",";
                 }
 
-                Session["Authority"] = lol;
+                Session["Authorities"] = authorities;
                 Response.Redirect("/WebPage.aspx");
             }
-            lbl_Login.Text = result.Message;
+            lbl_Login.Text = userLogin.Message;
         }
 
         protected void Btn_PasswordReminder_Click(object sender, EventArgs e)

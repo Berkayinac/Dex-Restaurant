@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Core.Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,27 +19,29 @@ namespace Web.UserControl
         }
 
         IUserService _userService = new UserManager();
+        IAuthService _authService = new AuthManager();
+        ISecurityQuestionService _securityQuestionService = new SecurityQuestionManager();
+
         protected void Btn_PasswordChange_Click(object sender, EventArgs e)
         {
-            var userEmail = Request.QueryString["email"];
+            var userEmail = Session["Email"].ToString();
+            var userQuestion = Session["Question"].ToString();
+            var userQuestionAnswer = Session["QuestionAnswer"].ToString();
 
-            var deneme = Request.QueryString;
+            var question =  _securityQuestionService.GetByQuestion(userQuestion).Data;
 
-            var user = _userService.GetByMail(userEmail);
+            UserSecurityQuestionDto userSecurityQuestionDto = new UserSecurityQuestionDto();
+            userSecurityQuestionDto.UserEmail = userEmail;
+            userSecurityQuestionDto.SecurityQuestion = userQuestion;
+            userSecurityQuestionDto.SecurityQuestionAnswer = userQuestionAnswer;
 
-            if (!user.Success)
-            {
-                lbl_PasswordReminder.Text = "Kullanıcı bulunamadı";
-            }
+            UserNewPasswordDto userNewPasswordDto = new UserNewPasswordDto();
+            userNewPasswordDto.Password = tbx_NewPassword.Text;
+            userNewPasswordDto.PasswordVerify = tbx_PasswordVerify.Text;
 
-            if (tbx_NewPassword.Text != tbx_PasswordVerify.Text)
-            {
-                lbl_PasswordReminder.Text = "Parola Eşleşmedi";
-            }
+            var userCheck = _authService.UserCheck(userSecurityQuestionDto, userNewPasswordDto);
 
-            user.Data.Password = tbx_NewPassword.Text;
-
-            _userService.Update(user.Data);
+            lbl_PasswordReminder.Text = userCheck.Message;
 
             Response.Redirect("~/Login/Login.aspx");
         }

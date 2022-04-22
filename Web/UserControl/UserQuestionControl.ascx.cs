@@ -17,16 +17,16 @@ namespace Web.UserControl
             if (!IsPostBack)
             {
                 var userEmail = Request.QueryString["email"];
-
-                Session["Email"] = userEmail;
-
                 var userQuestion = _userService.GetUserSecurityQuestion(userEmail);
 
                 if (!userQuestion.Success)
                 {
-                    lbl_PasswordReminder.Text = "kullanıcının güvenlik sorusu bulunamadı.";
+                    lbl_PasswordReminder.Text = userQuestion.Message;
                     Response.Redirect("~/Register/Register.aspx");
                 }
+
+                Session["Email"] = userEmail;
+                Session["Question"] = userQuestion.Data;
 
                 lbl_userEmail.Text = userEmail;
                 lbl_userQuestion.Text = userQuestion.Data.SecurityQuestion;
@@ -45,7 +45,8 @@ namespace Web.UserControl
 
             if (result == userQuestion.Data.SecurityQuestionAnswer)
             {
-                Response.Redirect("~/PasswordReminder/PasswordChange.aspx?email=" + userEmail);
+                Session["QuestionAnswer"] = tbx_UserQuestionAnswer.Text;
+                Response.Redirect("~/PasswordReminder/PasswordChange.aspx");
             }
             lbl_PasswordReminder.Text = "Tekrar Deneyiniz.";
 

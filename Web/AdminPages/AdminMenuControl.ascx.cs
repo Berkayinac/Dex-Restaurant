@@ -14,7 +14,7 @@ namespace Web.AdminPages
         IAuthService authService = new AuthManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            var authority = Session["Authority"];
+            var authority = Session["Authorities"];
 
             var userAuthorities = authority.ToString();
 
@@ -22,22 +22,19 @@ namespace Web.AdminPages
 
             if (authorities.Contains("Admin"))
             {
-                for (int i = 0; i < authorities.Length; i++)
+                AdminMenuManager adminMenuManager = new AdminMenuManager();
+
+                var menus = adminMenuManager.GetAll().Data;
+
+                string myMenu = "";
+
+                foreach (var menu in menus)
                 {
-                    AdminMenuManager adminMenuManager = new AdminMenuManager();
-
-                    var menus = adminMenuManager.GetAll().Data;
-
-                    string myMenu = "";
-
-                    foreach (var menu in menus)
-                    {
-                        myMenu += "<li>";
-                        myMenu += "<a href = " + "" + menu.Name + " ><i class='fa fa-table'></i> " + " " + menu.Name + "</a>";
-                        myMenu += "</li>";
-                    }
-                    Literal1.Text = myMenu;
+                    myMenu += "<li>";
+                    myMenu += "<a href = " + "" + menu.Name + " ><i class='fa fa-table'></i> " + " " + menu.Name + "</a>";
+                    myMenu += "</li>";
                 }
+                Literal1.Text = myMenu;
             } 
         }
     }
