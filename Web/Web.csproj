@@ -401,6 +401,7 @@
     <Content Include="models\vendor\boxicons\fonts\boxicons.ttf" />
     <Content Include="models\vendor\boxicons\fonts\boxicons.woff" />
     <Content Include="models\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="UserControl\RestaurantMenuControl.ascx" />
     <Content Include="UserControl\UserLoginControl.ascx" />
     <Content Include="UserControl\UserMenuControl.ascx" />
     <Content Include="UserControl\UserPasswordChangeControl.ascx" />
@@ -871,6 +872,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RestaurantMenuControl.ascx.cs">
+      <DependentUpon>RestaurantMenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\RestaurantMenuControl.ascx.designer.cs">
+      <DependentUpon>RestaurantMenuControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\UserLoginControl.ascx.cs">
       <DependentUpon>UserLoginControl.ascx</DependentUpon>

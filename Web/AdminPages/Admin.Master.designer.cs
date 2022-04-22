@@ -33,6 +33,15 @@ namespace Web.AdminPages
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// AdminMenuControl denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::Web.AdminPages.AdminMenuControl AdminMenuControl;
+
+        /// <summary>
         /// Dashboard denetimi.
         /// </summary>
         /// <remarks>

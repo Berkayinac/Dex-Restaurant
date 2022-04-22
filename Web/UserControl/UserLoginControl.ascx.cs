@@ -27,11 +27,21 @@ namespace Web.UserControl
 
             var result = _authService.Login(userForLoginDto);
 
-            var authorities = _authService.GetUserAuthority(result.Data);
+            var authorities = _authService.GetUserAuthority(result.Data).Data;
 
             if (result.Success)
             {
                 lbl_Login.Text = result.Message;
+
+                string lol = "";
+
+                foreach (var authority in authorities.Authorities)
+                {
+                    string resultV1 = authority.AuthorityName;
+                    lol += resultV1+ ",";
+                }
+
+                Session["Authority"] = lol;
                 Response.Redirect("/WebPage.aspx");
             }
             lbl_Login.Text = result.Message;

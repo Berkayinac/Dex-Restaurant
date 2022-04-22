@@ -41,21 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAdminMenuService.cs" />
     <Compile Include="Abstract\IAuthorityService.cs" />
     <Compile Include="Abstract\IAuthService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\ICustomerService.cs" />
     <Compile Include="Abstract\IOrderService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\IRestaurantMenuService.cs" />
     <Compile Include="Abstract\ISecurityQuestionService.cs" />
     <Compile Include="Abstract\IUserAuthorityService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrete\AdminMenuManager.cs" />
     <Compile Include="Concrete\AuthManager.cs" />
     <Compile Include="Concrete\AuthorityManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\CustomerManager.cs" />
     <Compile Include="Concrete\OrderManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
+    <Compile Include="Concrete\RestaurantMenuManager.cs" />
     <Compile Include="Concrete\SecurityQuestionManager.cs" />
     <Compile Include="Concrete\UserAuthorityManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />

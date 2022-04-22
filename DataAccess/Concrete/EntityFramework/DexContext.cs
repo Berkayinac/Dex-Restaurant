@@ -23,6 +23,8 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Authority> Authorities { get; set; }
         public DbSet<UserAuthority> UserAuthorities { get; set; }
         public DbSet<SecurityQuestion> SecurityQuestions { get; set; }
+        public DbSet<AdminMenu> AdminMenus { get; set; }
+        public DbSet<RestaurantMenu> RestaurantMenus { get; set; }
 
     }
 }

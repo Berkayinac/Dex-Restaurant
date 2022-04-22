@@ -5,7 +5,9 @@
 
     <script>
         function myfunction(myId) {
-            alert(myId)
+            url = "https://localhost:44311/WebPage.aspx";
+            alert(url + "/" + myId);
+            window.location.href = url + "/" + myId;
         }
     </script>
 
@@ -45,9 +47,11 @@
                     <img src="models/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
                     <div class="menu-content">
                         
-                      <a href="#"><%=product.Name%></a> <span>$<%=product.UnitPrice %> <br>  <input id="Btn_Add_to_CartV1" onclick="myfunction(<%=product.Id %>)" class="book-a-table-btn scrollto d-none d-lg-flex hulo" type="button" value="Add To Cart Js" /></span>
+                      <a href="#"><%=product.Name%></a> <span>$<%=product.UnitPrice %>
+                          <br>  
+                          <input id="Btn_Add_to_CartV1" onclick="myfunction(<%=product.Id %>)" class="book-a-table-btn scrollto d-none d-lg-flex hulo" type="button" value="Add To Cart Js" /></span>
                     </div>
-             
+                            
                     <div class="menu-ingredients">
                       <%=product.QuantityPerUnit %>
                     </div>
@@ -64,5 +68,3 @@
 
     
 </asp:Content>
-
-

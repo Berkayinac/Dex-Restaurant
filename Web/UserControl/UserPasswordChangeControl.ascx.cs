@@ -20,6 +20,9 @@ namespace Web.UserControl
         protected void Btn_PasswordChange_Click(object sender, EventArgs e)
         {
             var userEmail = Request.QueryString["email"];
+
+            var deneme = Request.QueryString;
+
             var user = _userService.GetByMail(userEmail);
 
             if (!user.Success)
@@ -40,3 +43,6 @@ namespace Web.UserControl
         }
     }
 }
+
+
+//< !--Response.Redirect kullanarak url oalrak gönderilen veriyi çek  -->
