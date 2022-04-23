@@ -55,9 +55,9 @@ namespace Business.Concrete
 
             User user = new User
             {
-                Email = userForRegisterDto.Email,
                 FirstName = userForRegisterDto.FirstName,
                 LastName = userForRegisterDto.LastName,
+                Email = userForRegisterDto.Email,
                 Password = userForRegisterDto.Password,
                 SecurityQuestionId = question.Id,
                 SecurityQuestionAnswer = userSecurityQuestionDto.SecurityQuestionAnswer,

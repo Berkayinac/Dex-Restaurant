@@ -36,8 +36,7 @@
 								</div>
 								
 								<div class="wrap-input100 validate-input">
-									<asp:DropDownList ID="drp_SecurityQuestions" CssClass="input100" Width="100%" Height="100%" runat="server">
-                                    </asp:DropDownList>
+									<asp:DropDownList ID="drp_SecurityQuestions" CssClass="input100" Width="100%" Height="100%" runat="server"></asp:DropDownList>
 									<span class="focus-input100"></span>
 									<span class="label-input100">Select Your Security Question</span>
 								</div>
