@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Core.Utilities.Results;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,20 +18,19 @@ namespace Web.UserControl
         {
             if (!IsPostBack)
             {
-                var userEmail = Request.QueryString["email"];
-                var userQuestion = _userService.GetUserSecurityQuestion(userEmail);
+                var userEmail = Session["Email"].ToString();
+                var userSecurityQuestionDto = _userService.GetUserSecurityQuestion(userEmail);
 
-                if (!userQuestion.Success)
+                if (!userSecurityQuestionDto.Success)
                 {
-                    lbl_PasswordReminder.Text = userQuestion.Message;
+                    lbl_PasswordReminder.Text = userSecurityQuestionDto.Message;
                     Response.Redirect("~/Register/Register.aspx");
                 }
 
-                Session["Email"] = userEmail;
-                Session["Question"] = userQuestion.Data;
+                Session["Question"] = userSecurityQuestionDto.Data.SecurityQuestion;
 
                 lbl_userEmail.Text = userEmail;
-                lbl_userQuestion.Text = userQuestion.Data.SecurityQuestion;
+                lbl_userQuestion.Text = userSecurityQuestionDto.Data.SecurityQuestion;
             }
         }
 
@@ -37,20 +38,17 @@ namespace Web.UserControl
 
         protected void Btn_userQuestion_Click(object sender, EventArgs e)
         {
-            var userEmail = Request.QueryString["email"];
+            var userEmail = Session["Email"].ToString();
+            var userSecurityQuestionDto = _userService.GetUserSecurityQuestion(userEmail);
 
-            var userQuestion = _userService.GetUserSecurityQuestion(userEmail);
+            var userQuestionAnswer = tbx_UserQuestionAnswer.Text;
 
-            var result = tbx_UserQuestionAnswer.Text;
-
-            if (result == userQuestion.Data.SecurityQuestionAnswer)
+            if (userQuestionAnswer == userSecurityQuestionDto.Data.SecurityQuestionAnswer)
             {
-                Session["QuestionAnswer"] = tbx_UserQuestionAnswer.Text;
+                Session["QuestionAnswer"] = userQuestionAnswer;
                 Response.Redirect("~/PasswordReminder/PasswordChange.aspx");
             }
             lbl_PasswordReminder.Text = "Tekrar Deneyiniz.";
-
-
         }
     }
 }

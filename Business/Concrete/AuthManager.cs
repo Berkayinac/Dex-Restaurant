@@ -121,6 +121,12 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
+        public IResult CheckUserQuestionAnswer(UserSecurityQuestionDto userSecurityQuestionDto)
+        {
+
+            return new SuccessResult();
+        }
+
         private IResult SecurityAnswer(User user, string securityAnswer)
         {
             if (user.SecurityQuestionAnswer != securityAnswer)

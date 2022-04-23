@@ -44,8 +44,6 @@ namespace Web.UserControl
 
         ISecurityQuestionService _securityQuestionService = new SecurityQuestionManager();
 
-
-
         protected void Btn_Register_Click(object sender, EventArgs e)
         {
             UserForRegisterDto userForRegisterDto = new UserForRegisterDto();
@@ -62,15 +60,11 @@ namespace Web.UserControl
 
             var result = _authService.Register(userForRegisterDto, userSecurityQuestionDto);
 
-            UserAuthority userAuthority = new UserAuthority
-            {
-                UserId = result.Data.Id,
-                AuthorityId = 1
-            };
-
+            UserAuthority userAuthority = new UserAuthority();
+            userAuthority.AuthorityId = 1;
+            userAuthority.UserId = result.Data.Id;
+                
             _authService.AddUserAuthority(userAuthority);
-
-            lbl_Register.Text = result.Message;
 
             if (result.Success)
             {

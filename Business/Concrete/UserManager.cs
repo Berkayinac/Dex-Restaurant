@@ -77,7 +77,6 @@ namespace Business.Concrete
         public IDataResult<UserSecurityQuestionDto> GetUserSecurityQuestion(string email)
         {
             var user = GetByMail(email).Data;
-
             var result = _userDal.GetUserSecurityQuestion(user);
             if (result == null)
             {

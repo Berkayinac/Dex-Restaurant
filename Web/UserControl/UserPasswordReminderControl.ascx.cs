@@ -18,8 +18,6 @@ namespace Web.UserControl
 
         IAuthService _authService = new AuthManager();
 
-        IUserService _userService = new UserManager();
-
         protected void Btn_PasswordReminder_Click(object sender, EventArgs e)
         {
             var result = _authService.UserExists(tbx_Email.Text);
@@ -28,8 +26,8 @@ namespace Web.UserControl
                 lbl_PasswordReminder.Text = result.Message;
             }
 
-            Response.Redirect("~/PasswordReminder/Question.aspx?Email=" + tbx_Email.Text);
-            //Response.Redirect("~/PasswordReminder/Question.aspx/" + tbx_Email.Text);
+            Session["Email"] = tbx_Email.Text;
+            Response.Redirect("~/PasswordReminder/Question");
         }
     }
 }

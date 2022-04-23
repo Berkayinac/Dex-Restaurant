@@ -34,7 +34,7 @@ namespace Web.UserControl
 
                 foreach (var authority in userAuthorities.Authorities)
                 {
-                    authorities += authority.AuthorityName + ",";
+                   authorities += authority.AuthorityName + ",";
                 }
 
                 Session["Authorities"] = authorities;
@@ -45,8 +45,12 @@ namespace Web.UserControl
 
         protected void Btn_PasswordReminder_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/PasswordReminder/PasswordReminder.aspx");
+            Response.Redirect("~/PasswordReminder/PasswordReminder");
         }
 
+        protected void Btn_Register_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Register/Register");
+        }
     }
-}
+}   

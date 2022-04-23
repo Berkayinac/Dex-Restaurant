@@ -7,6 +7,7 @@
 					<div class="container-login100">
 						<div class="wrap-login100">
 							<div class="login100-form validate-form">
+
 								<span class="login100-form-title p-b-43">
 									Password Reminder
 								</span>
@@ -36,8 +37,7 @@
 
 							</div>
 
-							<div class="login100-more" style="background-image: url('/models/img/event-custom.jpg');">
-							</div>
+							<div class="login100-more" style="background-image: url('/models/img/event-custom.jpg');"></div>
 						</div>
 					</div>
 				</div>

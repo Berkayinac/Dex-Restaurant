@@ -60,6 +60,15 @@ namespace Web.UserControl
         protected global::System.Web.UI.WebControls.Button Btn_Login;
 
         /// <summary>
+        /// Btn_Register denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Register;
+
+        /// <summary>
         /// Btn_PasswordReminder denetimi.
         /// </summary>
         /// <remarks>

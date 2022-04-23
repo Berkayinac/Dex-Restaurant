@@ -31,7 +31,8 @@
 									<br />
 									<br />
 									<br />
-									<asp:Button ID="Btn_PasswordReminder" CssClass="login100-form-btn" runat="server" OnClick="Btn_PasswordReminder_Click" Text="Password Reminder" />
+									<asp:Button ID="Btn_Register" CssClass="login100-form-btn" Width="50%" runat="server"  OnClick="Btn_Register_Click" Text="Register" />
+									<asp:Button ID="Btn_PasswordReminder" CssClass="login100-form-btn" Width="50%" runat="server" OnClick="Btn_PasswordReminder_Click" Text="Password Reminder" />
 								</div>
 					
 								<div class="text-center p-t-46 p-b-20">

@@ -16,7 +16,8 @@ namespace Web
             route.MapPageRoute("Giriş", "Login/Login", "~/Login/Login.aspx");
             route.MapPageRoute("Kayıt", "Register/Register", "~/Register/Register.aspx");
             route.MapPageRoute("Şifremi Hatırlat", "PasswordReminder/PasswordReminder", "~/PasswordReminder/PasswordReminder.aspx");
-            route.MapPageRoute("Güvenlik Sorusu", "PasswordReminder/Question/{Email}", "~/PasswordReminder/Question.aspx");
+            route.MapPageRoute("Güvenlik Sorusu ile email", "PasswordReminder/Question/{Email}", "~/PasswordReminder/Question.aspx");
+            route.MapPageRoute("Güvenlik Sorusu", "PasswordReminder/Question", "~/PasswordReminder/Question.aspx");
             route.MapPageRoute("Şifremi Değiştir", "PasswordReminder/PasswordChange", "~/PasswordReminder/PasswordChange.aspx");
 
             // Admin

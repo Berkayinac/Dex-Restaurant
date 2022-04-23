@@ -18,7 +18,6 @@ namespace Web.UserControl
 
         }
 
-        IUserService _userService = new UserManager();
         IAuthService _authService = new AuthManager();
         ISecurityQuestionService _securityQuestionService = new SecurityQuestionManager();
 
