@@ -11,15 +11,15 @@ using System.Web.UI.WebControls;
 
 namespace Web
 {
-    public partial class WebPage : System.Web.UI.Page
+    public partial class AdminControlWebPage : System.Web.UI.Page
     {
-        IProductService _productService = new ProductManager();
-        ICategoryService _categoryService = new CategoryManager();
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
+
+        IProductService _productService = new ProductManager();
+        ICategoryService _categoryService = new CategoryManager();
 
         public List<Product> GetAllProducts()
         {
@@ -38,9 +38,7 @@ namespace Web
 
         protected void Btn_Add_to_Cart_Command(object sender, CommandEventArgs e)
         {
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myId", "myFunction();", true);
-            
-        }
 
+        }
     }
 }

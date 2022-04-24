@@ -14,9 +14,7 @@ namespace Web.AdminPages
         IAuthService authService = new AuthManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            var authority = Session["Authorities"];
-
-            var userAuthorities = authority.ToString();
+            var userAuthorities = Session["Authorities"].ToString();
 
             var authorities = userAuthorities.Split(',');
 

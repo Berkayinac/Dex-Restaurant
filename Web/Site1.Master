@@ -1,5 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Web.Site1" %>
 
+<%@ Register Src="~/UserControl/AdminControl.ascx" TagPrefix="uc1" TagName="AdminControl" %>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -67,6 +70,7 @@
       </nav><!-- .navbar -->
       <a href="#menu" class="book-a-table-btn scrollto d-none d-lg-flex">Our Menu</a>
       <a href="/Login/Login" class="book-a-table-btn scrollto d-none d-lg-flex">Login</a>
+      <asp:ContentPlaceHolder ID="myLiteralContent" runat="server"></asp:ContentPlaceHolder>
 
     </div>
   </header><!-- End Header -->
@@ -274,8 +278,6 @@
       </div>
     </section><!-- End Specials Section -->
      
-   
-
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
       <div class="container" data-aos="fade-up">
@@ -444,14 +446,6 @@
     </section><!-- End Gallery Section -->
   </main><!-- End #main -->
 
-
-
-       
-    
-        <div>
-            <asp:ContentPlaceHolder ID="Categories" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
         <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
@@ -539,8 +533,6 @@
   <script src="models/js/main.js"></script>
 
   <script src="Scripts/jquery-3.0.0.js"> </script>
-    <asp:ContentPlaceHolder ID="MyScripts" runat="server">
-     </asp:ContentPlaceHolder>
 
 </body>
 </html>

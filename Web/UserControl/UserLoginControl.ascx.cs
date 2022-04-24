@@ -38,7 +38,7 @@ namespace Web.UserControl
                 }
 
                 Session["Authorities"] = authorities;
-                Response.Redirect("/WebPage.aspx");
+                Control(authorities);
             }
             lbl_Login.Text = userLogin.Message;
         }
@@ -51,6 +51,15 @@ namespace Web.UserControl
         protected void Btn_Register_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Register/Register");
+        }
+
+        protected void Control(string authorities)
+        {
+            if (authorities.Contains("Admin"))
+            {
+                Response.Redirect("~/Admin/WebPage");
+            }
+            Response.Redirect("~/User/WebPage");
         }
     }
 }   
