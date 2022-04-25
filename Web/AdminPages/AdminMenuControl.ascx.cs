@@ -14,12 +14,22 @@ namespace Web.AdminPages
         IAuthService authService = new AuthManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            var userAuthorities = Session["Authorities"].ToString();
 
-            var authorities = userAuthorities.Split(',');
-
-            if (authorities.Contains("Admin"))
+            if (Session["Authorities"] == null)
             {
+                Response.Redirect("~/WebPage");
+            }
+
+            if (Session["Authorities"] != null)
+            {
+                var userAuthorities = Session["Authorities"].ToString();
+                var authorities = userAuthorities.Split(',');
+
+                if (!authorities.Contains("Admin"))
+                {
+                    Response.Redirect("~/WebPage");
+                }
+
                 AdminMenuManager adminMenuManager = new AdminMenuManager();
 
                 var menus = adminMenuManager.GetAll().Data;
@@ -33,7 +43,7 @@ namespace Web.AdminPages
                     myMenu += "</li>";
                 }
                 Literal1.Text = myMenu;
-            } 
+            }
         }
     }
 }

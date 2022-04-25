@@ -42,15 +42,6 @@ namespace Web.AdminPages
         protected global::Web.AdminPages.AdminMenuControl AdminMenuControl;
 
         /// <summary>
-        /// Dashboard denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik olarak oluşturulan alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Dashboard;
-
-        /// <summary>
         /// MyPage denetimi.
         /// </summary>
         /// <remarks>

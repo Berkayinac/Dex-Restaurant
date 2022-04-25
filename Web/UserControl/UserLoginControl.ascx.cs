@@ -30,15 +30,11 @@ namespace Web.UserControl
             if (userLogin.Success)
             {
                 var userAuthorities = _authService.GetUserAuthority(userLogin.Data).Data;
-                string authorities = "";
-
-                foreach (var authority in userAuthorities.Authorities)
-                {
-                   authorities += authority.AuthorityName + ",";
-                }
+                var authorities =  _authService.GetAuthorities(userAuthorities).Data;
+                var routeUser = _authService.UserAuthorityRoute(authorities).Data;
 
                 Session["Authorities"] = authorities;
-                Control(authorities);
+                Response.Redirect(routeUser);
             }
             lbl_Login.Text = userLogin.Message;
         }
@@ -57,9 +53,9 @@ namespace Web.UserControl
         {
             if (authorities.Contains("Admin"))
             {
-                Response.Redirect("~/Admin/WebPage");
+                Response.Redirect("~/AdminWebPage");
             }
-            Response.Redirect("~/User/WebPage");
+            Response.Redirect("~/WebPage");
         }
     }
 }   

@@ -121,10 +121,37 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        public IResult CheckUserQuestionAnswer(UserSecurityQuestionDto userSecurityQuestionDto)
+        public IDataResult<string> GetAuthorities(UserAuthoritiesDto userAuthoritiesDto)
         {
+            var result = "";
+            if (userAuthoritiesDto.Authorities == null)
+            {
+                return new ErrorDataResult<string>();
+            }
+            foreach (var authority in userAuthoritiesDto.Authorities)
+            {
+                result += authority.AuthorityName +",";
+            }
+            return new SuccessDataResult<string>(result,Messages.AuthorityGeted);
+        }
 
-            return new SuccessResult();
+        public IDataResult<string> UserAuthorityRoute(string authorities)
+        {
+            if (authorities.Contains("Admin"))
+            {
+                return new SuccessDataResult<string>("~/AdminWebPage", Messages.AuthorityGeted);
+            }
+            return new ErrorDataResult<string>("~/WebPage", Messages.AuthorityGeted);
+        }
+
+
+        public IResult CheckUserAuthority(string authorities)
+        {
+            if (authorities.Contains("Admin"))
+            {
+                return new SuccessResult();
+            }
+            return new ErrorResult();
         }
 
         private IResult SecurityAnswer(User user, string securityAnswer)
@@ -144,5 +171,7 @@ namespace Business.Concrete
             }
             return new SuccessResult();
         }
+
+        
     }
 }

@@ -29,10 +29,10 @@ namespace Web
             route.MapPageRoute("Authority", "Admin/Authority", "~/AdminPages/AdminAuthorityPanelV1.aspx");
             route.MapPageRoute("User", "Admin/User", "~/AdminPages/AdminUserPanelV1.aspx");
             route.MapPageRoute("UserAuthority", "Admin/UserAuthority", "~/AdminPages/AdminUserAuthorityPanelV1.aspx");
-            route.MapPageRoute("AdminWebPage", "Admin/WebPage", "~/AdminControlWebPage.aspx");
+            route.MapPageRoute("AdminUserWebPage", "AdminWebPage", "~/AdminControlWebPage.aspx");
 
             // User
-            route.MapPageRoute("WebPage", "User/WebPage", "~/AdminControlWebPage.aspx");
+            route.MapPageRoute("UserWebPage", "WebPage", "~/WebPage.aspx");
             //route.MapPageRoute("Category", "User/Category", "~/User/Category.aspx");
             //route.MapPageRoute("Order", "User/Order", "~/User/Order.aspx");
             //route.MapPageRoute("Cart", "User/Cart", "~/User/Cart.aspx");

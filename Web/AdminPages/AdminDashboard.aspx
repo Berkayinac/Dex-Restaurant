@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/Admin.Master" AutoEventWireup="true" CodeBehind="AdminDashboard.aspx.cs" Inherits="Web.AdminPages.AdminDashboard" %>
-<asp:Content ID="Content3" ContentPlaceHolderID="DashBoard" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="MyPage" runat="server">
      <!-- /. ROW  -->
 
                 <div class="row">
