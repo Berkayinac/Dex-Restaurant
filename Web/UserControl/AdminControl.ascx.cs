@@ -20,7 +20,6 @@ namespace Web.UserControl
 
             if (authorities.Contains("Admin"))
             {
-                var buttonAdmin = "<a href='/Admin/Dashboard''class='book-a-table-btn scrollto d-none d-lg-flex'>'Admin'</a>'";
                 var href = "<a href=";
                 var myLink = "'/Admin/Dashboard'" + " ";
                 var myCssClass = "class=" + "'book-a-table-btn scrollto d-none d-lg-flex'>";

@@ -24,7 +24,7 @@ namespace Web.UserControl
                 if (!userSecurityQuestionDto.Success)
                 {
                     lbl_PasswordReminder.Text = userSecurityQuestionDto.Message;
-                    Response.Redirect("~/Register/Register.aspx");
+                    Response.Redirect("~/Register/Register");
                 }
 
                 Session["Question"] = userSecurityQuestionDto.Data.SecurityQuestion;
@@ -46,7 +46,7 @@ namespace Web.UserControl
             if (userQuestionAnswer == userSecurityQuestionDto.Data.SecurityQuestionAnswer)
             {
                 Session["QuestionAnswer"] = userQuestionAnswer;
-                Response.Redirect("~/PasswordReminder/PasswordChange.aspx");
+                Response.Redirect("~/PasswordReminder/PasswordChange");
             }
             lbl_PasswordReminder.Text = "Tekrar Deneyiniz.";
         }

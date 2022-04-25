@@ -42,7 +42,7 @@ namespace Web.UserControl
 
             lbl_PasswordReminder.Text = userCheck.Message;
 
-            Response.Redirect("~/Login/Login.aspx");
+            Response.Redirect("~/Login/Login");
         }
     }
 }

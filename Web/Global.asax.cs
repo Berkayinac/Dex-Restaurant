@@ -13,12 +13,12 @@ namespace Web
 
         void RouteUser(RouteCollection route)
         {
-            route.MapPageRoute("Giriş", "Login/Login", "~/Login/Login.aspx");
-            route.MapPageRoute("Kayıt", "Register/Register", "~/Register/Register.aspx");
-            route.MapPageRoute("Şifremi Hatırlat", "PasswordReminder/PasswordReminder", "~/PasswordReminder/PasswordReminder.aspx");
-            route.MapPageRoute("Güvenlik Sorusu ile email", "PasswordReminder/Question/{Email}", "~/PasswordReminder/Question.aspx");
-            route.MapPageRoute("Güvenlik Sorusu", "PasswordReminder/Question", "~/PasswordReminder/Question.aspx");
-            route.MapPageRoute("Şifremi Değiştir", "PasswordReminder/PasswordChange", "~/PasswordReminder/PasswordChange.aspx");
+            route.MapPageRoute("Giriş", "Login/Login", "~/UserLRP/Login/Login.aspx");
+            route.MapPageRoute("Kayıt", "Register/Register", "~/UserLRP/Register/Register.aspx");
+            route.MapPageRoute("Şifremi Hatırlat", "PasswordReminder/PasswordReminder", "~/UserLRP/PasswordReminder/PasswordReminder.aspx");
+            route.MapPageRoute("Güvenlik Sorusu ile email", "PasswordReminder/Question/{Email}", "~/UserLRP/PasswordReminder/Question.aspx");
+            route.MapPageRoute("Güvenlik Sorusu", "PasswordReminder/Question", "~/UserLRP/PasswordReminder/Question.aspx");
+            route.MapPageRoute("Şifremi Değiştir", "PasswordReminder/PasswordChange", "~/UserLRP/PasswordReminder/PasswordChange.aspx");
 
             // Admin
             route.MapPageRoute("Product","Admin/Product", "~/AdminPages/AdminProductPanelV1.aspx");

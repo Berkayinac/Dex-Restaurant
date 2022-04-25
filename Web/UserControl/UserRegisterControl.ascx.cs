@@ -69,7 +69,7 @@ namespace Web.UserControl
             if (result.Success)
             {
                 lbl_Register.Text = result.Message;
-                Response.Redirect("/Login/Login.aspx");
+                Response.Redirect("/Login/Login");
             }
 
             lbl_Register.Text = result.Message;
