@@ -49,14 +49,5 @@ namespace Web.UserControl
         {
             Response.Redirect("~/Register/Register");
         }
-
-        protected void Control(string authorities)
-        {
-            if (authorities.Contains("Admin"))
-            {
-                Response.Redirect("~/AdminWebPage");
-            }
-            Response.Redirect("~/WebPage");
-        }
     }
 }   

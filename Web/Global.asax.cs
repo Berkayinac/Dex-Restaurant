@@ -33,9 +33,6 @@ namespace Web
 
             // User
             route.MapPageRoute("UserWebPage", "WebPage", "~/WebPage.aspx");
-            //route.MapPageRoute("Category", "User/Category", "~/User/Category.aspx");
-            //route.MapPageRoute("Order", "User/Order", "~/User/Order.aspx");
-            //route.MapPageRoute("Cart", "User/Cart", "~/User/Cart.aspx");
         }
 
         protected void Application_Start(object sender, EventArgs e)
