@@ -34,6 +34,7 @@ namespace Web.UserControl
                 var routeUser = _authService.UserAuthorityRoute(authorities).Data;
 
                 Session["Authorities"] = authorities;
+                Session["UserName"] = userAuthorities.User.FirstName +" "+ userAuthorities.User.LastName;
                 Response.Redirect(routeUser);
             }
             lbl_Login.Text = userLogin.Message;

@@ -42,6 +42,15 @@ namespace Web
         protected global::System.Web.UI.WebControls.ContentPlaceHolder myLiteralContent;
 
         /// <summary>
+        /// UserWebPageLogin denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::Web.UserControl.UserWebPageLogin UserWebPageLogin;
+
+        /// <summary>
         /// lbl_WhyChooseOurRestaurantV1 denetimi.
         /// </summary>
         /// <remarks>

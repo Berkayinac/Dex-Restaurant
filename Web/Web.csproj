@@ -410,6 +410,7 @@
     <Content Include="UserControl\UserPasswordReminderControl.ascx" />
     <Content Include="UserControl\UserQuestionControl.ascx" />
     <Content Include="UserControl\UserRegisterControl.ascx" />
+    <Content Include="UserControl\UserWebPageLogin.ascx" />
     <Content Include="WebPage.aspx" />
     <Content Include="Login\assets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
     <Content Include="Login\assets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
@@ -937,6 +938,13 @@
     </Compile>
     <Compile Include="UserControl\UserRegisterControl.ascx.designer.cs">
       <DependentUpon>UserRegisterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserWebPageLogin.ascx.cs">
+      <DependentUpon>UserWebPageLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserWebPageLogin.ascx.designer.cs">
+      <DependentUpon>UserWebPageLogin.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebPage.aspx.cs">
       <DependentUpon>WebPage.aspx</DependentUpon>
