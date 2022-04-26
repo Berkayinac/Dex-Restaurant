@@ -24,12 +24,12 @@ namespace Web.UserControl
         protected global::System.Web.UI.WebControls.Literal Literal1;
 
         /// <summary>
-        /// btn_Logout denetimi.
+        /// Lnk_Logout denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Logout;
+        protected global::System.Web.UI.WebControls.LinkButton Lnk_Logout;
     }
 }

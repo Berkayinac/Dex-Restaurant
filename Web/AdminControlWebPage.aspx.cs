@@ -15,16 +15,17 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            GetAll();
+        }
 
+        public void GetAll()
+        {
+            GridView1.DataSource = _productService.GetAllByDto().Data;
+            GridView1.DataBind();
         }
 
         IProductService _productService = new ProductManager();
         ICategoryService _categoryService = new CategoryManager();
-
-        public List<Product> GetAllProducts()
-        {
-            return _productService.GetAll().Data;
-        }
 
         public List<ProductDto> GetAllProductDtos()
         {
@@ -36,9 +37,23 @@ namespace Web
             return _categoryService.GetAll().Data;
         }
 
-        protected void Btn_Add_to_Cart_Command(object sender, CommandEventArgs e)
+        protected void Lnk_AddToCart_Command(object sender, CommandEventArgs e)
         {
+            var productId = Convert.ToInt32(e.CommandArgument);
+            var productToDelete = _productService.GetById(productId).Data;
 
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.DataBind();
+        }
+
+
+        protected void Lnk_Cart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Cart.aspx");
         }
     }
 }

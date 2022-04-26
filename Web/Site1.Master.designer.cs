@@ -42,6 +42,15 @@ namespace Web
         protected global::System.Web.UI.WebControls.ContentPlaceHolder myLiteralContent;
 
         /// <summary>
+        /// myCart denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder myCart;
+
+        /// <summary>
         /// UserWebPageLogin denetimi.
         /// </summary>
         /// <remarks>

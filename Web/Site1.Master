@@ -72,6 +72,7 @@
       </nav><!-- .navbar -->
       <a href="#menu" class="book-a-table-btn scrollto d-none d-lg-flex">Our Menu</a>
       <asp:ContentPlaceHolder ID="myLiteralContent" runat="server"></asp:ContentPlaceHolder>
+      <asp:ContentPlaceHolder ID="myCart" runat="server"></asp:ContentPlaceHolder>
       <uc1:UserWebPageLogin runat="server" id="UserWebPageLogin" />
 
     </div>
@@ -178,8 +179,18 @@
 
 
     <div>
-       <asp:ContentPlaceHolder ID="Products" runat="server">
-        </asp:ContentPlaceHolder>
+       <section id="menu" class="menu section-bg">
+              <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                  <h2>Menu</h2>
+                  <p>Check Our Tasty Menu</p>
+                </div>
+
+                 <asp:ContentPlaceHolder ID="Products" runat="server"></asp:ContentPlaceHolder> 
+
+                </div>
+        </section>
     </div>
 
     <!-- ======= Specials Section ======= -->

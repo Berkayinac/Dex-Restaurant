@@ -39,9 +39,9 @@ namespace Web.AdminPages
         protected void LnkBtn_Delete_Command(object sender, CommandEventArgs e)
         {
             var authorityId = Convert.ToInt32(e.CommandArgument);
-            var authorityToUpdate = _authorityService.GetById(authorityId).Data;
+            var authorityToDelete = _authorityService.GetById(authorityId).Data;
 
-            Delete(authorityToUpdate);
+            Delete(authorityToDelete);
 
             GetAll();
         }

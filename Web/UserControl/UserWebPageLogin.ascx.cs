@@ -26,7 +26,7 @@ namespace Web.UserControl
             }
         }
 
-        protected void btn_Logout_Click(object sender, EventArgs e)
+        protected void Lnk_Logout_Click(object sender, EventArgs e)
         {
             Session["UserName"] = null;
             Session["Authorities"] = null;

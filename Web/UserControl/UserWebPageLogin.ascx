@@ -6,6 +6,6 @@
 
 <%if (Literal1.Text.Contains("Welcome")){ %>
 
-<asp:Button ID="btn_Logout" CssClass="book-a-table-btn scrollto d-none d-lg-flex" OnClick="btn_Logout_Click" runat="server" Text="Logout" />
+<asp:LinkButton ID="Lnk_Logout" CssClass="book-a-table-btn scrollto d-none d-lg-flex" OnClick="Lnk_Logout_Click" runat="server">Logout</asp:LinkButton>
 
 <% }  %>
