@@ -12,6 +12,12 @@ namespace Web.AdminPages
 {
     public partial class AdminOrderPanelV1 : System.Web.UI.Page
     {
+        IOrderService _orderService;
+        public AdminOrderPanelV1()
+        {
+            _orderService = new OrderManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             GetAll();
@@ -22,8 +28,6 @@ namespace Web.AdminPages
             GridView1.DataSource = _orderService.GetAll().Data;
             GridView1.DataBind();
         }
-
-        IOrderService _orderService = new OrderManager();
 
         protected void LnkBtn_Update_Command(object sender, CommandEventArgs e)
         {

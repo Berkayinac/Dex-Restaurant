@@ -13,13 +13,19 @@ namespace Web.UserControl
 {
     public partial class UserPasswordChangeControl : System.Web.UI.UserControl
     {
+        IAuthService _authService;
+        ISecurityQuestionService _securityQuestionService;
+
+        public UserPasswordChangeControl()
+        {
+            _authService = new AuthManager();
+            _securityQuestionService = new SecurityQuestionManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        IAuthService _authService = new AuthManager();
-        ISecurityQuestionService _securityQuestionService = new SecurityQuestionManager();
 
         protected void Btn_PasswordChange_Click(object sender, EventArgs e)
         {

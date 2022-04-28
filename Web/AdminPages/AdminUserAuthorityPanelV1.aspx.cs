@@ -12,6 +12,12 @@ namespace Web.AdminPages
 {
     public partial class AdminUserAuthorityPanelV1 : System.Web.UI.Page
     {
+        IUserAuthorityService _userAuthorityService;
+        public AdminUserAuthorityPanelV1()
+        {
+            _userAuthorityService = new UserAuthorityManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             GetAll();
@@ -22,9 +28,6 @@ namespace Web.AdminPages
             GridView1.DataSource = _userAuthorityService.GetAll().Data;
             GridView1.DataBind();
         }
-
-        IUserAuthorityService _userAuthorityService = new UserAuthorityManager();
-
         protected void LnkBtn_Update_Command(object sender, CommandEventArgs e)
         {
             var userAuthorityId = Convert.ToInt32(e.CommandArgument);

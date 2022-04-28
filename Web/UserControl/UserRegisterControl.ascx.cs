@@ -13,6 +13,16 @@ namespace Web.UserControl
 {
     public partial class UserRegisterControl : System.Web.UI.UserControl
     {
+        IAuthService _authService;
+        ISecurityQuestionService _securityQuestionService;
+
+        public UserRegisterControl()
+        {
+            _authService = new AuthManager();
+            _securityQuestionService = new SecurityQuestionManager();
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -39,10 +49,6 @@ namespace Web.UserControl
 
             return list;
         }
-
-        IAuthService _authService = new AuthManager();
-
-        ISecurityQuestionService _securityQuestionService = new SecurityQuestionManager();
 
         protected void Btn_Register_Click(object sender, EventArgs e)
         {

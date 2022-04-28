@@ -12,6 +12,12 @@ namespace Web.AdminPages
 {
     public partial class AdminProductPanelV1 : System.Web.UI.Page
     {
+        IProductService _productService;
+        public AdminProductPanelV1()
+        {
+            _productService = new ProductManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             GetAll();
@@ -22,8 +28,6 @@ namespace Web.AdminPages
             GridView1.DataSource = _productService.GetAll().Data;
             GridView1.DataBind();
         }
-
-        IProductService _productService = new ProductManager();
 
         protected void LnkBtn_Update_Command(object sender, CommandEventArgs e)
         {

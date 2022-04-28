@@ -14,6 +14,13 @@ namespace Web.UserControl
 {
     public partial class UserQuestionControl : System.Web.UI.UserControl
     {
+
+        IUserService _userService;
+        public UserQuestionControl()
+        {
+            _userService = new UserManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -33,8 +40,6 @@ namespace Web.UserControl
                 lbl_userQuestion.Text = userSecurityQuestionDto.Data.SecurityQuestion;
             }
         }
-
-        IUserService _userService = new UserManager();
 
         protected void Btn_userQuestion_Click(object sender, EventArgs e)
         {

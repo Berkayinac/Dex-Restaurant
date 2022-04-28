@@ -13,7 +13,15 @@ namespace Web
 {
     public partial class WebPage : System.Web.UI.Page
     {
-        List<CartItemDto> cartItems = new List<CartItemDto>();
+        IProductService _productService;
+        ICategoryService _categoryService;
+        List<CartItemDto> cartItems;
+        public WebPage()
+        {
+             cartItems = new List<CartItemDto>();
+            _categoryService = new CategoryManager();
+            _productService = new ProductManager();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,9 +36,6 @@ namespace Web
             GridView1.DataSource = _productService.GetAllByDto().Data;
             GridView1.DataBind();
         }
-
-        IProductService _productService = new ProductManager();
-        ICategoryService _categoryService = new CategoryManager();
 
         public List<ProductDto> GetAllProductDtos()
         {

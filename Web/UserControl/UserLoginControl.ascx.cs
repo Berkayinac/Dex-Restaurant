@@ -12,12 +12,17 @@ namespace Web.UserControl
 {
     public partial class UserLoginControl : System.Web.UI.UserControl
     {
+
+        IAuthService _authService;
+        public UserLoginControl()
+        {
+            _authService = new AuthManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        IAuthService _authService = new AuthManager();
 
         protected void Btn_Login_Click(object sender, EventArgs e)
         {

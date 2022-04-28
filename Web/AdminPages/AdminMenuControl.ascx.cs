@@ -11,7 +11,7 @@ namespace Web.AdminPages
 {
     public partial class AdminMenuControl : System.Web.UI.UserControl
     {
-        IAuthService authService = new AuthManager();
+        IAuthService _authService = new AuthManager();
         protected void Page_Load(object sender, EventArgs e)
         {
 

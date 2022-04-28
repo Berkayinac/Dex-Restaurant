@@ -12,6 +12,12 @@ namespace Web.AdminPages
 {
     public partial class AdminCategoryPanelV1 : System.Web.UI.Page
     {
+        ICategoryService _categoryService;
+        public AdminCategoryPanelV1()
+        {
+            _categoryService = new CategoryManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             GetAll();
@@ -22,8 +28,6 @@ namespace Web.AdminPages
             GridView1.DataSource = _categoryService.GetAll().Data;
             GridView1.DataBind();
         }
-
-        ICategoryService _categoryService = new CategoryManager();
 
         protected void LnkBtn_Update_Command(object sender, CommandEventArgs e)
         {

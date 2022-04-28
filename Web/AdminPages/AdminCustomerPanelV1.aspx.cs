@@ -12,6 +12,12 @@ namespace Web.AdminPages
 {
     public partial class AdminCustomerPanelV1 : System.Web.UI.Page
     {
+        ICustomerService _customerService;
+        public AdminCustomerPanelV1()
+        {
+            _customerService = new CustomerManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Authorities"] == null)
@@ -27,9 +33,6 @@ namespace Web.AdminPages
             GridView1.DataSource = _customerService.GetAll().Data;
             GridView1.DataBind();
         }
-
-        ICustomerService _customerService = new CustomerManager();
-
         protected void LnkBtn_Update_Command(object sender, CommandEventArgs e)
         {
             var customerId = Convert.ToInt32(e.CommandArgument);

@@ -12,6 +12,13 @@ namespace Web.AdminPages
 {
     public partial class AdminAuthorityPanelV1 : System.Web.UI.Page
     {
+
+        IAuthorityService _authorityService;
+        public AdminAuthorityPanelV1()
+        {
+            _authorityService = new AuthorityManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {   
             GetAll();
@@ -22,8 +29,6 @@ namespace Web.AdminPages
             GridView1.DataSource = _authorityService.GetAll().Data;
             GridView1.DataBind();
         }
-
-        IAuthorityService _authorityService = new AuthorityManager();
 
         protected void LnkBtn_Update_Command(object sender, CommandEventArgs e)
         {

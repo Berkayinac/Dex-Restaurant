@@ -12,6 +12,18 @@ namespace Web.AdminPages
 {
     public partial class AdminDashboard : System.Web.UI.Page
     {
+        IProductService _productService;
+        ICustomerService _customerService;
+        ICategoryService _categoryService;
+        IOrderService _orderService;
+        public AdminDashboard()
+        {
+            _productService = new ProductManager();
+            _customerService = new CustomerManager();
+            _categoryService = new CategoryManager();
+            _orderService = new OrderManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             lbl_Categories.Text = Convert.ToString(CategoriesCount());
@@ -20,13 +32,6 @@ namespace Web.AdminPages
             lbl_Products.Text = Convert.ToString(ProductsCount());
         }
 
-        IProductService _productService = new ProductManager();
-        IUserService _userService = new UserManager();
-        ICustomerService _customerService = new CustomerManager();
-        ICategoryService _categoryService = new CategoryManager();
-        IOrderService _orderService = new OrderManager();
-
-        
         // Persents
         public double ProductsPersent()
         {

@@ -11,12 +11,17 @@ namespace Web.UserControl
 {
     public partial class UserPasswordReminderControl : System.Web.UI.UserControl
     {
+
+        IAuthService _authService;
+        public UserPasswordReminderControl()
+        {
+            _authService = new AuthManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        IAuthService _authService = new AuthManager();
 
         protected void Btn_PasswordReminder_Click(object sender, EventArgs e)
         {

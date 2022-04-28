@@ -13,6 +13,14 @@ namespace Web
 {
     public partial class AdminControlWebPage : System.Web.UI.Page
     {
+        IProductService _productService;
+        ICategoryService _categoryService;
+        public AdminControlWebPage()
+        {
+            _productService = new ProductManager();
+            _categoryService = new CategoryManager();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             GetAll();
@@ -23,9 +31,6 @@ namespace Web
             GridView1.DataSource = _productService.GetAllByDto().Data;
             GridView1.DataBind();
         }
-
-        IProductService _productService = new ProductManager();
-        ICategoryService _categoryService = new CategoryManager();
 
         public List<ProductDto> GetAllProductDtos()
         {
