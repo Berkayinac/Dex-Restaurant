@@ -67,12 +67,14 @@
           <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
           <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="#">                       </a></li>
+          <asp:ContentPlaceHolder ID="myCart" runat="server"></asp:ContentPlaceHolder>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       <a href="#menu" class="book-a-table-btn scrollto d-none d-lg-flex">Our Menu</a>
       <asp:ContentPlaceHolder ID="myLiteralContent" runat="server"></asp:ContentPlaceHolder>
-      <asp:ContentPlaceHolder ID="myCart" runat="server"></asp:ContentPlaceHolder>
+      
       <uc1:UserWebPageLogin runat="server" id="UserWebPageLogin" />
 
     </div>

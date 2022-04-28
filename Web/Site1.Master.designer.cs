@@ -33,15 +33,6 @@ namespace Web
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// myLiteralContent denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik olarak oluşturulan alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder myLiteralContent;
-
-        /// <summary>
         /// myCart denetimi.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace Web
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder myCart;
+
+        /// <summary>
+        /// myLiteralContent denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder myLiteralContent;
 
         /// <summary>
         /// UserWebPageLogin denetimi.

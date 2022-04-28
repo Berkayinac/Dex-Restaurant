@@ -13,9 +13,14 @@ namespace Web
 {
     public partial class WebPage : System.Web.UI.Page
     {
+        List<CartItemDto> cartItems = new List<CartItemDto>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetAll();
+            if (!IsPostBack) 
+            {
+                GetAll();
+            }
         }
 
         public void GetAll()
@@ -40,7 +45,25 @@ namespace Web
         protected void Lnk_AddToCart_Command(object sender, CommandEventArgs e)
         {
             var productId = Convert.ToInt32(e.CommandArgument);
-            var productToDelete = _productService.GetById(productId).Data;
+            var productToAddCart = _productService.GetById(productId).Data;
+
+            CartItemDto cartItemDto = new CartItemDto();
+            cartItemDto.Product = productToAddCart;
+            
+            cartItemDto.Quantity = 0;
+
+            cartItems.Add(cartItemDto);
+
+            string htmlText = "";
+
+            foreach (var cartItem in cartItems)
+            {
+                htmlText += "<li>";
+                htmlText += "<a href = " + "'#'" + " >"+ cartItem.Product.Name + "<span>"+ cartItem.Quantity +"</span>" + "</a>";
+                htmlText += "</li>";
+            }
+            Literal1.Text = htmlText;
+
 
         }
 

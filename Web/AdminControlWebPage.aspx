@@ -3,7 +3,7 @@
 <%@ Register Src="~/UserControl/AdminControl.ascx" TagPrefix="uc1" TagName="AdminControl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="myCart" runat="server">
-    <asp:LinkButton ID="Lnk_Cart" CssClass="book-a-table-btn scrollto d-none d-lg-flex" OnClick="Lnk_Cart_Click" runat="server">Cart</asp:LinkButton>
+    <asp:LinkButton ID="Lnk_Cart" CssClass="book-a-table-btn scrollto d-none d-lg-flex" Width="75%" Text="sda" OnClick="Lnk_Cart_Click" runat="server">Cart</asp:LinkButton>
 </asp:Content>
 
 
@@ -13,6 +13,7 @@
       {
         display: none;
       }
+
     </style>
 </asp:Content>
 

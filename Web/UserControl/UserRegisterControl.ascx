@@ -59,7 +59,7 @@
 
 							</div>
 
-							<div class="login100-more" style="background-image: url('/models/img/hero-bg.jpg');">
+							<div class="login100-more" style="background-image: url('/models/img/event-private.jpg');">
 							</div>
 						</div>
 					</div>

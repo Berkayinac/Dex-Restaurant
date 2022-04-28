@@ -40,7 +40,7 @@
 
 							</div>
 
-							<div class="login100-more" style="background-image: url('/models/img/event-custom.jpg');">
+							<div class="login100-more" style="background-image: url('/models/img/about-bg.jpg');">
 							</div>
 						</div>
 					</div>

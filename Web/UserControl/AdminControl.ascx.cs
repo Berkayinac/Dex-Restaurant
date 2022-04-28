@@ -15,23 +15,33 @@ namespace Web.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var userAuthorities = Session["Authorities"].ToString();
-            var authorities = userAuthorities.Split(',');
 
-            if (authorities.Contains("Admin"))
+            if (Session["Authorities"] == null)
             {
-                var href = "<a href=";
-                var myLink = "'/Admin/Dashboard'" + " ";
-                var myCssClass = "class=" + "'book-a-table-btn scrollto d-none d-lg-flex'>";
-                var myName = "Admin";
-                var hrefclose = "</a>";
-                myLiteral.Text = href + myLink + myCssClass + myName + hrefclose;
-                var lol = myLiteral.Text;
+                Response.Redirect("~/WebPage");
             }
+
             else
             {
-                Response.Redirect("/User/WebPage");
+                var userAuthorities = Session["Authorities"].ToString();
+                var authorities = userAuthorities.Split(',');
+
+                if (authorities.Contains("Admin"))
+                {
+                    var href = "<a href=";
+                    var myLink = "'/Admin/Dashboard'" + " ";
+                    var myCssClass = "class=" + "'book-a-table-btn scrollto d-none d-lg-flex'>";
+                    var myName = "Admin";
+                    var hrefclose = "</a>";
+                    myLiteral.Text = href + myLink + myCssClass + myName + hrefclose;
+                    var lol = myLiteral.Text;
+                }
+                else
+                {
+                    Response.Redirect("~    /WebPage");
+                }
             }
+            
         }
     }
 }

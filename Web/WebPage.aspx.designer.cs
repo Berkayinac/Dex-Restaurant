@@ -15,6 +15,15 @@ namespace Web
     {
 
         /// <summary>
+        /// Literal1 denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal1;
+
+        /// <summary>
         /// Lnk_Cart denetimi.
         /// </summary>
         /// <remarks>
