@@ -1,9 +1,11 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    internal class CartManager : ICartService
+    public class CartManager : ICartService
     {
         private ICartDal _cartDal;
         public CartManager()
@@ -40,6 +42,16 @@ namespace Business.Concrete
                 return new ErrorDataResult<List<Cart>>();
             }
             return new SuccessDataResult<List<Cart>>(result, Messages.CartListed);
+        }
+
+        public IDataResult<List<CartDto>> GetAllDtos(User user)
+        {
+            var result = _cartDal.GetAllCartDto(user);
+            if (result == null)
+            {
+                return new ErrorDataResult<List<CartDto>>();
+            }
+            return new SuccessDataResult<List<CartDto>>(result, Messages.CartListed);
         }
 
         public IDataResult<Cart> GetById(int id)

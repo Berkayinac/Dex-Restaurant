@@ -49,6 +49,7 @@
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\RestaurantMenu.cs" />
     <Compile Include="DTOs\AuthorityDto.cs" />
+    <Compile Include="DTOs\CartDto.cs" />
     <Compile Include="DTOs\ProductDto.cs" />
     <Compile Include="DTOs\UserAuthoritiesDto.cs" />
     <Compile Include="DTOs\UserForLoginDto.cs" />

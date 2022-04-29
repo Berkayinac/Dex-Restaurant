@@ -40,6 +40,7 @@ namespace Web.UserControl
 
                 Session["Authorities"] = authorities;
                 Session["UserName"] = userAuthorities.User.FirstName +" "+ userAuthorities.User.LastName;
+                Session["UserId"] = userAuthorities.User.Id;
                 Response.Redirect(routeUser);
             }
             lbl_Login.Text = userLogin.Message;

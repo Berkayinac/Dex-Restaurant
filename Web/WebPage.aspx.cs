@@ -15,10 +15,14 @@ namespace Web
     {
         IProductService _productService;
         ICategoryService _categoryService;
+        ICartService _cartService;
+        IUserService _userService;
         public WebPage()
         {
             _categoryService = new CategoryManager();
             _productService = new ProductManager();
+            _cartService = new CartManager();
+            _userService = new UserManager();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -31,6 +35,19 @@ namespace Web
             Grd_ProductDtos.DataSource = _productService.GetAllByDto().Data;
             Grd_ProductDtos.DataBind();
         }
+
+        public List<CartDto> GetCarts()
+        {
+            var userId = Session["UserId"];
+            var user = _userService.GetById(Convert.ToInt32(userId)).Data;
+            var result = _cartService.GetAllDtos(user);
+            if (result.Success)
+            {
+                return result.Data;
+            }
+            return null;
+        }
+
 
         public List<ProductDto> GetAllProductDtos()
         {
@@ -46,6 +63,12 @@ namespace Web
         {
             var productId = Convert.ToInt32(e.CommandArgument);
             var productToAddCart = _productService.GetById(productId).Data;
+
+            Cart cart = new Cart();
+            cart.ProductId = productId;
+            cart.UserId = Convert.ToInt32(Session["UserId"]);
+
+            _cartService.Add(cart);
         }
 
         protected void Lnk_Cart_Click(object sender, EventArgs e)
