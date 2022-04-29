@@ -19,6 +19,7 @@ namespace WebAPI.Controllers
             _authService = new AuthManager();
         }
 
+        [HttpPost]
         public User Register(UserForRegisterDto userForRegisterDto, UserSecurityQuestionDto userSecurityQuestionDto)
         {
            var result = _authService.Register(userForRegisterDto, userSecurityQuestionDto);
@@ -28,6 +29,8 @@ namespace WebAPI.Controllers
             }
             return null;
         }
+
+        [HttpPost]
         public User Login(UserForLoginDto userForLoginDto)
         {
             var result = _authService.Login(userForLoginDto);
