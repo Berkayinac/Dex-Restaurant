@@ -170,6 +170,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\RestaurantMenusController.cs" />
     <Compile Include="Controllers\SecurityQuestionsController.cs" />
     <Compile Include="Controllers\UserAuhtorities.cs" />
     <Compile Include="Controllers\UsersController.cs" />
