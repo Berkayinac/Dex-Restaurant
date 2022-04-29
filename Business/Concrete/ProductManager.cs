@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
@@ -24,6 +25,13 @@ namespace Business.Concrete
 
         public IResult Add(Product product)
         {
+            //var rules =  BusinessRules.Run(ProductNameCheck(product.Name));
+
+            //if (!rules.Success)
+            //{
+            //    return new ErrorResult(rules.Message);
+            //}
+
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded);
         }
@@ -68,6 +76,16 @@ namespace Business.Concrete
                 return new ErrorDataResult<List<ProductDto>>();
             }
             return new SuccessDataResult<List<ProductDto>>(result, Messages.ProductsListed);
+        }
+
+        private IResult ProductNameCheck(string productName)
+        {
+            var result = _productDal.Get(p => p.Name == productName);
+            if (result != null)
+            {
+                return new ErrorResult(Messages.ProductAlreadyExist);
+            }
+            return new SuccessResult();
         }
     }
 }
