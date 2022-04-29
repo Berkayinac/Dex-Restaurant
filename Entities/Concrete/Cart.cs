@@ -12,5 +12,6 @@ namespace Entities.Concrete
         public int Id { get; set; }
         public int UserId { get; set; }
         public int ProductId { get; set; }
+        public Int16 Quantity { get; set; }
     }
 }

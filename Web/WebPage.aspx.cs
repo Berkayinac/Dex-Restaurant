@@ -38,12 +38,15 @@ namespace Web
 
         public List<CartDto> GetCarts()
         {
-            var userId = Session["UserId"];
-            var user = _userService.GetById(Convert.ToInt32(userId)).Data;
-            var result = _cartService.GetAllDtos(user);
-            if (result.Success)
+            if (Session["UserId"] != null)
             {
-                return result.Data;
+                var userId = Convert.ToInt32(Session["UserId"]);
+                var user = _userService.GetById(userId).Data;
+                var result = _cartService.GetAllDtos(user);
+                if (result.Success)
+                {
+                    return result.Data;
+                }
             }
             return null;
         }
@@ -62,13 +65,14 @@ namespace Web
         protected void Lnk_AddToCart_Command(object sender, CommandEventArgs e)
         {
             var productId = Convert.ToInt32(e.CommandArgument);
-            var productToAddCart = _productService.GetById(productId).Data;
 
             Cart cart = new Cart();
             cart.ProductId = productId;
             cart.UserId = Convert.ToInt32(Session["UserId"]);
+            cart.Quantity = 1;
 
-            _cartService.Add(cart);
+            _cartService.CheckCart(cart);
+            GetCarts();
         }
 
         protected void Lnk_Cart_Click(object sender, EventArgs e)

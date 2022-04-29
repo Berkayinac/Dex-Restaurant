@@ -3,12 +3,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="myCart" runat="server">
    <li class="dropdown"><a href="#"><span>Cart</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <asp:Literal ID="Literal1" runat="server"></asp:Literal>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-             <asp:LinkButton ID="Lnk_Cart" CssClass="book-a-table-btn scrollto d-none d-lg-flex" OnClick="Lnk_Cart_Click" runat="server">Cart</asp:LinkButton>
+                 <% if (GetCarts() != null){ %>
+                    <%foreach (var cart in GetCarts()){ %>
+                      <li><a href="#"><%=cart.ProductName%> <span><%=cart.Quantity%></span></a></li>
+                    <% } %>
+                    <asp:LinkButton ID="Lnk_Cart" CssClass="book-a-table-btn scrollto d-none d-lg-flex" OnClick="Lnk_Cart_Click" runat="server">Cart</asp:LinkButton>
+                <% } %>
             </ul>
          </li>
 </asp:Content>

@@ -54,6 +54,22 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CartDto>>(result, Messages.CartListed);
         }
 
+        public IResult CheckCart(Cart cart)
+        {
+            var getItem = _cartDal.Get(c => c.ProductId == cart.ProductId);
+            if (getItem == null)
+            {
+                Add(cart);
+                return new SuccessResult();
+            }
+            else
+            {
+                getItem.Quantity += cart.Quantity;
+                Update(getItem);
+                return new SuccessResult();
+            }
+        }
+
         public IDataResult<Cart> GetById(int id)
         {
             var result = _cartDal.Get(c => c.Id == id);

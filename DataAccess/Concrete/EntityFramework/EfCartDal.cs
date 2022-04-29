@@ -17,14 +17,14 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (DexContext context = new DexContext())
             {
-                var result = from cart in context.Carts
-                             join product in context.Products
-                             on cart.ProductId equals product.Id
+                var result = from product in context.Products
+                             join cart in context.Carts
+                             on product.Id equals cart.ProductId
                              where cart.UserId == user.Id
                              select new CartDto
                              {
                                  ProductName = product.Name,
-                                 Quantity = 1,
+                                 Quantity = cart.Quantity,
                                  UserName = user.FirstName + " " + user.LastName
                              };
                 return result.ToList();
