@@ -25,6 +25,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<SecurityQuestion> SecurityQuestions { get; set; }
         public DbSet<AdminMenu> AdminMenus { get; set; }
         public DbSet<RestaurantMenu> RestaurantMenus { get; set; }
+        public DbSet<Cart> Carts { get; set; }
 
     }
 }

@@ -62,5 +62,11 @@ namespace Business.Constants
         public static string SecurityQuestionAnswerNotMatch = "Güvenlik Sorusu Cevabı Eşleşmedi.";
         public static string UserOrAuthortiesAreNull = "Kullanıcı bilgileri veya Yetkiler eksik";
         public static string ProductAlreadyExist = "Böyle bir ürün zaten var";
+
+        public static string CartUpdated = "Sepet Güncellendi.";
+        public static string CartGeted = "Sepetten Getirildi.";
+        public static string CartListed = "Sepet Listelendi.";
+        public static string CartDeleted = "Sepetten Silindi.";
+        public static string CartAdded = "Sepete Eklendi.";
     }
 }

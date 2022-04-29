@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IAdminMenuDal.cs" />
     <Compile Include="Abstract\IAuthorityDal.cs" />
+    <Compile Include="Abstract\ICartDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Abstract\IOrderDal.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Abstract\IRestaurantMenuDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAdminMenuDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAuthorityDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCartDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfOrderDal.cs" />

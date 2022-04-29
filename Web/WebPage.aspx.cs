@@ -15,26 +15,21 @@ namespace Web
     {
         IProductService _productService;
         ICategoryService _categoryService;
-        List<CartItemDto> cartItems;
         public WebPage()
         {
-             cartItems = new List<CartItemDto>();
             _categoryService = new CategoryManager();
             _productService = new ProductManager();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) 
-            {
-                GetAll();
-            }
+            GetAll();
         }
 
         public void GetAll()
         {
-            GridView1.DataSource = _productService.GetAllByDto().Data;
-            GridView1.DataBind();
+            Grd_ProductDtos.DataSource = _productService.GetAllByDto().Data;
+            Grd_ProductDtos.DataBind();
         }
 
         public List<ProductDto> GetAllProductDtos()
@@ -51,36 +46,17 @@ namespace Web
         {
             var productId = Convert.ToInt32(e.CommandArgument);
             var productToAddCart = _productService.GetById(productId).Data;
-
-            CartItemDto cartItemDto = new CartItemDto();
-            cartItemDto.Product = productToAddCart;
-            
-            cartItemDto.Quantity = 0;
-
-            cartItems.Add(cartItemDto);
-
-            string htmlText = "";
-
-            foreach (var cartItem in cartItems)
-            {
-                htmlText += "<li>";
-                htmlText += "<a href = " + "'#'" + " >"+ cartItem.Product.Name + "<span>"+ cartItem.Quantity +"</span>" + "</a>";
-                htmlText += "</li>";
-            }
-            Literal1.Text = htmlText;
-
-
-        }
-
-        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            GridView1.PageIndex = e.NewPageIndex;
-            GridView1.DataBind();
         }
 
         protected void Lnk_Cart_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Cart.aspx");
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            Grd_ProductDtos.PageIndex = e.NewPageIndex;
+            Grd_ProductDtos.DataBind();
         }
     }
 }

@@ -42,14 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\AdminMenu.cs" />
+    <Compile Include="Concrete\Cart.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Customer.cs" />
     <Compile Include="Concrete\Order.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\RestaurantMenu.cs" />
     <Compile Include="DTOs\AuthorityDto.cs" />
-    <Compile Include="DTOs\CartItemDto.cs" />
-    <Compile Include="DTOs\CartItemsDto.cs" />
     <Compile Include="DTOs\ProductDto.cs" />
     <Compile Include="DTOs\UserAuthoritiesDto.cs" />
     <Compile Include="DTOs\UserForLoginDto.cs" />

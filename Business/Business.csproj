@@ -44,6 +44,7 @@
     <Compile Include="Abstract\IAdminMenuService.cs" />
     <Compile Include="Abstract\IAuthorityService.cs" />
     <Compile Include="Abstract\IAuthService.cs" />
+    <Compile Include="Abstract\ICartService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\ICustomerService.cs" />
     <Compile Include="Abstract\IOrderService.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Concrete\AdminMenuManager.cs" />
     <Compile Include="Concrete\AuthManager.cs" />
     <Compile Include="Concrete\AuthorityManager.cs" />
+    <Compile Include="Concrete\CartManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\CustomerManager.cs" />
     <Compile Include="Concrete\OrderManager.cs" />
