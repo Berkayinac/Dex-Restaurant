@@ -51,6 +51,33 @@ namespace Web.UserControl
         protected global::System.Web.UI.WebControls.TextBox tbx_LastName;
 
         /// <summary>
+        /// tbx_City denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbx_City;
+
+        /// <summary>
+        /// tbx_Address denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbx_Address;
+
+        /// <summary>
+        /// tbx_PhoneNumber denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbx_PhoneNumber;
+
+        /// <summary>
         /// tbx_Email denetimi.
         /// </summary>
         /// <remarks>

@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
 using Core.Entities.Concrete;
+using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,14 @@ namespace Web.UserControl
     public partial class UserRegisterControl : System.Web.UI.UserControl
     {
         IAuthService _authService;
+        ICustomerService _customerService;
         ISecurityQuestionService _securityQuestionService;
 
         public UserRegisterControl()
         {
             _authService = new AuthManager();
             _securityQuestionService = new SecurityQuestionManager();
+            _customerService = new CustomerManager();
         }
 
 
@@ -65,15 +68,26 @@ namespace Web.UserControl
             userSecurityQuestionDto.SecurityQuestionAnswer = tbx_SecurityQuestionAnswer.Text;
 
             var result = _authService.Register(userForRegisterDto, userSecurityQuestionDto);
-
-            UserAuthority userAuthority = new UserAuthority();
-            userAuthority.AuthorityId = 1;
-            userAuthority.UserId = result.Data.Id;
-                
-            _authService.AddUserAuthority(userAuthority);
-
             if (result.Success)
             {
+                UserAuthority userAuthority = new UserAuthority();
+                userAuthority.AuthorityId = 1;
+                userAuthority.UserId = result.Data.Id;
+
+                _authService.AddUserAuthority(userAuthority);
+
+                Customer customer = new Customer
+                {
+                    UserId = result.Data.Id,
+                    FirstName = tbx_FirstName.Text,
+                    LastName = tbx_LastName.Text,
+                    City = tbx_City.Text,
+                    Address = tbx_Address.Text,
+                    Phone = tbx_PhoneNumber.Text
+                };
+
+                _customerService.Add(customer);
+
                 lbl_Register.Text = result.Message;
                 Response.Redirect("/Login/Login");
             }

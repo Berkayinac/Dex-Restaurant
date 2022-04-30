@@ -51,13 +51,22 @@ namespace Web.AdminPages
         protected global::System.Web.UI.WebControls.TextBox tbx_AddProductId;
 
         /// <summary>
-        /// tbx_AddCustomerID denetimi.
+        /// tbx_AddCustomerId denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbx_AddCustomerID;
+        protected global::System.Web.UI.WebControls.TextBox tbx_AddCustomerId;
+
+        /// <summary>
+        /// tbx_AddQuantity denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbx_AddQuantity;
 
         /// <summary>
         /// btn_Add denetimi.
@@ -87,13 +96,22 @@ namespace Web.AdminPages
         protected global::System.Web.UI.WebControls.TextBox tbx_UpdateProductId;
 
         /// <summary>
-        /// tbx_UpdateCustomerID denetimi.
+        /// tbx_UpdateCustomerId denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbx_UpdateCustomerID;
+        protected global::System.Web.UI.WebControls.TextBox tbx_UpdateCustomerId;
+
+        /// <summary>
+        /// tbx_UpdateQuantity denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbx_UpdateQuantity;
 
         /// <summary>
         /// btn_Update denetimi.

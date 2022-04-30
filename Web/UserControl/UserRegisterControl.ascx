@@ -23,6 +23,24 @@
 									<span class="label-input100">Last Name</span>
 								</div>
 
+								<div class="wrap-input100 validate-input">
+									<asp:TextBox ID="tbx_City" CssClass="input100" runat="server"></asp:TextBox>
+									<span class="focus-input100"></span>
+									<span class="label-input100">City</span>
+								</div>
+
+								<div class="wrap-input100 validate-input">
+									<asp:TextBox ID="tbx_Address" CssClass="input100" runat="server"></asp:TextBox>
+									<span class="focus-input100"></span>
+									<span class="label-input100">Address</span>
+								</div>
+
+								<div class="wrap-input100 validate-input">
+									<asp:TextBox ID="tbx_PhoneNumber" CssClass="input100" runat="server"></asp:TextBox>
+									<span class="focus-input100"></span>
+									<span class="label-input100">Phone Number</span>
+								</div>
+
 								<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 									<asp:TextBox ID="tbx_Email" CssClass="input100" runat="server"></asp:TextBox>
 									<span class="focus-input100"></span>

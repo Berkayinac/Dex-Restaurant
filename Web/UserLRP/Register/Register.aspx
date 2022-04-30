@@ -2,7 +2,6 @@
 
 <%@ Register Src="~/UserControl/UserRegisterControl.ascx" TagPrefix="uc1" TagName="UserRegisterControl" %>
 
-
 <asp:Content ID="Content2" ContentPlaceHolderID="myLRP" runat="server">
     <uc1:UserRegisterControl runat="server" ID="UserRegisterControl" />
 </asp:Content>

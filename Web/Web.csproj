@@ -115,6 +115,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="forms\Readme.txt" />
     <Content Include="Global.asax" />
+    <Content Include="UserCart\UserCartWebPage.aspx" />
     <Content Include="UserLRP\assets\css\main.css" />
     <Content Include="UserLRP\assets\css\util.css" />
     <Content Include="UserLRP\assets\fonts\font-awesome-4.7.0\css\font-awesome.css" />
@@ -592,6 +593,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="UserCart\UserCart.Master.cs">
+      <DependentUpon>UserCart.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCart\UserCart.Master.designer.cs">
+      <DependentUpon>UserCart.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserCart\UserCartWebPage.aspx.cs">
+      <DependentUpon>UserCartWebPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCart\UserCartWebPage.aspx.designer.cs">
+      <DependentUpon>UserCartWebPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserLRP\Login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -729,6 +744,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Site1.Master" />
     <Content Include="UserLRP\LRP.Master" />
+    <Content Include="UserCart\UserCart.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -760,9 +776,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Cart\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

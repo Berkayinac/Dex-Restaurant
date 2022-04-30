@@ -56,7 +56,7 @@ namespace Business.Concrete
 
         public IResult CheckCart(Cart cart)
         {
-            var getItem = _cartDal.Get(c => c.ProductId == cart.ProductId);
+            var getItem = _cartDal.Get(c => c.ProductId == cart.ProductId && c.UserId == cart.UserId);
             if (getItem == null)
             {
                 Add(cart);
@@ -66,6 +66,26 @@ namespace Business.Concrete
             {
                 getItem.Quantity += cart.Quantity;
                 Update(getItem);
+                return new SuccessResult();
+            }
+        }
+
+        public IResult CartDelete(Cart cart)
+        {
+            var getItem = _cartDal.Get(c => c.ProductId == cart.ProductId && c.UserId == cart.UserId);
+            if (getItem == null)
+            {
+                return new ErrorResult();
+            }
+            if (getItem.Quantity >1)
+            {
+                getItem.Quantity -= cart.Quantity;
+                Update(getItem);
+                return new SuccessResult();
+            }
+            else
+            {
+                Delete(getItem);
                 return new SuccessResult();
             }
         }

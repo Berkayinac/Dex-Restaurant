@@ -39,6 +39,7 @@ namespace Web.AdminPages
             var customerToUpdate = _customerService.GetById(customerId).Data;
 
             tbx_UpdateId.Text = Convert.ToString(customerToUpdate.Id);
+            tbx_UpdateUserId.Text = Convert.ToString(customerToUpdate.UserId);
             tbx_UpdateFirstName.Text = Convert.ToString(customerToUpdate.FirstName);
             tbx_UpdateLastName.Text = Convert.ToString(customerToUpdate.LastName);
             tbx_UpdateAddress.Text = Convert.ToString(customerToUpdate.Address);
@@ -53,20 +54,15 @@ namespace Web.AdminPages
             var customerId = Convert.ToInt32(e.CommandArgument);
             var customerToDelete = _customerService.GetById(customerId).Data;
 
-            Delete(customerToDelete);
-
+            _customerService.Delete(customerToDelete);
             GetAll();
-        }
-
-        public void Delete(Customer customer)
-        {
-            _customerService.Delete(customer);
         }
 
         protected void btn_Update_Click(object sender, EventArgs e)
         {
             Customer customer = new Customer();
             customer.Id = Convert.ToInt32(tbx_UpdateId.Text);
+            customer.UserId = Convert.ToInt32(tbx_UpdateUserId.Text);
             customer.FirstName = tbx_UpdateFirstName.Text;
             customer.LastName = tbx_UpdateLastName.Text;
             customer.Address = tbx_UpdateAddress.Text;
@@ -81,6 +77,7 @@ namespace Web.AdminPages
         {
             Customer customer = new Customer();
 
+            customer.UserId = Convert.ToInt32(tbx_AddUserId.Text);
             customer.FirstName = tbx_AddFirstName.Text;
             customer.LastName = tbx_AddLastName.Text;
             customer.Address = tbx_AddAddress.Text;

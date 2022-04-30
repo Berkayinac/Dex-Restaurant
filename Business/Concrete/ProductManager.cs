@@ -86,5 +86,15 @@ namespace Business.Concrete
             }
             return new SuccessResult();
         }
+
+        public IDataResult<Product> GetByName(string name)
+        {
+            var result = _productDal.Get(p => p.Name == name);
+            if (result != null )
+            {
+                return new ErrorDataResult<Product>();
+            }
+            return new SuccessDataResult<Product>(result, Messages.ProductGeted);
+        }
     }
 }

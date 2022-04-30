@@ -52,6 +52,16 @@ namespace Business.Concrete
             return new SuccessDataResult<Customer>(result, Messages.CustomerGeted);
         }
 
+        public IDataResult<Customer> GetByUserId(int userId)
+        {
+            var result = _customerDal.Get(c => c.UserId == userId);
+            if (result == null)
+            {
+                return new ErrorDataResult<Customer>();
+            }
+            return new SuccessDataResult<Customer>(result, Messages.CustomerGeted);
+        }
+
         public IResult Update(Customer customer)
         {
             _customerDal.Update(customer);

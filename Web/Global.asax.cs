@@ -33,6 +33,7 @@ namespace Web
 
             // User
             route.MapPageRoute("UserWebPage", "WebPage", "~/WebPage.aspx");
+            route.MapPageRoute("UserCart", "Cart", "~/UserCart/UserCartWebPage.aspx");
         }
 
         protected void Application_Start(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace Web
 
         protected void Session_Start(object sender, EventArgs e)
         {
-
+            Session.Timeout = 10;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

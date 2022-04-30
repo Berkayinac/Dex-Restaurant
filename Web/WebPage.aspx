@@ -44,7 +44,6 @@
 
                                     <img src="models/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
                                     <div class="menu-content" width="100%">
-                        
                                         <a href="#"><%#Eval("Name")%></a> <span>$<%#Eval("UnitPrice")%>
                                         <asp:LinkButton ID="Lnk_AddToCart" CssClass="book-a-table-btn scrollto d-none d-lg-flex" CommandArgument='<%#Eval("Id")%>' CommandName='<%#Eval("Name")%>' OnCommand="Lnk_AddToCart_Command" runat="server">Add To Cart</asp:LinkButton>
                                         </span>

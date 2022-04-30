@@ -34,6 +34,7 @@ namespace Web.UserControl
 
             if (userLogin.Success)
             {
+
                 var userAuthorities = _authService.GetUserAuthority(userLogin.Data).Data;
                 var authorities =  _authService.GetAuthorities(userAuthorities).Data;
                 var routeUser = _authService.UserAuthorityRoute(authorities).Data;

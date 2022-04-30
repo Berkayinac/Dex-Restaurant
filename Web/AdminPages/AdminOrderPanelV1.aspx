@@ -10,7 +10,8 @@
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id"  />
             <asp:BoundField DataField="ProductId" HeaderText="ProductId"  />
-            <asp:BoundField DataField="CustomerID" HeaderText="CustomerID"  />
+            <asp:BoundField DataField="CustomerId" HeaderText="CustomerId"  />
+            <asp:BoundField DataField="Quantity" HeaderText="Quantity"  />
 
             <asp:TemplateField>
                 <ItemTemplate>
@@ -31,8 +32,11 @@
             <label for="exampleFormControlInput1">ProductId</label>
             <asp:TextBox ID="tbx_AddProductId" CssClass="form-control" runat="server"></asp:TextBox>
 
-             <label for="exampleFormControlInput1">CustomerID</label>
-            <asp:TextBox ID="tbx_AddCustomerID" CssClass="form-control" runat="server"></asp:TextBox>
+            <label for="exampleFormControlInput1">CustomerId</label>
+            <asp:TextBox ID="tbx_AddCustomerId" CssClass="form-control" runat="server"></asp:TextBox>
+
+            <label for="exampleFormControlInput1">Quantity</label>
+            <asp:TextBox ID="tbx_AddQuantity" CssClass="form-control" runat="server"></asp:TextBox>
 
 
             <asp:Button ID="btn_Add" runat="server" CssClass="btn btn-success" Text="Add" OnClick="btn_Add_Click" />
@@ -46,9 +50,11 @@
             <label for="exampleFormControlInput1">ProductId</label>
             <asp:TextBox ID="tbx_UpdateProductId" CssClass="form-control" runat="server"></asp:TextBox>
 
-             <label for="exampleFormControlInput1">CustomerID</label>
-            <asp:TextBox ID="tbx_UpdateCustomerID" CssClass="form-control" runat="server"></asp:TextBox>
+            <label for="exampleFormControlInput1">CustomerID</label>
+            <asp:TextBox ID="tbx_UpdateCustomerId" CssClass="form-control" runat="server"></asp:TextBox>
 
+            <label for="exampleFormControlInput1">Quantity</label>
+            <asp:TextBox ID="tbx_UpdateQuantity" CssClass="form-control" runat="server"></asp:TextBox>
 
             <asp:Button ID="btn_Update" runat="server" CssClass="btn btn-warning" Text="Update" OnClick="btn_Update_Click" />
           </div>

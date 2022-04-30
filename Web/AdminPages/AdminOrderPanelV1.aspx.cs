@@ -36,7 +36,8 @@ namespace Web.AdminPages
 
             tbx_UpdateId.Text = Convert.ToString(orderToUpdate.Id);
             tbx_UpdateProductId.Text = Convert.ToString(orderToUpdate.ProductId);
-            tbx_UpdateCustomerID.Text = Convert.ToString(orderToUpdate.CustomerID);
+            tbx_UpdateCustomerId.Text = Convert.ToString(orderToUpdate.CustomerId);
+            tbx_UpdateQuantity.Text = Convert.ToString(orderToUpdate.Quantity);
 
             GetAll();
         }
@@ -61,7 +62,8 @@ namespace Web.AdminPages
             Order order = new Order();
             order.Id = Convert.ToInt32(tbx_UpdateId.Text);
             order.ProductId = Convert.ToInt32(tbx_UpdateProductId.Text);
-            order.CustomerID = Convert.ToInt32(tbx_UpdateCustomerID.Text);
+            order.CustomerId = Convert.ToInt32(tbx_UpdateCustomerId.Text);
+            order.Quantity = Convert.ToInt16(tbx_UpdateQuantity.Text);
 
             _orderService.Update(order);
             GetAll();
@@ -72,7 +74,8 @@ namespace Web.AdminPages
             Order order = new Order();
 
             order.ProductId = Convert.ToInt32(tbx_AddProductId.Text);
-            order.CustomerID = Convert.ToInt32(tbx_AddCustomerID.Text);
+            order.CustomerId = Convert.ToInt32(tbx_AddCustomerId.Text);
+            order.Quantity = Convert.ToInt16(tbx_AddQuantity.Text);
 
             _orderService.Add(order);
             GetAll();

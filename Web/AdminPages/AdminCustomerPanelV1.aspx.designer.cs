@@ -42,6 +42,15 @@ namespace Web.AdminPages
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
+        /// tbx_AddUserId denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbx_AddUserId;
+
+        /// <summary>
         /// tbx_AddFirstName denetimi.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace Web.AdminPages
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbx_UpdateId;
+
+        /// <summary>
+        /// tbx_UpdateUserId denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbx_UpdateUserId;
 
         /// <summary>
         /// tbx_UpdateFirstName denetimi.

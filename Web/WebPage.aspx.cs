@@ -28,6 +28,7 @@ namespace Web
         protected void Page_Load(object sender, EventArgs e)
         {
             GetAll();
+            GetCarts();
         }
 
         public void GetAll()
@@ -77,7 +78,7 @@ namespace Web
 
         protected void Lnk_Cart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Cart.aspx");
+            Response.Redirect("~/Cart");
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)

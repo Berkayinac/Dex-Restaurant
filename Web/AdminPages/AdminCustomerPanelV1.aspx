@@ -11,6 +11,7 @@
         <asp:GridView ID="GridView1" runat="server" CssClass="table table-light " AutoGenerateColumns="false"  >
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id"  />
+            <asp:BoundField DataField="UserId" HeaderText="UserId"  />
             <asp:BoundField DataField="FirstName" HeaderText="FirstName"  />
              <asp:BoundField DataField="LastName" HeaderText="LastName"  />
             <asp:BoundField DataField="Address" HeaderText="Address"  />
@@ -32,6 +33,9 @@
       <div class="form-group row">
           <div class="col-lg-5">
 
+
+            <label for="exampleFormControlInput1">UserId</label>
+            <asp:TextBox ID="tbx_AddUserId" CssClass="form-control" runat="server"></asp:TextBox>
 
             <label for="exampleFormControlInput1">FirstName</label>
             <asp:TextBox ID="tbx_AddFirstName" CssClass="form-control" runat="server"></asp:TextBox>
@@ -55,8 +59,11 @@
 
           <div class="col-lg-5">
 
-             <label for="exampleFormControlInput1">Id</label>
+            <label for="exampleFormControlInput1">Id</label>
             <asp:TextBox ID="tbx_UpdateId" CssClass="form-control" runat="server"></asp:TextBox>
+
+            <label for="exampleFormControlInput1">UserId</label>
+            <asp:TextBox ID="tbx_UpdateUserId" CssClass="form-control" runat="server"></asp:TextBox>
 
             <label for="exampleFormControlInput1">FirstName</label>
             <asp:TextBox ID="tbx_UpdateFirstName" CssClass="form-control" runat="server"></asp:TextBox>
