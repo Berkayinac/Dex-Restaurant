@@ -15,22 +15,48 @@ namespace Web
     {
         IProductService _productService;
         ICategoryService _categoryService;
+        ICartService _cartService;
+        IUserService _userService;
         public AdminControlWebPage()
         {
-            _productService = new ProductManager();
             _categoryService = new CategoryManager();
+            _productService = new ProductManager();
+            _cartService = new CartManager();
+            _userService = new UserManager();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Session["Authorities"].ToString().Contains("Admin"))
+            {
+                Response.Redirect("/WebPage");
+            }
+
             GetAll();
+            GetCarts();
         }
 
         public void GetAll()
         {
-            GridView1.DataSource = _productService.GetAllByDto().Data;
-            GridView1.DataBind();
+            Grd_ProductDtos.DataSource = _productService.GetAllByDto().Data;
+            Grd_ProductDtos.DataBind();
         }
+
+        public List<CartDto> GetCarts()
+        {
+            if (Session["UserId"] != null)
+            {
+                var userId = Convert.ToInt32(Session["UserId"]);
+                var user = _userService.GetById(userId).Data;
+                var result = _cartService.GetAllDtos(user);
+                if (result.Success)
+                {
+                    return result.Data;
+                }
+            }
+            return null;
+        }
+
 
         public List<ProductDto> GetAllProductDtos()
         {
@@ -45,20 +71,25 @@ namespace Web
         protected void Lnk_AddToCart_Command(object sender, CommandEventArgs e)
         {
             var productId = Convert.ToInt32(e.CommandArgument);
-            var productToDelete = _productService.GetById(productId).Data;
 
+            Cart cart = new Cart();
+            cart.ProductId = productId;
+            cart.UserId = Convert.ToInt32(Session["UserId"]);
+            cart.Quantity = 1;
+
+            _cartService.CheckCart(cart);
+            GetCarts();
+        }
+
+        protected void Lnk_Cart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Cart");
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            GridView1.PageIndex = e.NewPageIndex;
-            GridView1.DataBind();
-        }
-
-
-        protected void Lnk_Cart_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Cart.aspx");
+            Grd_ProductDtos.PageIndex = e.NewPageIndex;
+            Grd_ProductDtos.DataBind();
         }
     }
 }
