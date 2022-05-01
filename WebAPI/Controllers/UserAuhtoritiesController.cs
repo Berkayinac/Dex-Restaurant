@@ -9,10 +9,10 @@ using System.Web.Http;
 
 namespace WebAPI.Controllers
 {
-    public class UserAuhtorities : ApiController
+    public class UserAuhtoritiesController : ApiController
     {
         IUserAuthorityService _userAuthorityService;
-        public UserAuhtorities()
+        public UserAuhtoritiesController()
         {
             _userAuthorityService = new UserAuthorityManager();
         }
