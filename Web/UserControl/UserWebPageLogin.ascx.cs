@@ -16,7 +16,6 @@ namespace Web.UserControl
                 if (HttpContext.Current.Session["UserName"] == null)
                 {
                     Literal1.Text = "<a href=" + "'/Login/Login'" + " class=" + "'book-a-table-btn scrollto d-none d-lg-flex'" + ">" + "Login" + "</a>";
-                    var result = Literal1.Text;
                 }
 
                 else

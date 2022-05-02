@@ -14,7 +14,6 @@ namespace Web.UserControl
 {
     public partial class UserQuestionControl : System.Web.UI.UserControl
     {
-
         IUserService _userService;
         public UserQuestionControl()
         {

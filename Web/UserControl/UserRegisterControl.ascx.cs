@@ -25,7 +25,6 @@ namespace Web.UserControl
             _customerService = new CustomerManager();
         }
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -49,21 +48,18 @@ namespace Web.UserControl
 
                 list.Add(item);
             }
-
             return list;
         }
 
         protected void Btn_Register_Click(object sender, EventArgs e)
         {
             UserForRegisterDto userForRegisterDto = new UserForRegisterDto();
-
             userForRegisterDto.FirstName = tbx_FirstName.Text;
             userForRegisterDto.LastName = tbx_LastName.Text;
             userForRegisterDto.Email = tbx_Email.Text;
             userForRegisterDto.Password = tbx_Password.Text;
 
             UserSecurityQuestionDto userSecurityQuestionDto = new UserSecurityQuestionDto();
-
             userSecurityQuestionDto.SecurityQuestion = drp_SecurityQuestions.SelectedItem.Text;
             userSecurityQuestionDto.SecurityQuestionAnswer = tbx_SecurityQuestionAnswer.Text;
 
@@ -91,7 +87,6 @@ namespace Web.UserControl
                 lbl_Register.Text = result.Message;
                 Response.Redirect("/Login/Login");
             }
-
             lbl_Register.Text = result.Message;
         }
     }

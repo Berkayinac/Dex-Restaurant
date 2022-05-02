@@ -41,7 +41,7 @@ namespace Web
         {
             if (HttpContext.Current.Session["UserId"] != null)
             {
-                var userId = Convert.ToInt32(Session["UserId"]);
+                var userId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
                 var user = _userService.GetById(userId).Data;
                 var result = _cartService.GetAllDtos(user);
                 if (result.Success)

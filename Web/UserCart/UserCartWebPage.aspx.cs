@@ -46,9 +46,9 @@ namespace Web.UserCart
 
         public List<CartDto> GetCarts()
         {
-            if (Session["UserId"] != null)
+            if (HttpContext.Current.Session["UserId"] != null)
             {
-                var userId = Convert.ToInt32(Session["UserId"]);
+                var userId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
                 var user = _userService.GetById(userId).Data;
                 var result = _cartService.GetAllDtos(user);
                 if (result.Success)
@@ -97,7 +97,7 @@ namespace Web.UserCart
 
             Cart cart = new Cart();
             cart.ProductId = productId;
-            cart.UserId = Convert.ToInt32(Session["UserId"]);
+            cart.UserId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
             cart.Quantity = 1;
 
             _cartService.CartDelete(cart);
@@ -107,7 +107,7 @@ namespace Web.UserCart
         protected void Lnk_Order_Click(object sender, EventArgs e)
         {
             var userCarts = GetCarts();
-            var userId = Convert.ToInt32(Session["UserId"]);
+            var userId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
             foreach (var cartItem in userCarts)
             {
                 Order order = new Order

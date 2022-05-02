@@ -11,7 +11,6 @@ namespace Web.UserControl
 {
     public partial class UserPasswordReminderControl : System.Web.UI.UserControl
     {
-
         IAuthService _authService;
         public UserPasswordReminderControl()
         {
