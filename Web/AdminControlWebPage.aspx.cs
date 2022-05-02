@@ -27,7 +27,7 @@ namespace Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Session["Authorities"].ToString().Contains("Admin"))
+            if (!HttpContext.Current.Session["Authorities"].ToString().Contains("Admin"))
             {
                 Response.Redirect("/WebPage");
             }
@@ -44,9 +44,9 @@ namespace Web
 
         public List<CartDto> GetCarts()
         {
-            if (Session["UserId"] != null)
+            if (HttpContext.Current.Session["UserId"] != null)
             {
-                var userId = Convert.ToInt32(Session["UserId"]);
+                var userId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
                 var user = _userService.GetById(userId).Data;
                 var result = _cartService.GetAllDtos(user);
                 if (result.Success)
@@ -74,7 +74,7 @@ namespace Web
 
             Cart cart = new Cart();
             cart.ProductId = productId;
-            cart.UserId = Convert.ToInt32(Session["UserId"]);
+            cart.UserId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
             cart.Quantity = 1;
 
             _cartService.CheckCart(cart);

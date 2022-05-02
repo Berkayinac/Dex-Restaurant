@@ -31,7 +31,7 @@ namespace Web.UserControl
                 lbl_PasswordReminder.Text = result.Message;
             }
 
-            Session["Email"] = tbx_Email.Text;
+            HttpContext.Current.Session["Email"] = tbx_Email.Text;
             Response.Redirect("~/PasswordReminder/Question");
         }
     }

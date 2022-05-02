@@ -12,7 +12,6 @@ namespace Web.AdminPages
 {
     public partial class AdminAuthorityPanelV1 : System.Web.UI.Page
     {
-
         IAuthorityService _authorityService;
         public AdminAuthorityPanelV1()
         {

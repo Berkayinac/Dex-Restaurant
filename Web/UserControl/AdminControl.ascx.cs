@@ -16,14 +16,14 @@ namespace Web.UserControl
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["Authorities"] == null)
+            if (HttpContext.Current.Session["Authorities"] == null)
             {
                 Response.Redirect("~/WebPage");
             }
 
             else
             {
-                var userAuthorities = Session["Authorities"].ToString();
+                var userAuthorities = HttpContext.Current.Session["Authorities"].ToString();
                 var authorities = userAuthorities.Split(',');
 
                 if (authorities.Contains("Admin"))
@@ -38,7 +38,7 @@ namespace Web.UserControl
                 }
                 else
                 {
-                    Response.Redirect("~    /WebPage");
+                    Response.Redirect("~/WebPage");
                 }
             }
             

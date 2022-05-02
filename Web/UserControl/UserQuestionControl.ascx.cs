@@ -25,7 +25,7 @@ namespace Web.UserControl
         {
             if (!IsPostBack)
             {
-                var userEmail = Session["Email"].ToString();
+                var userEmail = HttpContext.Current.Session["Email"].ToString();
                 var userSecurityQuestionDto = _userService.GetUserSecurityQuestion(userEmail);
 
                 if (!userSecurityQuestionDto.Success)
@@ -34,7 +34,7 @@ namespace Web.UserControl
                     Response.Redirect("~/Register/Register");
                 }
 
-                Session["Question"] = userSecurityQuestionDto.Data.SecurityQuestion;
+                HttpContext.Current.Session["Question"] = userSecurityQuestionDto.Data.SecurityQuestion;
 
                 lbl_userEmail.Text = userEmail;
                 lbl_userQuestion.Text = userSecurityQuestionDto.Data.SecurityQuestion;
@@ -43,14 +43,14 @@ namespace Web.UserControl
 
         protected void Btn_userQuestion_Click(object sender, EventArgs e)
         {
-            var userEmail = Session["Email"].ToString();
+            var userEmail = HttpContext.Current.Session["Email"].ToString();
             var userSecurityQuestionDto = _userService.GetUserSecurityQuestion(userEmail);
 
             var userQuestionAnswer = tbx_UserQuestionAnswer.Text;
 
             if (userQuestionAnswer == userSecurityQuestionDto.Data.SecurityQuestionAnswer)
             {
-                Session["QuestionAnswer"] = userQuestionAnswer;
+                HttpContext.Current.Session["QuestionAnswer"] = userQuestionAnswer;
                 Response.Redirect("~/PasswordReminder/PasswordChange");
             }
             lbl_PasswordReminder.Text = "Tekrar Deneyiniz.";

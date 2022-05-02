@@ -11,18 +11,16 @@ namespace Web.AdminPages
 {
     public partial class AdminMenuControl : System.Web.UI.UserControl
     {
-        IAuthService _authService = new AuthManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (Session["Authorities"] == null)
+            if (HttpContext.Current.Session["Authorities"] == null)
             {
                 Response.Redirect("~/WebPage");
             }
 
-            if (Session["Authorities"] != null)
+            if (HttpContext.Current.Session["Authorities"] != null)
             {
-                var userAuthorities = Session["Authorities"].ToString();
+                var userAuthorities = HttpContext.Current.Session["Authorities"].ToString();
                 var authorities = userAuthorities.Split(',');
 
                 if (!authorities.Contains("Admin"))

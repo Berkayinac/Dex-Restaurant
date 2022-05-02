@@ -39,9 +39,9 @@ namespace Web.UserControl
                 var authorities =  _authService.GetAuthorities(userAuthorities).Data;
                 var routeUser = _authService.UserAuthorityRoute(authorities).Data;
 
-                Session["Authorities"] = authorities;
-                Session["UserName"] = userAuthorities.User.FirstName +" "+ userAuthorities.User.LastName;
-                Session["UserId"] = userAuthorities.User.Id;
+                HttpContext.Current.Session["Authorities"] = authorities;
+                HttpContext.Current.Session["UserName"] = userAuthorities.User.FirstName +" "+ userAuthorities.User.LastName;
+                HttpContext.Current.Session["UserId"] = userAuthorities.User.Id;
                 Response.Redirect(routeUser);
             }
             lbl_Login.Text = userLogin.Message;

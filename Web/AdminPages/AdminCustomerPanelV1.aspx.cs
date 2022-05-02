@@ -20,11 +20,6 @@ namespace Web.AdminPages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Authorities"] == null)
-            {
-
-            }
-
             GetAll();
         }
 

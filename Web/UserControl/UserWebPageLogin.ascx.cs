@@ -13,7 +13,7 @@ namespace Web.UserControl
         {
             if (!IsPostBack)
             {
-                if (Session["UserName"] == null)
+                if (HttpContext.Current.Session["UserName"] == null)
                 {
                     Literal1.Text = "<a href=" + "'/Login/Login'" + " class=" + "'book-a-table-btn scrollto d-none d-lg-flex'" + ">" + "Login" + "</a>";
                     var result = Literal1.Text;
@@ -21,18 +21,18 @@ namespace Web.UserControl
 
                 else
                 {
-                    Literal1.Text ="Welcome," + " " +Session["UserName"].ToString();
+                    Literal1.Text ="Welcome," + " " + HttpContext.Current.Session["UserName"].ToString();
                 }
             }
         }
 
         protected void Lnk_Logout_Click(object sender, EventArgs e)
         {
-            Session["UserName"] = null;
-            Session["Authorities"] = null;
-            Session["Email"] = null;
-            Session["Question"] = null;
-            Session["QuestionAnswer"] = null;
+            HttpContext.Current.Session["UserName"] = null;
+            HttpContext.Current.Session["Authorities"] = null;
+            HttpContext.Current.Session["Email"] = null;
+            HttpContext.Current.Session["Question"] = null;
+            HttpContext.Current.Session["QuestionAnswer"] = null;
 
             Response.Redirect("~/WebPage");
         }

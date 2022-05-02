@@ -29,9 +29,9 @@ namespace Web.UserControl
 
         protected void Btn_PasswordChange_Click(object sender, EventArgs e)
         {
-            var userEmail = Session["Email"].ToString();
-            var userQuestion = Session["Question"].ToString();
-            var userQuestionAnswer = Session["QuestionAnswer"].ToString();
+            var userEmail = HttpContext.Current.Session["Email"].ToString();
+            var userQuestion = HttpContext.Current.Session["Question"].ToString();
+            var userQuestionAnswer = HttpContext.Current.Session["QuestionAnswer"].ToString();
 
             var question =  _securityQuestionService.GetByQuestion(userQuestion).Data;
 
@@ -52,6 +52,3 @@ namespace Web.UserControl
         }
     }
 }
-
-
-//< !--Response.Redirect kullanarak url oalrak gönderilen veriyi çek  -->
