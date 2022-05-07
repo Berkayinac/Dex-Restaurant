@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,10 @@ namespace Web.UserControl
 {
     public partial class UserLoginControl : System.Web.UI.UserControl
     {
-
         IAuthService _authService;
         public UserLoginControl()
         {
-            _authService = new AuthManager();
+            _authService = InstanceFactory.GetInstance<IAuthService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -34,7 +34,6 @@ namespace Web.UserControl
 
             if (userLogin.Success)
             {
-
                 var userAuthorities = _authService.GetUserAuthority(userLogin.Data).Data;
                 var authorities =  _authService.GetAuthorities(userAuthorities).Data;
                 var routeUser = _authService.UserAuthorityRoute(authorities).Data;
@@ -49,12 +48,12 @@ namespace Web.UserControl
 
         protected void Btn_PasswordReminder_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/PasswordReminder/PasswordReminder");
+            Response.Redirect("~/PasswordReminder");
         }
 
         protected void Btn_Register_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Register/Register");
+            Response.Redirect("~/Register");
         }
     }
 }   

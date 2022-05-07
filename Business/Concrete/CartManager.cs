@@ -17,9 +17,9 @@ namespace Business.Concrete
     public class CartManager : ICartService
     {
         private ICartDal _cartDal;
-        public CartManager()
+        public CartManager(ICartDal cartDal)
         {
-            _cartDal = new EfCartDal();
+            _cartDal = cartDal;
         }
 
         public IResult Add(Cart cart)

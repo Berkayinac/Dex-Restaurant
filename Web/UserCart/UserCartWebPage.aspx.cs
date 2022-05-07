@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -22,12 +23,12 @@ namespace Web.UserCart
 
         public UserCartWebPage()
         {
-            _categoryService = new CategoryManager();
-            _productService = new ProductManager();
-            _cartService = new CartManager();
-            _userService = new UserManager();
-            _orderService = new OrderManager();
-            _customerService = new CustomerManager();
+            _cartService = InstanceFactory.GetInstance<ICartService>();
+            _userService = InstanceFactory.GetInstance<IUserService>();
+            _productService = InstanceFactory.GetInstance<IProductService>();
+            _customerService = InstanceFactory.GetInstance<ICustomerService>();
+            _categoryService = InstanceFactory.GetInstance<ICategoryService>();
+            _orderService = InstanceFactory.GetInstance<IOrderService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)

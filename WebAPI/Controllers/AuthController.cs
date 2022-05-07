@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using Entities.DTOs;
@@ -16,7 +17,7 @@ namespace WebAPI.Controllers
         IAuthService _authService;
         public AuthController()
         {
-            _authService = new AuthManager();
+            _authService = InstanceFactory.GetInstance<IAuthService>();
         }
 
         [HttpPost]

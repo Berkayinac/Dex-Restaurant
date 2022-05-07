@@ -16,9 +16,9 @@ namespace Business.Concrete
     public class UserAuthorityManager : IUserAuthorityService
     {
         private IUserAuthorityDal _userAuthorityDal;
-        public UserAuthorityManager()
+        public UserAuthorityManager(IUserAuthorityDal userAuthorityDal)
         {
-            _userAuthorityDal = new EfUserAuthorityDal();
+            _userAuthorityDal = userAuthorityDal;
         }
 
         public IResult Add(UserAuthority userAuthority)

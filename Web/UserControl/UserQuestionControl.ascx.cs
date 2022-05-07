@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Core.Utilities.Results;
 using Entities.DTOs;
 using System;
@@ -17,7 +18,7 @@ namespace Web.UserControl
         IUserService _userService;
         public UserQuestionControl()
         {
-            _userService = new UserManager();
+            _userService = InstanceFactory.GetInstance<IUserService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace Web.UserControl
                 if (!userSecurityQuestionDto.Success)
                 {
                     lbl_PasswordReminder.Text = userSecurityQuestionDto.Message;
-                    Response.Redirect("~/Register/Register");
+                    Response.Redirect("~/Register");
                 }
 
                 HttpContext.Current.Session["Question"] = userSecurityQuestionDto.Data.SecurityQuestion;
@@ -50,7 +51,7 @@ namespace Web.UserControl
             if (userQuestionAnswer == userSecurityQuestionDto.Data.SecurityQuestionAnswer)
             {
                 HttpContext.Current.Session["QuestionAnswer"] = userQuestionAnswer;
-                Response.Redirect("~/PasswordReminder/PasswordChange");
+                Response.Redirect("~/PasswordChange");
             }
             lbl_PasswordReminder.Text = "Tekrar Deneyiniz.";
         }

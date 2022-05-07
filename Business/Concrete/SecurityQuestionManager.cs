@@ -14,10 +14,9 @@ namespace Business.Concrete
     public class SecurityQuestionManager : ISecurityQuestionService
     {
         private ISecurityQuestionDal _securityQuestionDal;
-
-        public SecurityQuestionManager()
+        public SecurityQuestionManager(ISecurityQuestionDal securityQuestionDal)
         {
-            _securityQuestionDal = new EfSecurityQuestionDal();
+            _securityQuestionDal = securityQuestionDal;
         }
 
         public IResult Add(SecurityQuestion securityQuestion)

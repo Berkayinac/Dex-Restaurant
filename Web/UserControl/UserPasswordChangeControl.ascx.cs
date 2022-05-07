@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Core.Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -18,8 +19,8 @@ namespace Web.UserControl
 
         public UserPasswordChangeControl()
         {
-            _authService = new AuthManager();
-            _securityQuestionService = new SecurityQuestionManager();
+            _authService = InstanceFactory.GetInstance<IAuthService>();
+            _securityQuestionService = InstanceFactory.GetInstance<ISecurityQuestionService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace Web.UserControl
 
             lbl_PasswordReminder.Text = userCheck.Message;
 
-            Response.Redirect("~/Login/Login");
+            Response.Redirect("~/Login");
         }
     }
 }

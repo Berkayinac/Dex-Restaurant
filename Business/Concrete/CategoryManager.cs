@@ -15,9 +15,9 @@ namespace Business.Concrete
     public class CategoryManager : ICategoryService
     {
         private ICategoryDal _categoryDal;
-        public CategoryManager()
+        public CategoryManager(ICategoryDal categoryDal)
         {
-            _categoryDal = new EfCategoryDal();
+            _categoryDal = categoryDal;
         }
 
         public IResult Add(Category category)

@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Core.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,9 @@ namespace WebAPI.Controllers
         IUserService _userService;
         public UsersController()
         {
-            _userService = new UserManager();
+            _userService = InstanceFactory.GetInstance<IUserService>();
         }
+
         [HttpGet]
         public List<User> GetAll()
         {

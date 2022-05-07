@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Core.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,9 @@ namespace Web.AdminPages
                     Response.Redirect("~/WebPage");
                 }
 
-                AdminMenuManager adminMenuManager = new AdminMenuManager();
+                IAdminMenuService adminMenuService = InstanceFactory.GetInstance<IAdminMenuService>();
 
-                var menus = adminMenuManager.GetAll().Data;
+                var menus = adminMenuService.GetAll().Data;
 
                 string myMenu = "";
 

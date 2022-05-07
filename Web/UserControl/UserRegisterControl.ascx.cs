@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Core.Entities.Concrete;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -20,9 +21,9 @@ namespace Web.UserControl
 
         public UserRegisterControl()
         {
-            _authService = new AuthManager();
-            _securityQuestionService = new SecurityQuestionManager();
-            _customerService = new CustomerManager();
+            _authService = InstanceFactory.GetInstance<IAuthService>();
+            _securityQuestionService = InstanceFactory.GetInstance<ISecurityQuestionService>();
+            _customerService = InstanceFactory.GetInstance<ICustomerService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -85,7 +86,7 @@ namespace Web.UserControl
                 _customerService.Add(customer);
 
                 lbl_Register.Text = result.Message;
-                Response.Redirect("/Login/Login");
+                Response.Redirect("/Login");
             }
             lbl_Register.Text = result.Message;
         }

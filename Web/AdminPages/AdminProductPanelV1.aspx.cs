@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Web.AdminPages
         IProductService _productService;
         public AdminProductPanelV1()
         {
-            _productService = new ProductManager();
+            _productService = InstanceFactory.GetInstance<IProductService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)

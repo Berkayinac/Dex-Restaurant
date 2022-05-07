@@ -16,10 +16,9 @@ namespace Business.Concrete
     public class AuthorityManager : IAuthorityService
     {
         private IAuthorityDal _authorityDal;
-
-        public AuthorityManager()
+        public AuthorityManager(IAuthorityDal authorityDal)
         {
-            _authorityDal = new EfAuthorityDal();
+            _authorityDal = authorityDal;
         }
 
         public IResult Add(Authority authority)

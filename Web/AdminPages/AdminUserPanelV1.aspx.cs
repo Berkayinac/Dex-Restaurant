@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Core.Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -16,7 +17,7 @@ namespace Web.AdminPages
         IUserService _userService;
         public AdminUserPanelV1()
         {
-            _userService = new UserManager();
+            _userService = InstanceFactory.GetInstance<IUserService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)

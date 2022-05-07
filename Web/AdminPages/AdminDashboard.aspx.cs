@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace Web.AdminPages
         IOrderService _orderService;
         public AdminDashboard()
         {
-            _productService = new ProductManager();
-            _customerService = new CustomerManager();
-            _categoryService = new CategoryManager();
-            _orderService = new OrderManager();
+            _productService = InstanceFactory.GetInstance<IProductService>();
+            _customerService = InstanceFactory.GetInstance<ICustomerService>();
+            _categoryService = InstanceFactory.GetInstance<ICategoryService>();
+            _orderService = InstanceFactory.GetInstance<IOrderService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)

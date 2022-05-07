@@ -15,10 +15,9 @@ namespace Business.Concrete
     public class OrderManager : IOrderService
     {
         private IOrderDal _orderDal;
-
-        public OrderManager()
+        public OrderManager(IOrderDal orderDal)
         {
-            _orderDal = new EfOrderDal();
+            _orderDal = orderDal;
         }
 
         public IResult Add(Order order)

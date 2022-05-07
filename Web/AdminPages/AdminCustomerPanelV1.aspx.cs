@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Web.AdminPages
         ICustomerService _customerService;
         public AdminCustomerPanelV1()
         {
-            _customerService = new CustomerManager();
+            _customerService = InstanceFactory.GetInstance<ICustomerService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)

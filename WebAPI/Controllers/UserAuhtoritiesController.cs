@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Core.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace WebAPI.Controllers
         IUserAuthorityService _userAuthorityService;
         public UserAuhtoritiesController()
         {
-            _userAuthorityService = new UserAuthorityManager();
+            _userAuthorityService = InstanceFactory.GetInstance<IUserAuthorityService>();
         }
 
         [HttpGet]

@@ -15,9 +15,9 @@ namespace Business.Concrete
     public class CustomerManager : ICustomerService
     {
         private ICustomerDal _customerDal;
-        public CustomerManager()
+        public CustomerManager(ICustomerDal customerDal)
         {
-            _customerDal = new EfCustomerDal();
+            _customerDal = customerDal;
         }
 
         public IResult Add(Customer customer)

@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,9 @@ namespace WebAPI.Controllers
     public class ProductsController : ApiController
     {
         IProductService _productService;
-
         public ProductsController()
         {
-            _productService = new ProductManager();
+            _productService = InstanceFactory.GetInstance<IProductService>();
         }
 
         [HttpGet]

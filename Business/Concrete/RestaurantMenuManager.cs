@@ -13,12 +13,10 @@ namespace Business.Concrete
 {
     public class RestaurantMenuManager : IRestaurantMenuService
     {
-
-        IRestaurantMenuDal _restaurantMenuDal;
-
-        public RestaurantMenuManager()
+        private IRestaurantMenuDal _restaurantMenuDal;
+        public RestaurantMenuManager(IRestaurantMenuDal restaurantMenuDal)
         {
-            _restaurantMenuDal = new EfRestaurantMenuDal();
+            _restaurantMenuDal = restaurantMenuDal;
         }
 
         public IResult Add(RestaurantMenu restaurantMenu)

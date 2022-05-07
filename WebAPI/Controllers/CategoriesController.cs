@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace WebAPI.Controllers
         ICategoryService _categoryService;
         public CategoriesController()
         {
-            _categoryService = new CategoryManager();
+            _categoryService = InstanceFactory.GetInstance<ICategoryService>();
         }
 
         [HttpGet]

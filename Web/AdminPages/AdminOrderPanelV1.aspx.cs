@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Web.AdminPages
         IOrderService _orderService;
         public AdminOrderPanelV1()
         {
-            _orderService = new OrderManager();
+            _orderService = InstanceFactory.GetInstance<IOrderService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)

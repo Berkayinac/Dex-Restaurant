@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -19,10 +20,10 @@ namespace Web
         IUserService _userService;
         public WebPage()
         {
-            _categoryService = new CategoryManager();
-            _productService = new ProductManager();
-            _cartService = new CartManager();
-            _userService = new UserManager();
+            _categoryService = InstanceFactory.GetInstance<ICategoryService>();
+            _productService = InstanceFactory.GetInstance<IProductService>();
+            _cartService = InstanceFactory.GetInstance<ICartService>();
+            _userService = InstanceFactory.GetInstance<IUserService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)

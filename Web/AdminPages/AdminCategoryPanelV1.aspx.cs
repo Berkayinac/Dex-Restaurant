@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Web.AdminPages
         ICategoryService _categoryService;
         public AdminCategoryPanelV1()
         {
-            _categoryService = new CategoryManager();
+            _categoryService = InstanceFactory.GetInstance<ICategoryService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)

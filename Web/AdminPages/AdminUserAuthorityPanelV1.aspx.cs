@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Core.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Web.AdminPages
         IUserAuthorityService _userAuthorityService;
         public AdminUserAuthorityPanelV1()
         {
-            _userAuthorityService = new UserAuthorityManager();
+            _userAuthorityService = InstanceFactory.GetInstance<IUserAuthorityService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)

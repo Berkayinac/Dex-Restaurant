@@ -10,17 +10,15 @@ namespace Web
 {
     public class Global : System.Web.HttpApplication
     {
-
         void RouteUser(RouteCollection route)
         {
-            route.MapPageRoute("Giriş", "Login/Login", "~/UserLRP/Login/Login.aspx");
-            route.MapPageRoute("Kayıt", "Register/Register", "~/UserLRP/Register/Register.aspx");
-            route.MapPageRoute("Şifremi Hatırlat", "PasswordReminder/PasswordReminder", "~/UserLRP/PasswordReminder/PasswordReminder.aspx");
-            route.MapPageRoute("Güvenlik Sorusu ile email", "PasswordReminder/Question/{Email}", "~/UserLRP/PasswordReminder/Question.aspx");
-            route.MapPageRoute("Güvenlik Sorusu", "PasswordReminder/Question", "~/UserLRP/PasswordReminder/Question.aspx");
-            route.MapPageRoute("Şifremi Değiştir", "PasswordReminder/PasswordChange", "~/UserLRP/PasswordReminder/PasswordChange.aspx");
+            route.MapPageRoute("Giriş", "Login", "~/UserLRP/Login/Login.aspx");
+            route.MapPageRoute("Kayıt", "Register", "~/UserLRP/Register/Register.aspx");
+            route.MapPageRoute("Şifremi Hatırlat", "PasswordReminder", "~/UserLRP/PasswordReminder/PasswordReminder.aspx");
+            route.MapPageRoute("Güvenlik Sorusu ile email", "Question/{Email}", "~/UserLRP/PasswordReminder/Question.aspx");
+            route.MapPageRoute("Güvenlik Sorusu", "Question", "~/UserLRP/PasswordReminder/Question.aspx");
+            route.MapPageRoute("Şifremi Değiştir", "PasswordChange", "~/UserLRP/PasswordReminder/PasswordChange.aspx");
 
-            // Admin
             route.MapPageRoute("Product","Admin/Product", "~/AdminPages/AdminProductPanelV1.aspx");
             route.MapPageRoute("Category", "Admin/Category", "~/AdminPages/AdminCategoryPanelV1.aspx");
             route.MapPageRoute("Customer", "Admin/Customer", "~/AdminPages/AdminCustomerPanelV1.aspx");
@@ -31,7 +29,6 @@ namespace Web
             route.MapPageRoute("UserAuthority", "Admin/UserAuthority", "~/AdminPages/AdminUserAuthorityPanelV1.aspx");
             route.MapPageRoute("AdminUserWebPage", "AdminWebPage", "~/AdminControlWebPage.aspx");
 
-            // User
             route.MapPageRoute("UserWebPage", "WebPage", "~/WebPage.aspx");
             route.MapPageRoute("UserCart", "Cart", "~/UserCart/UserCartWebPage.aspx");
         }

@@ -13,12 +13,10 @@ namespace Business.Concrete
 {
     public class AdminMenuManager : IAdminMenuService
     {
-
-        IAdminMenuDal _adminMenuDal;
-
-        public AdminMenuManager()
+        private IAdminMenuDal _adminMenuDal;
+        public AdminMenuManager(IAdminMenuDal adminMenuDal)
         {
-            _adminMenuDal = new EfAdminMenuDal();
+            _adminMenuDal = adminMenuDal;
         }
 
         public IResult Add(AdminMenu adminMenu)

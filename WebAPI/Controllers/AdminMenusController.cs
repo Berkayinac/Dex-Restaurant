@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace WebAPI.Controllers
         IAdminMenuService _adminMenuService;
         public AdminMenusController()
         {
-            _adminMenuService = new AdminMenuManager();
+            _adminMenuService = InstanceFactory.GetInstance<IAdminMenuService>();
         }
 
         [HttpGet]

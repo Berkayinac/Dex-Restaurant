@@ -14,15 +14,14 @@ namespace Business.Concrete
 {
     public class AuthManager : IAuthService
     {
-        IUserService _userService;
-        IUserAuthorityService _userAuthorityService;
-        ISecurityQuestionService _securityQuestionService;
-
-        public AuthManager()
+        private IUserService _userService;
+        private IUserAuthorityService _userAuthorityService;
+        private ISecurityQuestionService _securityQuestionService;
+        public AuthManager(IUserService userService, IUserAuthorityService userAuthorityService, ISecurityQuestionService securityQuestionService)
         {
-            _userService = new UserManager();
-            _userAuthorityService = new UserAuthorityManager();
-            _securityQuestionService = new SecurityQuestionManager();
+            _userService = userService;
+            _userAuthorityService = userAuthorityService;
+            _securityQuestionService = securityQuestionService;
         }
 
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)

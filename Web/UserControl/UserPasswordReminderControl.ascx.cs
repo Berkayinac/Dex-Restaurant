@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Web.UserControl
         IAuthService _authService;
         public UserPasswordReminderControl()
         {
-            _authService = new AuthManager();
+            _authService = InstanceFactory.GetInstance<IAuthService>();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace Web.UserControl
             }
 
             HttpContext.Current.Session["Email"] = tbx_Email.Text;
-            Response.Redirect("~/PasswordReminder/Question");
+            Response.Redirect("~/Question");
         }
     }
 }
