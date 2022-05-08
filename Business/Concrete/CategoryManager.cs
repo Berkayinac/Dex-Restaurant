@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Utilities.FluentValidation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
@@ -22,6 +24,8 @@ namespace Business.Concrete
 
         public IResult Add(Category category)
         {
+            ValidationTool.Validate(new CategoryValidator(), category);
+
             _categoryDal.Add(category);
             return new SuccessResult(Messages.CategoryAdded);
         }
@@ -54,6 +58,8 @@ namespace Business.Concrete
 
         public IResult Update(Category category)
         {
+            ValidationTool.Validate(new CategoryValidator(), category);
+
             _categoryDal.Update(category);
             return new SuccessResult(Messages.CategoryUpdated);
         }

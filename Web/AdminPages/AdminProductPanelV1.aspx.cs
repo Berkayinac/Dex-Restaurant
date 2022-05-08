@@ -80,9 +80,16 @@ namespace Web.AdminPages
             product.UnitPrice = Convert.ToDecimal(tbx_AddUnitPrice.Text);
             product.UnitsInStock = Convert.ToInt16(tbx_AddUnitsInStock.Text);
 
-            _productService.Add(product);
+            var result = _productService.Add(product);
+            if (result.Success)
+            {
+                Literal1.Text = "<div class='alert alert-success'" + " " + "role='alert'" + ">" + result.Message + "</div>";
+            }
+            else
+            {
+                Literal1.Text = "<div class='alert alert-danger'" + " " + "role='alert'" + ">" + result.Message + "</div>";
+            }
             GetAll();
         }
-
     }
 }

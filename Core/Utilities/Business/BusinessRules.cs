@@ -15,11 +15,10 @@ namespace Core.Utilities.Business
             {
                 if (!result.Success)
                 {
-                    return result;
+                    return new ErrorResult(result.Message);
                 }
             }
-
-            return null;
+            return new SuccessResult();
         }
     }
 }

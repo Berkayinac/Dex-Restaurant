@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
 using Core.Utilities.Business;
+using Core.Utilities.FluentValidation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
@@ -24,12 +26,13 @@ namespace Business.Concrete
 
         public IResult Add(Product product)
         {
-            //var rules =  BusinessRules.Run(ProductNameCheck(product.Name));
+            ValidationTool.Validate(new ProductValidator(), product);
+            var rules = BusinessRules.Run(ProductNameCheck(product.Name));
 
-            //if (!rules.Success)
-            //{
-            //    return new ErrorResult(rules.Message);
-            //}
+            if (!rules.Success)
+            {
+                return new ErrorResult(rules.Message);
+            }
 
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded);
@@ -63,6 +66,8 @@ namespace Business.Concrete
 
         public IResult Update(Product product)
         {
+            ValidationTool.Validate(new ProductValidator(), product);
+
             _productDal.Update(product);
             return new SuccessResult(Messages.ProductUpdated);
         }
@@ -77,6 +82,16 @@ namespace Business.Concrete
             return new SuccessDataResult<List<ProductDto>>(result, Messages.ProductsListed);
         }
 
+        public IDataResult<Product> GetByName(string name)
+        {
+            var result = _productDal.Get(p => p.Name == name);
+            if (result != null )
+            {
+                return new ErrorDataResult<Product>();
+            }
+            return new SuccessDataResult<Product>(result, Messages.ProductGeted);
+        }
+
         private IResult ProductNameCheck(string productName)
         {
             var result = _productDal.Get(p => p.Name == productName);
@@ -87,14 +102,5 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        public IDataResult<Product> GetByName(string name)
-        {
-            var result = _productDal.Get(p => p.Name == name);
-            if (result != null )
-            {
-                return new ErrorDataResult<Product>();
-            }
-            return new SuccessDataResult<Product>(result, Messages.ProductGeted);
-        }
     }
 }

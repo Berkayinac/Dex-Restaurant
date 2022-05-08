@@ -63,11 +63,13 @@
             <asp:Button ID="btn_Update" runat="server" CssClass="btn btn-warning" Text="Update" OnClick="btn_Update_Click" />
           </div>
       </div>
+            
+
+            <footer class="right">
+                <asp:Literal ID="Literal1" runat="server" Text=""></asp:Literal>
+            </footer>
+
         </ContentTemplate>
     </asp:UpdatePanel>
-
-
-
-    
 
 </asp:Content>

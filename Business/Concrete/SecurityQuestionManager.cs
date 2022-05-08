@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
 using Core.Entities.Concrete;
+using Core.Utilities.FluentValidation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
@@ -21,6 +23,8 @@ namespace Business.Concrete
 
         public IResult Add(SecurityQuestion securityQuestion)
         {
+            ValidationTool.Validate(new SecurityQuestionValidator(), securityQuestion);
+
             _securityQuestionDal.Add(securityQuestion);
             return new SuccessResult();
         }
@@ -48,6 +52,8 @@ namespace Business.Concrete
 
         public IResult Update(SecurityQuestion securityQuestion)
         {
+            ValidationTool.Validate(new SecurityQuestionValidator(), securityQuestion);
+
             _securityQuestionDal.Update(securityQuestion);
             return new SuccessResult();
         }

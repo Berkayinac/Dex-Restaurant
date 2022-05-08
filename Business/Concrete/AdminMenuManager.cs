@@ -1,8 +1,11 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
+using Core.Utilities.FluentValidation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +24,8 @@ namespace Business.Concrete
 
         public IResult Add(AdminMenu adminMenu)
         {
+            ValidationTool.Validate(new AdminMenuValidator(), adminMenu);
+
             _adminMenuDal.Add(adminMenu);
             return new SuccessResult();
         }
@@ -53,6 +58,8 @@ namespace Business.Concrete
 
         public IResult Update(AdminMenu adminMenu)
         {
+            ValidationTool.Validate(new AdminMenuValidator(), adminMenu);
+
             _adminMenuDal.Update(adminMenu);
             return new SuccessResult();
         }
