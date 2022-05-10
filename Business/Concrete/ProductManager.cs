@@ -28,7 +28,6 @@ namespace Business.Concrete
         {
             ValidationTool.Validate(new ProductValidator(), product);
             var rules = BusinessRules.Run(ProductNameCheck(product.Name));
-
             if (!rules.Success)
             {
                 return new ErrorResult(rules.Message);

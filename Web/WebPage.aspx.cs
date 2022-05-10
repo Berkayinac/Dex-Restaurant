@@ -59,6 +59,16 @@ namespace Web
             return _productService.GetAllByDto().Data;
         }
 
+        public List<int> GetNumbers()
+        {
+            List<int> result = new List<int>();
+            for (int i = 0; i <= 9; i++)
+            {
+                result.Add(i);
+            }
+            return result;
+        }
+
         public List<Category> GetAllCategories()
         {
             return _categoryService.GetAll().Data;

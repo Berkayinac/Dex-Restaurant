@@ -67,7 +67,6 @@
           <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
           <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
-          <li><a class="nav-link scrollto" href="#">                       </a></li>
           <asp:ContentPlaceHolder ID="myCart" runat="server"></asp:ContentPlaceHolder>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -153,29 +152,28 @@
           <div class="col-lg-4">
             <div class="box" data-aos="zoom-in" data-aos-delay="100">
               <span>01</span>
-              <h4><asp:Label ID="lbl_WhyChooseOurRestaurantV1" runat="server" CssClass="text-light" Text=""></asp:Label></h4>
-              <p><asp:Label ID="lbl_WhyChooseOurRestaurantDescriptionV1" runat="server" CssClass="text-light" Text=""></asp:Label></p>
+              <h4>Lions in a Cage</h4>
+              <p>See the lions in The cage, See the victims of the rage</p>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="200">
               <span>02</span>
-              <h4><asp:Label ID="lbl_WhyChooseOurRestaurantV2" runat="server" CssClass="text-light" Text=""></asp:Label></h4>
-              <p><asp:Label ID="lbl_WhyChooseOurRestaurantDescriptionV2" runat="server" CssClass="text-light" Text=""></asp:Label></p>
+              <h5>Give Me Something to Kill the Pain</h5>
+              <p>Give Me Something To Kill The Pain There is no tomorrow and no today My soul is not for eternity And I know I will fade away, In memories</p>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="300">
               <span>03</span>
-              <h4><asp:Label ID="lbl_WhyChooseOurRestaurantV3" runat="server" CssClass="text-light" Text=""></asp:Label></h4>
-              <p><asp:Label ID="lbl_WhyChooseOurRestaurantDescriptionV3" runat="server" CssClass="text-light" Text=""></asp:Label></p>
+              <h4>Dark is the Sunlight</h4>
+              <p>Dark is the sunlight, we cast the right together Dark is the sunlight, or I'm blind forever</p>
             </div>
           </div>
 
         </div>
-
       </div>
     </section><!-- End Why Us Section -->
 
@@ -208,19 +206,19 @@
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Modi sit est</a>
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">History</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Unde praesentium sed</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">The Three</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Pariatur explicabo vel</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">The Seven</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">The Nine</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Iusto ut expedita aut</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">The One Ring</a>
               </li>
             </ul>
           </div>
@@ -229,9 +227,11 @@
               <div class="tab-pane active show" id="tab-1">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Architecto ut aperiam autem id</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                    <h3 class="fst-italic">"Rings of Power"</h3>
+                    <p class="fst-italic">"Three Rings for the Elven-kings under the sky, Seven for the Dwarf-lords in their halls of stone,</p>
+                    <p class="fst-italic">Nine for Mortal Men doomed to die, One for the Dark Lord on his dark throne</p>
+                    <p class="fst-italic">In the Land of Mordor where the Shadows lie. One Ring to rule them all, One Ring to find them,</p>
+                    <p class="fst-italic">One Ring to bring them all and in the darkness bind them In the Land of Mordor where the Shadows lie."</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/specials-1.png" alt="" class="img-fluid">
@@ -241,9 +241,9 @@
               <div class="tab-pane" id="tab-2">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Et blanditiis nemo veritatis excepturi</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                    <h3 class="fst-italic">"Three Rings for the Elven-kings under the sky"</h3>
+                     <p>Celebrimbor forged the Three Rings by himself, and the Three were never touched by Sauron. They were called Narya (the Ring of Fire), Nenya (the Ring of Adamant), and Vilya (the Ring of Air).</p>
+                     <p>Narya was first worn first by Gil-galad, who gave it Círdan, and was lastly worn by Gandalf. Gil-galad also initially owned Vilya, before Elrond inherited it after the former's death. Nenya was worn only by Galadriel.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/specials-2.png" alt="" class="img-fluid">
@@ -253,9 +253,8 @@
               <div class="tab-pane" id="tab-3">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                    <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                    <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                    <h3 class="fst-italic">"Seven for the Dwarf-lords in their halls of stone..."</h3>
+                    <p>Sauron presented the Seven Rings to the Dwarf-lords. This might have been the division of seven Dwarf clans mentioned in The History of Middle-earth: Durin's Folk, Firebeards, Broadbeams, Ironfists, Stiffbeards, Blacklocks, and Stonefoots.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/specials-3.png" alt="" class="img-fluid">
@@ -265,9 +264,9 @@
               <div class="tab-pane" id="tab-4">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                    <h3 class="fst-italic">"Nine for mortal men doomed to die..."</h3>
+                    <p>The nine rings for mortal men were those divided amongst those men doomed to become the Nazgûl, the Ringwraiths. These ring-bearers held rings that were controlled by Sauron, for they became evil servants of his.</p>
+                    <p>None are mentioned specifically throughout The Lord of the Rings save their leader, the Witch-king of Angmar. His second-in-command was named in the Unfinished Tales as Khamûl, the Black Easterling.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/specials-4.png" alt="" class="img-fluid">
@@ -277,9 +276,8 @@
               <div class="tab-pane" id="tab-5">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                    <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                   <h3 class="fst-italic">"The One Ring"</h3>
+                    <p >The One Ring, secretly forged by Sauron in the heart of Mount Doom, had the power to dominate the other nineteen Great Rings.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/specials-5.png" alt="" class="img-fluid">
@@ -309,12 +307,26 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  What's life without a little risk?
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="models/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
+                <img src="models/img/photos/SiriusV1.jpg" class="testimonial-img" alt="">
+                <h3>Sirius Black</h3>
+                <h4>Auror</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+          
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                 Things we lose have a way of coming back to us in the end, if not always in the way we expect.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="models/img/photos/luna.jpg" class="testimonial-img" alt="">
+                <h3>Luna Lovegood</h3>
+                <h4>Witch</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -322,12 +334,25 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  I can teach you how to bewitch the mind and ensnare the senses. I can tell you how to bottle fame, brew glory, and even put a stopper in death.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="models/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
+                <img src="models/img/photos/Snape.jpg" class="testimonial-img" alt="">
+                <h3>Severus Snape</h3>
+                <h4>Professor of the wizarding school Hogwarts.</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+             <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  We've all got both light and dark inside us. What matters is the part we choose to act on. That's who we really are.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="models/img/photos/sirius.jpg" class="testimonial-img" alt="">
+                <h3>Sirius Black</h3>
+                <h4>Auror</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -335,38 +360,12 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  Words are, in my not-so-humble opinion, our most inexhaustible source of magic. Capable of both inflicting injury, and remedying it.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="models/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="models/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="models/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
+                <img src="models/img/photos/Dumbledore.jpg" class="testimonial-img" alt="">
+                <h3>Albus Dumbledore</h3>
+                <h4>headmaster of the wizarding school Hogwarts.</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -469,54 +468,15 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-              <h3>Restaurantly</h3>
+              <h3>DEX</h3>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+                Khazad-dûm <br>
+                Misty Mountains<br><br>
+                <strong>Phone:</strong> +90 555 444 33 22<br>
+                <strong>Github:</strong> https://github.com/berkayinac<br>
               </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
             </div>
           </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
-
         </div>
       </div>
     </div>
