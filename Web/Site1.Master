@@ -233,9 +233,6 @@
                     <p class="fst-italic">In the Land of Mordor where the Shadows lie. One Ring to rule them all, One Ring to find them,</p>
                     <p class="fst-italic">One Ring to bring them all and in the darkness bind them In the Land of Mordor where the Shadows lie."</p>
                   </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-1.png" alt="" class="img-fluid">
-                  </div>
                 </div>
               </div>
               <div class="tab-pane" id="tab-2">
@@ -245,9 +242,6 @@
                      <p>Celebrimbor forged the Three Rings by himself, and the Three were never touched by Sauron. They were called Narya (the Ring of Fire), Nenya (the Ring of Adamant), and Vilya (the Ring of Air).</p>
                      <p>Narya was first worn first by Gil-galad, who gave it Círdan, and was lastly worn by Gandalf. Gil-galad also initially owned Vilya, before Elrond inherited it after the former's death. Nenya was worn only by Galadriel.</p>
                   </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-2.png" alt="" class="img-fluid">
-                  </div>
                 </div>
               </div>
               <div class="tab-pane" id="tab-3">
@@ -255,9 +249,6 @@
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3 class="fst-italic">"Seven for the Dwarf-lords in their halls of stone..."</h3>
                     <p>Sauron presented the Seven Rings to the Dwarf-lords. This might have been the division of seven Dwarf clans mentioned in The History of Middle-earth: Durin's Folk, Firebeards, Broadbeams, Ironfists, Stiffbeards, Blacklocks, and Stonefoots.</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-3.png" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -268,9 +259,6 @@
                     <p>The nine rings for mortal men were those divided amongst those men doomed to become the Nazgûl, the Ringwraiths. These ring-bearers held rings that were controlled by Sauron, for they became evil servants of his.</p>
                     <p>None are mentioned specifically throughout The Lord of the Rings save their leader, the Witch-king of Angmar. His second-in-command was named in the Unfinished Tales as Khamûl, the Black Easterling.</p>
                   </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-4.png" alt="" class="img-fluid">
-                  </div>
                 </div>
               </div>
               <div class="tab-pane" id="tab-5">
@@ -278,9 +266,6 @@
                   <div class="col-lg-8 details order-2 order-lg-1">
                    <h3 class="fst-italic">"The One Ring"</h3>
                     <p >The One Ring, secretly forged by Sauron in the heart of Mount Doom, had the power to dominate the other nineteen Great Rings.</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-5.png" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
