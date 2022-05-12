@@ -103,19 +103,19 @@
     
                 <div class="row">
                    
-                    <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Responsive Table Example
+                                Categories
                             </div> 
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr>
-                                                <th>CategoryId</th>
-                                                <th>CategoryName</th>
+                                                <th>Id</th>
+                                                <th>Name</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -123,6 +123,35 @@
                                             <tr>
                                                 <td><%= category.Id %></td>
                                                 <td><%= category.Name %></td>
+                                            </tr>
+                                            <% } %>
+                                        </tbody>
+                                     </table>
+                                </div>
+                            </div>
+                            <div class="panel-heading">
+                                Products
+                            </div> 
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>CategoryId</th>
+                                                <th>Name</th>
+                                                <th>UnitPrice</th>
+                                                <th>UnitsInStock</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%foreach (var product in ProductsGetAll()){ %>
+                                            <tr>
+                                                <td><%= product.Id %></td>
+                                                <td><%= product.CategoryId %></td>
+                                                <td><%= product.Name %></td>
+                                                <td><%= product.UnitPrice %></td>
+                                                <td><%= product.UnitsInStock %></td>
                                             </tr>
                                             <% } %>
                                         </tbody>

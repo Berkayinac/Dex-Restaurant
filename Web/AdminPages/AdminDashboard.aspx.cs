@@ -33,7 +33,7 @@ namespace Web.AdminPages
             lbl_Products.Text = Convert.ToString(ProductsCount());
         }
 
-        // Persents
+        // PersentMethods
         public double ProductsPersent()
         {
             double result = _productService.GetAll().Data.Count / 10.0;
@@ -56,7 +56,7 @@ namespace Web.AdminPages
             return result;
         }
 
-        // Counts
+        // CountMethods
 
         public int ProductsCount()
         {
@@ -79,7 +79,7 @@ namespace Web.AdminPages
         }
 
 
-        // GetAlls
+        // GetAllMethods
         public List<Product> ProductsGetAll()
         {
             return _productService.GetAll().Data;
@@ -88,19 +88,5 @@ namespace Web.AdminPages
         {
             return _categoryService.GetAll().Data;
         }
-
-        //public int UsersGetAll()
-        //{
-        //   return _userService.GetAll().Data.Count;
-        //}
-
-        //public int CustomersGetAll()
-        //{
-        //   return _customerService.GetAll().Data.Count;
-        //}
-
-
-
-        
     }
 }

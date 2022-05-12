@@ -2,6 +2,7 @@
 using Business.Concrete;
 using Business.DependencyResolvers.Ninject;
 using Core.Entities.Concrete;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,34 +15,50 @@ namespace Web.AdminPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (HttpContext.Current.Session["Authorities"] == null)
-            {
-                Response.Redirect("~/WebPage");
-            }
+            UserAuthoritiesIsNull();
+            UserAuthoritiesIsNotNull();
+        }
 
+        private void UserAuthoritiesIsNotNull()
+        {
             if (HttpContext.Current.Session["Authorities"] != null)
             {
                 var userAuthorities = HttpContext.Current.Session["Authorities"].ToString();
                 var authorities = userAuthorities.Split(',');
-
-                if (!authorities.Contains("Admin"))
-                {
-                    Response.Redirect("~/WebPage");
-                }
+                IsUserAdmin(authorities);
 
                 IAdminMenuService adminMenuService = InstanceFactory.GetInstance<IAdminMenuService>();
-
                 var menus = adminMenuService.GetAll().Data;
+                CreateAdminMenu(menus);
+            }
+        }
 
-                string myMenu = "";
+        private void CreateAdminMenu(List<AdminMenu> menus)
+        {
+            string myMenu = "";
 
-                foreach (var menu in menus)
-                {
-                    myMenu += "<li>";
-                    myMenu += "<a href = " + "" + menu.Name + " ><i class='fa fa-table'></i> " + " " + menu.Name + "</a>";
-                    myMenu += "</li>";
-                }
-                Literal1.Text = myMenu;
+            foreach (var menu in menus)
+            {
+                myMenu += "<li>";
+                myMenu += "<a href = " + "" + menu.Name + " ><i class='fa fa-table'></i> " + " " + menu.Name + "</a>";
+                myMenu += "</li>";
+            }
+            Literal1.Text = myMenu;
+        }
+
+        private void IsUserAdmin(string[] authorities)
+        {
+            if (!authorities.Contains("Admin"))
+            {
+                Response.Redirect("~/WebPage");
+            }
+        }
+
+        private void UserAuthoritiesIsNull()
+        {
+            if (HttpContext.Current.Session["Authorities"] == null)
+            {
+                Response.Redirect("~/WebPage");
             }
         }
     }
