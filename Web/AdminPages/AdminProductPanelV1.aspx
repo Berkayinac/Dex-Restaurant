@@ -14,6 +14,7 @@
             <asp:BoundField DataField="Name" HeaderText="Name"  />
             <asp:BoundField DataField="UnitPrice" HeaderText="UnitPrice"  />
             <asp:BoundField DataField="UnitsInStock" HeaderText="UnitsInStock"  />
+            <asp:BoundField DataField="Photo" HeaderText="Photo"  />
 
             <asp:TemplateField>
                 <ItemTemplate>
