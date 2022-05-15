@@ -40,6 +40,7 @@ namespace Web.AdminPages
             tbx_UpdateName.Text = productToUpdate.Name;
             tbx_UpdateUnitPrice.Text = Convert.ToString(productToUpdate.UnitPrice);
             tbx_UpdateUnitsInStock.Text = Convert.ToString(productToUpdate.UnitsInStock);
+            tbx_UpdatePhoto.Text = Convert.ToString(productToUpdate.Photo);
 
             GetAll();
         }
@@ -67,6 +68,7 @@ namespace Web.AdminPages
             product.Name = tbx_UpdateName.Text;
             product.UnitPrice = Convert.ToDecimal(tbx_UpdateUnitPrice.Text);
             product.UnitsInStock = Convert.ToInt16(tbx_UpdateUnitsInStock.Text);
+            product.Photo = tbx_UpdatePhoto.Text;
 
             _productService.Update(product);
             GetAll();
@@ -79,6 +81,7 @@ namespace Web.AdminPages
             product.Name = tbx_AddName.Text;
             product.UnitPrice = Convert.ToDecimal(tbx_AddUnitPrice.Text);
             product.UnitsInStock = Convert.ToInt16(tbx_AddUnitsInStock.Text);
+            product.Photo = tbx_AddPhoto.Text;
 
             var result = _productService.Add(product);
             if (result.Success)

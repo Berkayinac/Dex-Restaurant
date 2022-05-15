@@ -41,6 +41,9 @@
             <label for="exampleFormControlInput1">UnitsInStock</label>
             <asp:TextBox ID="tbx_AddUnitsInStock" CssClass="form-control" runat="server"></asp:TextBox>
 
+                <label for="exampleFormControlInput1">PhotoName</label>
+            <asp:TextBox ID="tbx_AddPhoto" CssClass="form-control" runat="server"></asp:TextBox>
+
             <asp:Button ID="btn_Add" runat="server" CssClass="btn btn-success" Text="Add" OnClick="btn_Add_Click" />
           </div>
 
@@ -59,6 +62,9 @@
 
             <label for="exampleFormControlInput1">UnitsInStock</label>
             <asp:TextBox ID="tbx_UpdateUnitsInStock" CssClass="form-control" runat="server"></asp:TextBox>
+
+            <label for="exampleFormControlInput1">PhotoName</label>
+            <asp:TextBox ID="tbx_UpdatePhoto" CssClass="form-control" runat="server"></asp:TextBox>
 
             <asp:Button ID="btn_Update" runat="server" CssClass="btn btn-warning" Text="Update" OnClick="btn_Update_Click" />
           </div>

@@ -78,6 +78,15 @@ namespace Web.AdminPages
         protected global::System.Web.UI.WebControls.TextBox tbx_AddUnitsInStock;
 
         /// <summary>
+        /// tbx_AddPhoto denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbx_AddPhoto;
+
+        /// <summary>
         /// btn_Add denetimi.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace Web.AdminPages
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbx_UpdateUnitsInStock;
+
+        /// <summary>
+        /// tbx_UpdatePhoto denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbx_UpdatePhoto;
 
         /// <summary>
         /// btn_Update denetimi.

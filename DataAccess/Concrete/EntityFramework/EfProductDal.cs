@@ -25,7 +25,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  CategoryName = c.Name,
                                  Name = p.Name,
                                  UnitPrice = p.UnitPrice,
-                                 UnitsInStock = p.UnitsInStock
+                                 UnitsInStock = p.UnitsInStock,
+                                 Photo = p.Photo
                              };
                 return result.ToList();
             }
