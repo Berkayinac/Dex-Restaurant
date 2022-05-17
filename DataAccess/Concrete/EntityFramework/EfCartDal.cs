@@ -28,7 +28,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  UserName = user.FirstName + " " + user.LastName,
                                  ProductUnitPrice = product.UnitPrice,
                                  ProductId = product.Id,
-                                 CartId = cart.Id
+                                 CartId = cart.Id,
+                                 Photo = product.Photo
                              };
                 return result.ToList();
             }

@@ -21,13 +21,14 @@
                     <asp:BoundField DataField="ProductName" ItemStyle-CssClass="hiddencol"  />
                     <asp:BoundField DataField="ProductUnitPrice"  ItemStyle-CssClass="hiddencol" />
                     <asp:BoundField DataField="Quantity" ItemStyle-CssClass="hiddencol"  />
-                        
+                    <asp:BoundField DataField="Photo" ItemStyle-CssClass="hiddencol"  /> 
+
                     <asp:TemplateField>
                         <ItemTemplate>
                              <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
                                 <div class="col-lg menu-item  <%#Eval("UserName")%>">
 
-                                    <img src="models/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
+                                    <img src="models/img/menu/<%#Eval("Photo")%>" class="menu-img" alt="">
                                     <div class="menu-content">
 
                                         <a href="#"><%#Eval("ProductName")%></a>  <span>$<%#Eval("ProductUnitPrice")%>

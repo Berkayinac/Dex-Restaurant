@@ -12,8 +12,10 @@ namespace Entities.DTOs
         public int CartId { get; set; }
         public int ProductId { get; set; }
         public string UserName { get; set; }
+        public string Photo { get; set; }
         public string ProductName { get; set; }
         public decimal ProductUnitPrice { get; set; }
         public Int16 Quantity { get; set; }
+
     }
 }
