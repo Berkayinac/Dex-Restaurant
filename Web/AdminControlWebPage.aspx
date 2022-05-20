@@ -3,7 +3,7 @@
 <%@ Register Src="~/UserControl/AdminControl.ascx" TagPrefix="uc1" TagName="AdminControl" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="myCart" runat="server">
-   <% if (GetCarts() != null){ %>
+     <% if (GetCarts() != null){ %>
         <li class="dropdown"><a href="#"><span>Cart</span> <i class="bi bi-chevron-down"></i></a>
            <ul>
                 <%foreach (var cart in GetCarts()){ %>
@@ -37,6 +37,7 @@
                     <asp:BoundField DataField="Name"  ItemStyle-CssClass="hiddencol" />
                     <asp:BoundField DataField="UnitPrice" ItemStyle-CssClass="hiddencol"  />
                     <asp:BoundField DataField="UnitsInStock" ItemStyle-CssClass="hiddencol"  />
+                    <asp:BoundField DataField="Photo" ItemStyle-CssClass="hiddencol"  />
               
                     <asp:TemplateField>
                         <ItemTemplate>
@@ -44,7 +45,7 @@
                             <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
                                 <div class="col-lg-6 menu-item <%#Eval("CategoryName")%>">
 
-                                    <img src="models/img/photos/thesun.jpg" class="menu-img" alt="">
+                                     <img src="models/img/<%#Eval("Photo")%>" class="menu-img" alt="">
                                     <div class="menu-content" width="100%">
                                         <a href="#"><%#Eval("Name")%></a> <span>$<%#Eval("UnitPrice")%>
                                         <asp:LinkButton ID="Lnk_AddToCart" CssClass="book-a-table-btn scrollto d-none d-lg-flex" CommandArgument='<%#Eval("Id")%>' CommandName='<%#Eval("Name")%>' OnCommand="Lnk_AddToCart_Command" runat="server">Add To Cart</asp:LinkButton>
@@ -54,7 +55,6 @@
                                     <div class="menu-ingredients">
                                          <%#Eval("UnitsInStock")%>
                                    </div>
-
                                </div>
                             </div>
 

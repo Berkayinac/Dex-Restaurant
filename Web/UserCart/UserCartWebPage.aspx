@@ -28,7 +28,7 @@
                              <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
                                 <div class="col-lg menu-item  <%#Eval("UserName")%>">
 
-                                    <img src="models/img/menu/<%#Eval("Photo")%>" class="menu-img" alt="">
+                                    <img src="models/img/<%#Eval("Photo")%>" class="menu-img" alt="">
                                     <div class="menu-content">
 
                                         <a href="#"><%#Eval("ProductName")%></a>  <span>$<%#Eval("ProductUnitPrice")%>

@@ -143,7 +143,6 @@
     <Content Include="UserLRP\assets\fonts\montserrat\OFL.txt" />
     <Content Include="UserLRP\assets\images\bg-01.jpg" />
     <Content Include="UserLRP\assets\images\icons\favicon.ico" />
-    <Content Include="UserLRP\assets\index.html" />
     <Content Include="UserLRP\assets\js\main.js" />
     <Content Include="UserLRP\assets\screenshot.png" />
     <Content Include="UserLRP\assets\screenshotmobile.png" />

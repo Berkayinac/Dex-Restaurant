@@ -12,6 +12,7 @@ namespace Web
     {
         void RouteUser(RouteCollection route)
         {
+            route.MapPageRoute("WebPage", "", "~/WebPage.aspx");
             route.MapPageRoute("Giriş", "Login", "~/UserLRP/Login/Login.aspx");
             route.MapPageRoute("Kayıt", "Register", "~/UserLRP/Register/Register.aspx");
             route.MapPageRoute("Şifremi Hatırlat", "PasswordReminder", "~/UserLRP/PasswordReminder/PasswordReminder.aspx");

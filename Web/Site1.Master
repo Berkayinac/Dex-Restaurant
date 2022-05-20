@@ -117,20 +117,21 @@
               <h2>About Us</h2>
               <p>Why Choose Our Restaurant</p>
             </div>
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>"Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk, agh burzum-ishi krimpatul"</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+            Three Rings for the Elven-kings under the sky,
+            Seven for the Dwarf-lords in their halls of stone,
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="bi bi-check-circle"></i> Nine for Mortal Men doomed to die,
+                One for the Dark Lord on his dark throne</li>
+              <li><i class="bi bi-check-circle"></i>In the Land of Mordor where the Shadows lie.
+                One Ring to rule them all, One Ring to find them,</li>
+              <li><i class="bi bi-check-circle"></i>One Ring to bring them all and in the darkness bind them
+                In the Land of Mordor where the Shadows lie.</li>
             </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+              The sheer scope of Peter Jackson's adaptation of J.R.R. Tolkien's Lord of the Rings trilogy is mind-boggling. The story rises from humble beginnings in Hobbiton to epic events in Moria, Rohan, Gondor, Mordor, and other fantastic locations. Strange names of people and places pop up at every turn and confusing lines are spouted off in everything from Elvish to Dwarvish, Entish, Orcish, and so on.
             </p>
           </div>
         </div>

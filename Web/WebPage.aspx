@@ -42,7 +42,7 @@
                             <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
                                 <div class="col-lg-6 menu-item <%#Eval("CategoryName")%>">
 
-                                     <img src="models/img/menu/<%#Eval("Photo")%>" class="menu-img" alt="">
+                                     <img src="models/img/<%#Eval("Photo")%>" class="menu-img" alt="">
                                     <div class="menu-content" width="100%">
                                         <a href="#"><%#Eval("Name")%></a> <span>$<%#Eval("UnitPrice")%>
                                         <asp:LinkButton ID="Lnk_AddToCart" CssClass="book-a-table-btn scrollto d-none d-lg-flex" CommandArgument='<%#Eval("Id")%>' CommandName='<%#Eval("Name")%>' OnCommand="Lnk_AddToCart_Command" runat="server">Add To Cart</asp:LinkButton>
