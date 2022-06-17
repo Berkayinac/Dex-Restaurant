@@ -47,17 +47,23 @@ namespace Web.UserCart
 
         public List<CartDto> GetCarts()
         {
-            if (HttpContext.Current.Session["UserId"] != null)
+            IsUserExist();
+            var userId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
+            var user = _userService.GetById(userId).Data;
+            var result = _cartService.GetAllDtos(user);
+            if (result.Success)
             {
-                var userId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
-                var user = _userService.GetById(userId).Data;
-                var result = _cartService.GetAllDtos(user);
-                if (result.Success)
-                {
-                    return result.Data;
-                }
+                return result.Data;
             }
             return null;
+        }
+
+        private void IsUserExist()
+        {
+            if (HttpContext.Current.Session["UserId"] == null)
+            {
+                Response.Redirect("~/Login");
+            }
         }
 
         public decimal TotalPrice()

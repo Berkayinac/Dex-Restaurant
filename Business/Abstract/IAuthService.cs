@@ -17,7 +17,6 @@ namespace Business.Abstract
         IDataResult<UserAuthoritiesDto> GetUserAuthority(User user);
         IDataResult<User> UserCheck(UserSecurityQuestionDto userSecurityQuestionDto, UserNewPasswordDto userNewPasswordDto);
         IResult AddUserAuthority(UserAuthority userAuthority);
-        IDataResult<string> UserAuthorityRoute(string authorities);
         IDataResult<string> GetAuthorities(UserAuthoritiesDto userAuthoritiesDto);
     }
 }

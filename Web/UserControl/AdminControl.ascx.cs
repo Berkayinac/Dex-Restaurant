@@ -15,33 +15,40 @@ namespace Web.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            IsNullAuthorities();
 
+            var userAuthorities = HttpContext.Current.Session["Authorities"].ToString();
+            var authorities = userAuthorities.Split(',');
+
+            UserIsNotAdmin(authorities);
+
+            AdminRedirectToPanel();
+        }
+
+        private void AdminRedirectToPanel()
+        {
+            var href = "<a href=";
+            var myLink = "'/Admin/Dashboard'" + " ";
+            var myCssClass = "class=" + "'book-a-table-btn scrollto d-none d-lg-flex'>";
+            var myName = "Admin";
+            var hrefclose = "</a>";
+            myLiteral.Text = href + myLink + myCssClass + myName + hrefclose;
+        }
+
+        private void UserIsNotAdmin(string[] authorities)
+        {
+            if (!authorities.Contains("Admin"))
+            {
+                Response.Redirect("~/WebPage");
+            }
+        }
+
+        private void IsNullAuthorities()
+        {
             if (HttpContext.Current.Session["Authorities"] == null)
             {
                 Response.Redirect("~/WebPage");
             }
-
-            else
-            {
-                var userAuthorities = HttpContext.Current.Session["Authorities"].ToString();
-                var authorities = userAuthorities.Split(',');
-
-                if (authorities.Contains("Admin"))
-                {
-                    var href = "<a href=";
-                    var myLink = "'/Admin/Dashboard'" + " ";
-                    var myCssClass = "class=" + "'book-a-table-btn scrollto d-none d-lg-flex'>";
-                    var myName = "Admin";
-                    var hrefclose = "</a>";
-                    myLiteral.Text = href + myLink + myCssClass + myName + hrefclose;
-                    var lol = myLiteral.Text;
-                }
-                else
-                {
-                    Response.Redirect("~/WebPage");
-                }
-            }
-            
         }
     }
 }

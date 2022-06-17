@@ -16,21 +16,18 @@ namespace Web.AdminPages
         protected void Page_Load(object sender, EventArgs e)
         {
             UserAuthoritiesIsNull();
-            UserAuthoritiesIsNotNull();
+            GetAdminMenus();
         }
 
-        private void UserAuthoritiesIsNotNull()
+        private void GetAdminMenus()
         {
-            if (HttpContext.Current.Session["Authorities"] != null)
-            {
-                var userAuthorities = HttpContext.Current.Session["Authorities"].ToString();
-                var authorities = userAuthorities.Split(',');
-                IsUserAdmin(authorities);
+            var userAuthorities = HttpContext.Current.Session["Authorities"].ToString();
+            var authorities = userAuthorities.Split(',');
+            IsUserAdmin(authorities);
 
-                IAdminMenuService adminMenuService = InstanceFactory.GetInstance<IAdminMenuService>();
-                var menus = adminMenuService.GetAll().Data;
-                CreateAdminMenu(menus);
-            }
+            IAdminMenuService adminMenuService = InstanceFactory.GetInstance<IAdminMenuService>();
+            var menus = adminMenuService.GetAll().Data;
+            CreateAdminMenu(menus);
         }
 
         private void CreateAdminMenu(List<AdminMenu> menus)

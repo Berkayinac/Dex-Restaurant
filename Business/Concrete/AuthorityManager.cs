@@ -25,7 +25,12 @@ namespace Business.Concrete
 
         public IResult Add(Authority authority)
         {
-            ValidationTool.Validate(new AuthorityValidator(), authority);
+            var result = ValidationTool.Validate(new AuthorityValidator(), authority);
+
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
 
             _authorityDal.Add(authority);
             return new SuccessResult(Messages.AuthorityAdded);
@@ -59,7 +64,12 @@ namespace Business.Concrete
 
         public IResult Update(Authority authority)
         {
-            ValidationTool.Validate(new AuthorityValidator(), authority);
+            var result = ValidationTool.Validate(new AuthorityValidator(), authority);
+
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
 
             _authorityDal.Update(authority);
             return new SuccessResult(Messages.AuthorityUpdated);

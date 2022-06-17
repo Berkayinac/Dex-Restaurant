@@ -2,11 +2,14 @@
 using Business.Concrete;
 using Business.DependencyResolvers.Ninject;
 using Core.Entities.Concrete;
+using Core.Utilities.Results;
+using Core.Utilities.UI;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -43,9 +46,11 @@ namespace Web.UserControl
 
             foreach (var question in securityQuestions)
             {
-                ListItem item = new ListItem();
-                item.Text = question.Question;
-                item.Value = Convert.ToString(question.Id);
+                ListItem item = new ListItem
+                {
+                    Text = question.Question,
+                    Value = Convert.ToString(question.Id)
+                };
 
                 list.Add(item);
             }
@@ -54,41 +59,52 @@ namespace Web.UserControl
 
         protected void Btn_Register_Click(object sender, EventArgs e)
         {
-            UserForRegisterDto userForRegisterDto = new UserForRegisterDto();
-            userForRegisterDto.FirstName = tbx_FirstName.Text;
-            userForRegisterDto.LastName = tbx_LastName.Text;
-            userForRegisterDto.Email = tbx_Email.Text;
-            userForRegisterDto.Password = tbx_Password.Text;
+            UserForRegisterDto userForRegisterDto = new UserForRegisterDto
+            {
+                FirstName = tbx_FirstName.Text,
+                LastName = tbx_LastName.Text,
+                Email = tbx_Email.Text,
+                Password = tbx_Password.Text
+            };
 
-            UserSecurityQuestionDto userSecurityQuestionDto = new UserSecurityQuestionDto();
-            userSecurityQuestionDto.SecurityQuestion = drp_SecurityQuestions.SelectedItem.Text;
-            userSecurityQuestionDto.SecurityQuestionAnswer = tbx_SecurityQuestionAnswer.Text;
+            UserSecurityQuestionDto userSecurityQuestionDto = new UserSecurityQuestionDto
+            {
+                SecurityQuestion = drp_SecurityQuestions.SelectedItem.Text,
+                SecurityQuestionAnswer = tbx_SecurityQuestionAnswer.Text
+            };
 
             var result = _authService.Register(userForRegisterDto, userSecurityQuestionDto);
-            if (result.Success)
+            if (!result.Success)
             {
-                UserAuthority userAuthority = new UserAuthority();
-                userAuthority.AuthorityId = 1;
-                userAuthority.UserId = result.Data.Id;
-
-                _authService.AddUserAuthority(userAuthority);
-
-                Customer customer = new Customer
-                {
-                    UserId = result.Data.Id,
-                    FirstName = tbx_FirstName.Text,
-                    LastName = tbx_LastName.Text,
-                    City = tbx_City.Text,
-                    Address = tbx_Address.Text,
-                    Phone = tbx_PhoneNumber.Text
-                };
-
-                _customerService.Add(customer);
-
                 lbl_Register.Text = result.Message;
-                Response.Redirect("/Login");
+                Thread.Sleep(3000);
+                Response.Redirect("~/Register");
             }
+
+            UserAuthority userAuthority = new UserAuthority
+            {
+                AuthorityId = 1,
+                UserId = result.Data.Id
+            };
+
+            _authService.AddUserAuthority(userAuthority);
+
+            Customer customer = new Customer
+            {
+                UserId = result.Data.Id,
+                FirstName = tbx_FirstName.Text,
+                LastName = tbx_LastName.Text,
+                City = tbx_City.Text,
+                Address = tbx_Address.Text,
+                Phone = tbx_PhoneNumber.Text
+            };
+
+            _customerService.Add(customer);
+
             lbl_Register.Text = result.Message;
+            Response.Redirect("~/Login");
+
+            
         }
     }
 }

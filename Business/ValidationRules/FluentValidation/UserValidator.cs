@@ -17,6 +17,8 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(u => u.Email).MaximumLength(50);
             RuleFor(u => u.Password).MaximumLength(50);
             RuleFor(u => u.SecurityQuestionAnswer).MaximumLength(50);
+            RuleFor(u => u.SecurityQuestionAnswer).NotEmpty();
+            RuleFor(u => u.SecurityQuestionAnswer).MinimumLength(4);
         }
     }
 }

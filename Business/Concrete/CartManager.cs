@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Core.Entities.Concrete;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
@@ -24,6 +25,13 @@ namespace Business.Concrete
 
         public IResult Add(Cart cart)
         {
+            var rules = BusinessRules.Run(CheckDataIsNull(cart));
+
+            if (!rules.Success)
+            {
+                return new ErrorResult();
+            }
+
             _cartDal.Add(cart);
             return new SuccessResult(Messages.CartAdded);
         }
@@ -54,20 +62,26 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CartDto>>(result, Messages.CartListed);
         }
 
+        // Technical Debt
         public IResult CheckCart(Cart cart)
         {
             var getItem = _cartDal.Get(c => c.ProductId == cart.ProductId && c.UserId == cart.UserId);
-            if (getItem == null)
+
+            var result = Add(getItem);
+
+            if (result.Success)
             {
-                Add(cart);
                 return new SuccessResult();
             }
-            else
-            {
-                getItem.Quantity += cart.Quantity;
-                Update(getItem);
-                return new SuccessResult();
-            }
+
+            return QuantityUpdate(cart, getItem);
+        }
+
+        private IResult QuantityUpdate(Cart cart, Cart getItem)
+        {
+            getItem.Quantity += cart.Quantity;
+            Update(getItem);
+            return new SuccessResult();
         }
 
         public IResult CartDelete(Cart cart)
@@ -104,6 +118,25 @@ namespace Business.Concrete
         {
             _cartDal.Update(cart);
             return new SuccessResult(Messages.CartUpdated);
+        }
+
+
+        private IResult CheckProcess(IResult result)
+        {
+            if (result.Success)
+            {
+                return new SuccessResult();
+            }
+            return new ErrorResult();
+        }
+
+        private IResult CheckDataIsNull(Cart cart)
+        {
+            if (cart == null)
+            {
+                return new SuccessResult();
+            }
+            return new ErrorResult();
         }
     }
 }

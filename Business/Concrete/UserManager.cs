@@ -25,7 +25,12 @@ namespace Business.Concrete
 
         public IResult Add(User user)
         {
-            ValidationTool.Validate(new UserValidator(), user);
+           var result = ValidationTool.Validate(new UserValidator(), user);
+
+           if (!result.Success)
+           {
+                return new ErrorResult(result.Message);
+           }
 
             _userDal.Add(user);
             return new SuccessResult(Messages.UserAdded);
@@ -90,7 +95,12 @@ namespace Business.Concrete
 
         public IResult Update(User user)
         {
-            ValidationTool.Validate(new UserValidator(), user);
+            var result = ValidationTool.Validate(new UserValidator(), user);
+
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
 
             _userDal.Update(user);
             return new SuccessResult(Messages.UserUpdated);

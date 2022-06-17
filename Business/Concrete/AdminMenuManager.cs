@@ -24,7 +24,12 @@ namespace Business.Concrete
 
         public IResult Add(AdminMenu adminMenu)
         {
-            ValidationTool.Validate(new AdminMenuValidator(), adminMenu);
+            var result = ValidationTool.Validate(new AdminMenuValidator(), adminMenu);
+
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
 
             _adminMenuDal.Add(adminMenu);
             return new SuccessResult();
@@ -58,7 +63,12 @@ namespace Business.Concrete
 
         public IResult Update(AdminMenu adminMenu)
         {
-            ValidationTool.Validate(new AdminMenuValidator(), adminMenu);
+            var result = ValidationTool.Validate(new AdminMenuValidator(), adminMenu);
+
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
 
             _adminMenuDal.Update(adminMenu);
             return new SuccessResult();

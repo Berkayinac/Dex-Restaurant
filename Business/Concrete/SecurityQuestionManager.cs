@@ -23,7 +23,12 @@ namespace Business.Concrete
 
         public IResult Add(SecurityQuestion securityQuestion)
         {
-            ValidationTool.Validate(new SecurityQuestionValidator(), securityQuestion);
+            var result = ValidationTool.Validate(new SecurityQuestionValidator(), securityQuestion);
+
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
 
             _securityQuestionDal.Add(securityQuestion);
             return new SuccessResult();
@@ -52,7 +57,12 @@ namespace Business.Concrete
 
         public IResult Update(SecurityQuestion securityQuestion)
         {
-            ValidationTool.Validate(new SecurityQuestionValidator(), securityQuestion);
+            var result = ValidationTool.Validate(new SecurityQuestionValidator(), securityQuestion);
+
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
 
             _securityQuestionDal.Update(securityQuestion);
             return new SuccessResult();

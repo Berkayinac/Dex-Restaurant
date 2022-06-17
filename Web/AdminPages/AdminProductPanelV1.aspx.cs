@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
 using Business.DependencyResolvers.Ninject;
+using Core.Utilities.Results;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -84,15 +85,25 @@ namespace Web.AdminPages
             product.Photo = tbx_AddPhoto.Text;
 
             var result = _productService.Add(product);
+            IsSuccess(result);
+            IsNotSuccess(result);
+            GetAll();
+        }
+
+        private void IsSuccess(IResult result)
+        {
             if (result.Success)
             {
                 Literal1.Text = "<div class='alert alert-success'" + " " + "role='alert'" + ">" + result.Message + "</div>";
             }
-            else
+        }
+
+        private void IsNotSuccess(IResult result)
+        {
+            if (!result.Success)
             {
                 Literal1.Text = "<div class='alert alert-danger'" + " " + "role='alert'" + ">" + result.Message + "</div>";
             }
-            GetAll();
         }
     }
 }

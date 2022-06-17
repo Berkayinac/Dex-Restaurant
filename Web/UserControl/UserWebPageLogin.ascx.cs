@@ -33,6 +33,8 @@ namespace Web.UserControl
             HttpContext.Current.Session["Question"] = null;
             HttpContext.Current.Session["QuestionAnswer"] = null;
 
+
+
             Response.Redirect("~/WebPage");
         }
     }

@@ -24,7 +24,12 @@ namespace Business.Concrete
 
         public IResult Add(Customer customer)
         {
-            ValidationTool.Validate(new CustomerValidator(), customer);
+            var result = ValidationTool.Validate(new CustomerValidator(), customer);
+
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
 
             _customerDal.Add(customer);
             return new SuccessResult(Messages.CustomerAdded);

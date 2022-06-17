@@ -26,8 +26,14 @@ namespace Business.Concrete
 
         public IResult Add(Product product)
         {
-            ValidationTool.Validate(new ProductValidator(), product);
+            var result = ValidationTool.Validate(new ProductValidator(), product);
             var rules = BusinessRules.Run(ProductNameCheck(product.Name));
+
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
+
             if (!rules.Success)
             {
                 return new ErrorResult(rules.Message);
@@ -65,7 +71,19 @@ namespace Business.Concrete
 
         public IResult Update(Product product)
         {
-            ValidationTool.Validate(new ProductValidator(), product);
+            var result = ValidationTool.Validate(new ProductValidator(), product);
+            var rules = BusinessRules.Run(ProductNameCheck(product.Name));
+
+            if (!result.Success)
+            {
+                return new ErrorResult(result.Message);
+            }
+
+            if (!rules.Success)
+            {
+                return new ErrorResult(rules.Message);
+            }
+
 
             _productDal.Update(product);
             return new SuccessResult(Messages.ProductUpdated);

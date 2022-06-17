@@ -87,9 +87,8 @@ namespace Business.Concrete
 
         public IResult UserExists(string email)
         {
-            // burası düzeltilecek.
             var userExist = _userService.GetByMail(email);
-            if (userExist == null)
+            if (userExist != null)
             {
                 return new ErrorResult(Messages.UserAlreadyExist);
             }
@@ -133,16 +132,6 @@ namespace Business.Concrete
             }
             return new SuccessDataResult<string>(result,Messages.AuthorityGeted);
         }
-
-        public IDataResult<string> UserAuthorityRoute(string authorities)
-        {
-            if (authorities.Contains("Admin"))
-            {
-                return new SuccessDataResult<string>("~/AdminWebPage", Messages.AuthorityGeted);
-            }
-            return new ErrorDataResult<string>("~/WebPage", Messages.AuthorityGeted);
-        }
-
 
         public IResult CheckUserAuthority(string authorities)
         {

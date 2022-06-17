@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
 using Business.DependencyResolvers.Ninject;
+using Core.Utilities.Results;
+using Core.Utilities.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +34,9 @@ namespace Web.UserControl
             }
 
             HttpContext.Current.Session["Email"] = tbx_Email.Text;
+
+            //HttpContext.Current.Session["User"] = 
+
             Response.Redirect("~/Question");
         }
     }
