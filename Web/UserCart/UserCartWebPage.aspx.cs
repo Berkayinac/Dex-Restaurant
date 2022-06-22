@@ -102,12 +102,14 @@ namespace Web.UserCart
         {
             var productId = Convert.ToInt32(e.CommandArgument);
 
-            Cart cart = new Cart();
-            cart.ProductId = productId;
-            cart.UserId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
-            cart.Quantity = 1;
+            Cart cart = new Cart
+            {
+                ProductId = productId,
+                UserId = Convert.ToInt32(HttpContext.Current.Session["UserId"]),
+                Quantity = 1
+            };
 
-            _cartService.CartDelete(cart);
+            DeleteToCart(cart);
             Response.Redirect("~/Cart");
         }
 
@@ -125,14 +127,60 @@ namespace Web.UserCart
                 };
                 _orderService.Add(order);
 
-                var product = _productService.GetById(cartItem.ProductId).Data;
-                product.UnitsInStock -= cartItem.Quantity;
-                _productService.Update(product);
+                UpdateToProductQuantity(cartItem);
 
                 var cart = _cartService.GetById(cartItem.CartId).Data;
                 _cartService.Delete(cart);
             }
             Response.Redirect("~/WebPage");
+        }
+
+        protected void UpdateToProductQuantity(CartDto cartItem)
+        {
+            var product = _productService.GetById(cartItem.ProductId).Data;
+            product.UnitsInStock -= cartItem.Quantity;
+            _productService.Update(product);
+        }
+
+        protected void DeleteToCart(Cart cart)
+        {
+            var getItem = _cartService.GetIfExistCartItem(cart).Data;
+
+            CartItemIsNull(getItem);
+            CartItemCheckQuantityGreaterThenOne(getItem);
+            UpdateToCartItemQuantity(cart, getItem);
+            CartItemCheckQuantityLessThenOne(getItem);
+            _cartService.Delete(getItem);
+        }
+
+        private void CartItemCheckQuantityGreaterThenOne(Cart getItem)
+        {
+            if (getItem.Quantity > 1)
+            {
+                Response.Redirect("~/Cart");
+            }
+        }
+
+        private void UpdateToCartItemQuantity(Cart cart, Cart getItem)
+        {
+            getItem.Quantity -= cart.Quantity;
+            _cartService.Update(getItem);
+        }
+
+        private void CartItemCheckQuantityLessThenOne(Cart getItem)
+        {
+            if (getItem.Quantity <= 1)
+            {
+                Response.Redirect("~/Cart");
+            }
+        }
+
+        private void CartItemIsNull(Cart getItem)
+        {
+            if (getItem == null)
+            {
+                Response.Redirect("~/Cart");
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -11,16 +12,26 @@ using System.Web.UI.WebControls;
 
 namespace Web.UserControl
 {
-    public partial class AdminControl : System.Web.UI.UserControl
+    public partial class AdminControl : UserAuthoritiesCheck
     {
+        IAuthService _authService;
+        public AdminControl()
+        {
+            _authService = InstanceFactory.GetInstance<IAuthService>();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             IsNullAuthorities();
 
-            var userAuthorities = HttpContext.Current.Session["Authorities"].ToString();
-            var authorities = userAuthorities.Split(',');
+            var userAuthorities = (UserAuthoritiesDto)HttpContext.Current.Session["UserAuthorities"];
+           
 
-            UserIsNotAdmin(authorities);
+            //var userAuthoritiesV1 = _authService.GetAuthorities(userAuthorities).Data;
+
+            //var authorities = userAuthorities.Split(',');
+
+            UserIsNotAdmin(userAuthorities);
 
             AdminRedirectToPanel();
         }
@@ -35,17 +46,17 @@ namespace Web.UserControl
             myLiteral.Text = href + myLink + myCssClass + myName + hrefclose;
         }
 
-        private void UserIsNotAdmin(string[] authorities)
-        {
-            if (!authorities.Contains("Admin"))
-            {
-                Response.Redirect("~/WebPage");
-            }
-        }
+        //private void UserIsNotAdmin(string[] authorities)
+        //{
+        //    if (!authorities.Contains("Admin"))
+        //    {
+        //        Response.Redirect("~/WebPage");
+        //    }
+        //}
 
         private void IsNullAuthorities()
         {
-            if (HttpContext.Current.Session["Authorities"] == null)
+            if ((UserAuthoritiesDto)HttpContext.Current.Session["UserAuthorities"] == null)
             {
                 Response.Redirect("~/WebPage");
             }

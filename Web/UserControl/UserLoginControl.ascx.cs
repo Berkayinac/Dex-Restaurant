@@ -13,7 +13,7 @@ using System.Web.UI.WebControls;
 
 namespace Web.UserControl
 {
-    public partial class UserLoginControl : System.Web.UI.UserControl
+    public partial class UserLoginControl : UserAuthoritiesCheck
     {
         IAuthService _authService;
         public UserLoginControl()
@@ -41,16 +41,17 @@ namespace Web.UserControl
                 Response.Redirect("~/Login");
             }
 
-            var userAuthorities = _authService.GetUserAuthority(userLogin.Data).Data;
-            var authorities = _authService.GetAuthorities(userAuthorities).Data;
-            
+            var userAuthoritiesDto = _authService.GetUserAuthority(userLogin.Data).Data;
+
+            //var authorities = _authService.GetAuthorities(userAuthoritiesDto).Data;
             //HttpContext.Current.Session["Authorities"] = authorities;
-            //HttpContext.Current.Session["UserName"] = userAuthorities.User.FirstName + " " + userAuthorities.User.LastName;
-            //HttpContext.Current.Session["UserId"] = userAuthorities.User.Id;
 
+            HttpContext.Current.Session["UserName"] = userAuthoritiesDto.User.FirstName + " " + userAuthoritiesDto.User.LastName;
+            HttpContext.Current.Session["UserId"] = userAuthoritiesDto.User.Id;
 
-            HttpContext.Current.Session["UserAuthorities"] = userAuthorities;
-            UserAuthorityRoute(authorities);
+            HttpContext.Current.Session["UserAuthoritiesDto"] = userAuthoritiesDto;
+
+            UserAuthorityRoute(userAuthoritiesDto.Authorities);
         }
 
         protected void Btn_PasswordReminder_Click(object sender, EventArgs e)
@@ -62,14 +63,5 @@ namespace Web.UserControl
         {
             Response.Redirect("~/Register");
         }
-
-        protected void UserAuthorityRoute(string authorities)
-        {
-            if (authorities.Contains("Admin"))
-            {
-                Response.Redirect("~/Admin/Dashboard");
-            }
-            Response.Redirect("~/WebPage");
-        }
     }
-}   
+}

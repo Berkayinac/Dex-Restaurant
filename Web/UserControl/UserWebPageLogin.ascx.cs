@@ -28,11 +28,12 @@ namespace Web.UserControl
         protected void Lnk_Logout_Click(object sender, EventArgs e)
         {
             HttpContext.Current.Session["UserName"] = null;
-            HttpContext.Current.Session["Authorities"] = null;
+            //HttpContext.Current.Session["Authorities"] = null;
             HttpContext.Current.Session["Email"] = null;
             HttpContext.Current.Session["Question"] = null;
             HttpContext.Current.Session["QuestionAnswer"] = null;
 
+            HttpContext.Current.Session["UserAuthorities"] = null;
 
 
             Response.Redirect("~/WebPage");

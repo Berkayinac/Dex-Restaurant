@@ -27,7 +27,7 @@ namespace Business.Concrete
         {
             var rules = BusinessRules.Run(CheckDataIsNull(cart));
 
-            if (!rules.Success)
+            if (rules.Success)
             {
                 return new ErrorResult();
             }
@@ -65,14 +65,14 @@ namespace Business.Concrete
         // Technical Debt
         public IResult CheckCart(Cart cart)
         {
-            var getItem = _cartDal.Get(c => c.ProductId == cart.ProductId && c.UserId == cart.UserId);
-
-            var result = Add(getItem);
+            var result = Add(cart);
 
             if (result.Success)
             {
                 return new SuccessResult();
             }
+
+            var getItem = _cartDal.Get(c => c.ProductId == cart.ProductId && c.UserId == cart.UserId);
 
             return QuantityUpdate(cart, getItem);
         }
@@ -84,24 +84,34 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        public IResult CartDelete(Cart cart)
+        //public IResult CartDelete(Cart cart)
+        //{
+        //    var getItem = _cartDal.Get(c => c.ProductId == cart.ProductId && c.UserId == cart.UserId);
+        //    if (getItem == null)
+        //    {
+        //        return new ErrorResult();
+        //    }
+        //    if (getItem.Quantity >1)
+        //    {
+        //        getItem.Quantity -= cart.Quantity;
+        //        Update(getItem);
+        //        return new SuccessResult();
+        //    }
+        //    else
+        //    {
+        //        Delete(getItem);
+        //        return new SuccessResult();
+        //    }
+        //}
+
+        public IDataResult<Cart> GetIfExistCartItem(Cart cart)
         {
             var getItem = _cartDal.Get(c => c.ProductId == cart.ProductId && c.UserId == cart.UserId);
             if (getItem == null)
             {
-                return new ErrorResult();
+                return new ErrorDataResult<Cart>();
             }
-            if (getItem.Quantity >1)
-            {
-                getItem.Quantity -= cart.Quantity;
-                Update(getItem);
-                return new SuccessResult();
-            }
-            else
-            {
-                Delete(getItem);
-                return new SuccessResult();
-            }
+            return new SuccessDataResult<Cart>(getItem);
         }
 
         public IDataResult<Cart> GetById(int id)
@@ -132,7 +142,7 @@ namespace Business.Concrete
 
         private IResult CheckDataIsNull(Cart cart)
         {
-            if (cart == null)
+            if (cart != null)
             {
                 return new SuccessResult();
             }

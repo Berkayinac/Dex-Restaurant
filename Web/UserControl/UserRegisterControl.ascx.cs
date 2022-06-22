@@ -3,7 +3,6 @@ using Business.Concrete;
 using Business.DependencyResolvers.Ninject;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
-using Core.Utilities.UI;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -101,10 +100,7 @@ namespace Web.UserControl
 
             _customerService.Add(customer);
 
-            lbl_Register.Text = result.Message;
             Response.Redirect("~/Login");
-
-            
         }
     }
 }

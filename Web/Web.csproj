@@ -137,6 +137,7 @@
     <Content Include="models\img\thethree.png" />
     <Content Include="models\img\Wine.jpg" />
     <Content Include="UserCart\UserCartWebPage.aspx" />
+    <Content Include="UserControl\UserAuthoritiesCheck.ascx" />
     <Content Include="UserLRP\assets\css\main.css" />
     <Content Include="UserLRP\assets\css\util.css" />
     <Content Include="UserLRP\assets\fonts\font-awesome-4.7.0\css\font-awesome.css" />
@@ -520,6 +521,13 @@
     </Compile>
     <Compile Include="UserCart\UserCartWebPage.aspx.designer.cs">
       <DependentUpon>UserCartWebPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserAuthoritiesCheck.ascx.cs">
+      <DependentUpon>UserAuthoritiesCheck.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserAuthoritiesCheck.ascx.designer.cs">
+      <DependentUpon>UserAuthoritiesCheck.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserLRP\Login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

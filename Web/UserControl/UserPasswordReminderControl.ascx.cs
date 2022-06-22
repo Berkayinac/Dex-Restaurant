@@ -2,7 +2,6 @@
 using Business.Concrete;
 using Business.DependencyResolvers.Ninject;
 using Core.Utilities.Results;
-using Core.Utilities.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;

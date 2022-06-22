@@ -19,6 +19,7 @@ namespace Business.Abstract
         IResult Update(Cart cart);
         IResult Delete(Cart cart);
         IResult CheckCart(Cart cart);
-        IResult CartDelete(Cart cart);
+        //IResult CartDelete(Cart cart);
+        IDataResult<Cart> GetIfExistCartItem(Cart cart);
     }
 }
