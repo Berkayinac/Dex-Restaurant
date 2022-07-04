@@ -84,26 +84,6 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        //public IResult CartDelete(Cart cart)
-        //{
-        //    var getItem = _cartDal.Get(c => c.ProductId == cart.ProductId && c.UserId == cart.UserId);
-        //    if (getItem == null)
-        //    {
-        //        return new ErrorResult();
-        //    }
-        //    if (getItem.Quantity >1)
-        //    {
-        //        getItem.Quantity -= cart.Quantity;
-        //        Update(getItem);
-        //        return new SuccessResult();
-        //    }
-        //    else
-        //    {
-        //        Delete(getItem);
-        //        return new SuccessResult();
-        //    }
-        //}
-
         public IDataResult<Cart> GetIfExistCartItem(Cart cart)
         {
             var getItem = _cartDal.Get(c => c.ProductId == cart.ProductId && c.UserId == cart.UserId);
@@ -129,7 +109,6 @@ namespace Business.Concrete
             _cartDal.Update(cart);
             return new SuccessResult(Messages.CartUpdated);
         }
-
 
         private IResult CheckProcess(IResult result)
         {

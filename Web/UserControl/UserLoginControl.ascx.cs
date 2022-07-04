@@ -43,9 +43,6 @@ namespace Web.UserControl
 
             var userAuthoritiesDto = _authService.GetUserAuthority(userLogin.Data).Data;
 
-            //var authorities = _authService.GetAuthorities(userAuthoritiesDto).Data;
-            //HttpContext.Current.Session["Authorities"] = authorities;
-
             HttpContext.Current.Session["UserName"] = userAuthoritiesDto.User.FirstName + " " + userAuthoritiesDto.User.LastName;
             HttpContext.Current.Session["UserId"] = userAuthoritiesDto.User.Id;
 

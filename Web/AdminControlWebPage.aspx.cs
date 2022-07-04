@@ -9,10 +9,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Web.UserControl;
 
 namespace Web
 {
-    public partial class AdminControlWebPage : System.Web.UI.Page
+    public partial class AdminControlWebPage : UserAuthoritiesCheck
     {
         IProductService _productService;
         ICategoryService _categoryService;
@@ -28,14 +29,12 @@ namespace Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!HttpContext.Current.Session["Authorities"].ToString().Contains("Admin"))
-            {
-                Response.Redirect("/WebPage");
-            }
+            CheckUserAuthorities();
 
             GetAll();
             GetCarts();
         }
+
 
         public void GetAll()
         {
@@ -45,19 +44,21 @@ namespace Web
 
         public List<CartDto> GetCarts()
         {
-            if (HttpContext.Current.Session["UserId"] != null)
+            UserNotFound();
+
+            var userId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
+            var user = _userService.GetById(userId).Data;
+            var result = _cartService.GetAllDtos(user);
+            
+            if (result.Success)
             {
-                var userId = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
-                var user = _userService.GetById(userId).Data;
-                var result = _cartService.GetAllDtos(user);
-                if (result.Success)
-                {
-                    return result.Data;
-                }
+                return result.Data;
             }
+
             return null;
         }
 
+        
 
         public List<ProductDto> GetAllProductDtos()
         {

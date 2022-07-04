@@ -25,11 +25,6 @@ namespace Web.UserControl
             IsNullAuthorities();
 
             var userAuthorities = (UserAuthoritiesDto)HttpContext.Current.Session["UserAuthorities"];
-           
-
-            //var userAuthoritiesV1 = _authService.GetAuthorities(userAuthorities).Data;
-
-            //var authorities = userAuthorities.Split(',');
 
             UserIsNotAdmin(userAuthorities);
 
@@ -44,22 +39,6 @@ namespace Web.UserControl
             var myName = "Admin";
             var hrefclose = "</a>";
             myLiteral.Text = href + myLink + myCssClass + myName + hrefclose;
-        }
-
-        //private void UserIsNotAdmin(string[] authorities)
-        //{
-        //    if (!authorities.Contains("Admin"))
-        //    {
-        //        Response.Redirect("~/WebPage");
-        //    }
-        //}
-
-        private void IsNullAuthorities()
-        {
-            if ((UserAuthoritiesDto)HttpContext.Current.Session["UserAuthorities"] == null)
-            {
-                Response.Redirect("~/WebPage");
-            }
         }
     }
 }

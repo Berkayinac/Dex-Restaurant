@@ -28,7 +28,7 @@ namespace Web.UserControl
             CheckAuthority(result);
         }
 
-        private static string GetAuthorities(UserAuthoritiesDto userAuthoritiesDto)
+        protected static string GetAuthorities(UserAuthoritiesDto userAuthoritiesDto)
         {
             string result = "";
 
@@ -40,11 +40,35 @@ namespace Web.UserControl
             return result;
         }
 
-        private void CheckAuthority(string result)
+        protected void CheckAuthority(string result)
         {
             if (!result.Contains("Admin"))
             {
                 Response.Redirect("~/WebPage");
+            }
+        }
+
+        protected void IsNullAuthorities()
+        {
+            if ((UserAuthoritiesDto)HttpContext.Current.Session["UserAuthorities"] == null)
+            {
+                Response.Redirect("~/WebPage");
+            }
+        }
+
+        protected void CheckUserAuthorities()
+        {
+            if (!HttpContext.Current.Session["Authorities"].ToString().Contains("Admin"))
+            {
+                Response.Redirect("/WebPage");
+            }
+        }
+
+        protected void UserNotFound()
+        {
+            if (HttpContext.Current.Session["UserId"] != null)
+            {
+                Response.Redirect("~/Login");
             }
         }
     }
